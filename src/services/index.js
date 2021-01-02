@@ -1,4 +1,5 @@
-export const googleLogin = () => {
+export const googleLogin = (event) => {
+  event.preventDefault();
   const provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider)
