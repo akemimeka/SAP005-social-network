@@ -21,7 +21,7 @@ const renderRoute = () => {
 };
 
 export const redirectToPage = (path) => {
-  onNavigate(`${path}`);
+  onNavigate(path);
   renderRoute();
 };
 
