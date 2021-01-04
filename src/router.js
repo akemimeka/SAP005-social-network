@@ -20,13 +20,8 @@ const renderRoute = () => {
   root.appendChild(routes[window.location.pathname]());
 };
 
-export const redirectToLogin = () => {
-  onNavigate('/');
-  renderRoute();
-};
-
-export const redirectToFeed = () => {
-  onNavigate('/feed');
+export const redirectToPage = (path) => {
+  onNavigate(`${path}`);
   renderRoute();
 };
 
