@@ -290,36 +290,6 @@ div.container {
   margin-bottom: 0.5rem;
 }
 
-
-/* NEW POST */
-.new-post {
-  margin-bottom: 2rem;
-}
-
-#new-post-form {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-}
-
-.new-post-title {
-  padding: 1rem;
-  background-color: #eeeeee;
-}
-
-.new-post-label {
-  margin-bottom: 0.3rem;
-}
-
-.new-post-input {
-  margin-bottom: 1rem;
-}
-
-#new-post-button {
-  max-width: 8rem;
-  display: block;
-}
-
 /* PROFILE */
 
 .profile-header {
