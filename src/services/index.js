@@ -1,4 +1,6 @@
-import { redirectToLogin, redirectToFeed } from '../router.js';
+// ARQUIVO PARA FUNÇÕES CRUD (CREATE, READ, UPDATE & DELETE) RELACIONADAS AO FIREBASE
+
+import { redirectToPage } from '../router.js';
 
 const logoutButton = document.querySelector('#logout-btn');
 const auth = firebase.auth();
@@ -8,10 +10,10 @@ const verifyLogin = () => {
   auth.onAuthStateChanged((user) => {
     if (user) {
       logoutButton.classList.remove('hidden');
-      redirectToFeed();
+      redirectToPage('/feed');
     } else {
       logoutButton.classList.add('hidden');
-      redirectToLogin();
+      redirectToPage('/');
     }
   });
 };
