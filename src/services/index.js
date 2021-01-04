@@ -1,11 +1,14 @@
+import { userLoggedIn } from '../router.js';
+
+const auth = firebase.auth();
+// const firestore = firebase.firestore();
+
 export const googleLogin = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
-  firebase.auth().signInWithPopup(provider)
-    .then((result) => {
-      const token = result.credential.accessToken;
-      const user = result.user;
-      console.log(user, token);
+  auth.signInWithPopup(provider)
+    .then(() => {
+      userLoggedIn();
     })
     .catch();
 };
