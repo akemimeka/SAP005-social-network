@@ -69,16 +69,16 @@ export const createRegister = (e) => {
     return false;
   }
   firebase.auth().createUserWithEmailAndPassword(email,password)
-    .then(user => {
-      console.log('usuário', user);
-      alert('usuário criado');
-    })
-    .catch(error => {
-      if (error.code === 'auth/email-already-in-use') {
-        alert('E-mail já cadastrado');
-      }
-      if (error.code === 'auth/invalid-email') {
-        alert('E-mail inválido');
-      }
-    })
+  .then(user => {
+    console.log('usuário', user);
+    alert('usuário criado');
+  })
+  .catch(error => {
+    if (error.code === 'auth/email-already-in-use') {
+      alert('E-mail já cadastrado');
+    }
+    if (error.code === 'auth/invalid-email') {
+      alert('E-mail inválido');
+    }
+  })
 };
