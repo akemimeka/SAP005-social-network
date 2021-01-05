@@ -20,7 +20,10 @@ export const Register = () => {
         <input class="input-confirm-password" type="password" name="confirm-password" minlength="8" id="confirm-password" placeholder="A senha deve conter no mínimo 8 caracteres" required>
         <button class="btn-register" type="submit" id="btn-register">Registrar-se</button>
         <label class="option-register">Ou</label>
-        <button class="btn-register" type="button">G google</button>
+        <button id="btn-google">
+          <img class="btn-login-icon" src="../../img/google-icon.svg" alt="Google icon"/>
+          <span class="btn-login-text">Cadastrar com conta Google</span>
+        </button>
       </form>
     </section>
     <p class="login-link">
