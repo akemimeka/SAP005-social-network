@@ -1,5 +1,4 @@
-import { emailAndPasswordLogin } from '../../services/index.js';
-import { googleLogin } from '../../services/index.js';
+import { emailAndPasswordLogin, googleLogin } from '../../services/index.js';
 
 export const Login = () => {
   const rootElement = document.createElement('div');
@@ -19,8 +18,8 @@ export const Login = () => {
           <button type="submit" class="btn-login" id="btn-login">Entrar</button>
           <label class="alternative">Ou</label>
           <button id="btn-google">
-            <img class="btn-login-icon" src="../../img/google-icon.svg" alt="Google icon"/>
-            <span class="btn-login-text">Sign in with Google</span>
+            <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
+            <span class="btn-google-text">Entre com conta Google</span>
           </button>
         </form>
       </section>
