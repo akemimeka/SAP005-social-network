@@ -1,4 +1,5 @@
-// ARQUIVO PARA FUNÇÕES CRUD (CREATE, READ, UPDATE & DELETE) RELACIONADAS AO FIREBASE
+/* eslint-disable no-alert */
+
 import { redirectToPage } from '../router.js';
 
 const logoutButton = document.querySelector('#logout-btn');
@@ -23,9 +24,15 @@ export const googleLogin = (event) => {
 
   auth.signInWithPopup(provider)
     .then(() => {
+      alert('usuário logado');
       verifyLogin();
     })
-    .catch();
+    .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/account-exists-with-different-credential') {
+        alert('Essa conta já existe com uma credencial diferente');
+      }
+    });
 };
 
 logoutButton.addEventListener('click', () => {
