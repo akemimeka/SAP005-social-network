@@ -1,5 +1,4 @@
-import { createRegister } from '../../services/index.js';
-import { googleLogin } from '../../services/index.js';
+import { createRegister, googleLogin } from '../../services/index.js';
 import { redirectTologinOrRegister } from '../../services/index.js';
 
 export const Register = () => {
