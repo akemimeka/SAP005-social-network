@@ -59,10 +59,10 @@ export const emailAndPasswordLogin = (event) => {
     });
 };
 
-export const createRegister = (event) => {
+export const createAccount = (event) => {
   event.preventDefault();
-  const email = document.querySelector('#register-email').value;
-  const password = document.querySelector('#register-password').value;
+  const email = document.querySelector('#sign-up-email').value;
+  const password = document.querySelector('#sign-up-password').value;
   const confirmPassword = document.querySelector('#confirm-password').value;
   if (password != confirmPassword) {
     alert('A senha digitada está diferente em um dos campos');
