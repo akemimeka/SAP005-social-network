@@ -59,26 +59,29 @@ export const emailAndPasswordLogin = (event) => {
     });
 };
 
-export const createRegister = (e) => {
-  e.preventDefault();
-  const email = document.getElementById('register-email').value;
-  const password = document.getElementById('register-password').value;
-  const confirmPassword = document.getElementById('confirm-password').value;
+export const createRegister = (event) => {
+  event.preventDefault();
+  const email = document.querySelector('#register-email').value;
+  const password = document.querySelector('#register-password').value;
+  const confirmPassword = document.querySelector('#confirm-password').value;
   if (password != confirmPassword) {
     alert('A senha digitada está diferente em um dos campos');
     return false;
   }
-  firebase.auth().createUserWithEmailAndPassword(email,password)
+  auth.createUserWithEmailAndPassword(email,password)
   .then(user => {
     console.log('usuário', user);
     alert('usuário criado');
+    verifyLogin();
   })
   .catch(error => {
-    if (error.code === 'auth/email-already-in-use') {
+    const errorCode = error.code;
+    if (errorCode === 'auth/email-already-in-use') {
       alert('E-mail já cadastrado');
-    }
-    if (error.code === 'auth/invalid-email') {
+    } else if (errorCode === 'auth/invalid-email') {
       alert('E-mail inválido');
+    } else if (errorCode === 'auth/weak-password') {
+      alert('Senha fraca');
     }
   })
 };

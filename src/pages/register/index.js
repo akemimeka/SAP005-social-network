@@ -1,4 +1,5 @@
-import { createRegister } from '../../services/index.js';
+import { createRegister, googleLogin } from '../../services/index.js';
+import { redirectToPage } from '../../router.js';
 
 export const Register = () => {
 
@@ -20,17 +21,23 @@ export const Register = () => {
         <input class="input-confirm-password" type="password" name="confirm-password" minlength="8" id="confirm-password" placeholder="A senha deve conter no mínimo 8 caracteres" required>
         <button class="btn-register" type="submit" id="btn-register">Registrar-se</button>
         <label class="option-register">Ou</label>
-        <button class="btn-register" type="button">G google</button>
+        <button class="btn-register" type="button" id="btn-register-google">Registrar-se com conta G google</button>
       </form>
     </section>
     <p class="login-link">
-    Já tem uma conta? <a href="#">Entrar</a>
+    Já tem uma conta? <a href="#" id="login-link">Entrar</a>
     </p>
   `;
   rootElement.innerHTML = templateRegister
 
   const registerButton = rootElement.querySelector('#btn-register');
   registerButton.addEventListener('click', createRegister);
+
+  const googleButton = rootElement.querySelector('#btn-register-google');
+  googleButton.addEventListener('click', googleLogin);
+
+  const linkLogin = rootElement.querySelector('#login-link');
+  linkLogin.addEventListener('click', (event) => {event.preventDefault(); redirectToPage('/')});
 
   return rootElement;
 };
