@@ -1,4 +1,5 @@
 import { emailAndPasswordLogin, googleLogin } from '../../services/index.js';
+import { redirectToPage } from '../../router.js';
 
 export const Login = () => {
   const rootElement = document.createElement('div');
@@ -23,8 +24,8 @@ export const Login = () => {
           </button>
         </form>
       </section>
-      <p class="register-login">
-        Ainda não tem uma conta? <a href="#">Registrar-se</a>
+      <p class="sign-up-login">
+        Ainda não tem uma conta? <a href="" id="sign-up-link">Registrar-se</a>
       </p>
   `;
 
@@ -33,6 +34,9 @@ export const Login = () => {
 
   const loginButton = rootElement.querySelector('#btn-login');
   loginButton.addEventListener('click', emailAndPasswordLogin);
+
+  const linkSignUp = rootElement.querySelector('#sign-up-link');
+  linkSignUp.addEventListener('click', () => redirectToPage('/signup'));
 
   return rootElement;
 };

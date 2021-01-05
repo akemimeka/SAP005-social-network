@@ -112,12 +112,12 @@ div.container {
   color: #757575;
 }
 
-.register-login {
+.sign-up-login {
   text-align: center;
   margin-bottom: 0.5rem;
 }
 
-/* REGISTER */
+/* SIGN UP */
 .icon-arrow {
   font-size: 1.5rem;
   margin: auto;
@@ -125,14 +125,14 @@ div.container {
   color: #000;
 }
 
-.header-register {
+.header-sign-up {
   display: inline;
   text-align: center;
   font-weight: normal;
   font-size: 12px;
 }
 
-.form-register {
+.form-sign-up {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -141,17 +141,17 @@ div.container {
   margin-bottom: 1rem;
 }
 
-.label-register-name,
-.label-register-email,
-.label-register-password,
+.label-sign-up-name,
+.label-sign-up-email,
+.label-sign-up-password,
 .label-confirm-password {
   margin-top: 1rem;
   margin-left: 1rem;
 }
 
-.input-register-name,
-.input-register-email,
-.input-register-password,
+.input-sign-up-name,
+.input-sign-up-email,
+.input-sign-up-password,
 .input-confirm-password {
   margin-top: 0.5rem;
   margin-left: 1rem;
@@ -159,7 +159,7 @@ div.container {
   padding: 0.2rem;
 }
 
-.btn-register {
+.btn-sign-up {
   width: 25vw;
   margin: 0 auto;
   margin-bottom: 1rem;
@@ -167,7 +167,7 @@ div.container {
   padding: 0.5rem;
 }
 
-.option-register {
+.option-sign-up {
   text-align: center;
 }
 
