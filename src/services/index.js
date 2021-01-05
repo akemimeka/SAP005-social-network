@@ -46,15 +46,15 @@ export const emailAndPasswordLogin = (event) => {
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/invalid-email') {
-        alert('Email address is not valid');
+        alert('Endereço de email não é válido');
       } else if (errorCode === 'auth/user-disabled.') {
-        alert ('User corresponding to the given email has been disabled.');
+        alert ('O usuário correspondente ao e-mail fornecido foi desativado.');
       } else if (errorCode === 'auth/user-not-found') {
-        alert ('There is no user corresponding to the given email.');
+        alert ('Não há nenhum usuário correspondente ao e-mail fornecido.');
       } else if (errorCode === 'auth/wrong-password') {
-        alert ('Password is invalid for the given email, or the account corresponding to the email does not have a password set.');
+        alert ('A senha é inválida para o e-mail fornecido ou a conta correspondente ao e-mail não tem uma senha definida.');
       } else {
-        alert('Something went wrong. Please try again');
+        alert('Algo deu errado. Por favor, tente novamente.');
       }
     });
 };
@@ -64,24 +64,24 @@ export const createRegister = (event) => {
   const email = document.querySelector('#register-email').value;
   const password = document.querySelector('#register-password').value;
   const confirmPassword = document.querySelector('#confirm-password').value;
-  if (password != confirmPassword) {
+  if (password !== confirmPassword) {
     alert('A senha digitada está diferente em um dos campos');
     return false;
   }
-  auth.createUserWithEmailAndPassword(email,password)
-  .then(user => {
-    console.log('usuário', user);
-    alert('usuário criado');
-    verifyLogin();
-  })
-  .catch(error => {
-    const errorCode = error.code;
-    if (errorCode === 'auth/email-already-in-use') {
-      alert('E-mail já cadastrado');
-    } else if (errorCode === 'auth/invalid-email') {
-      alert('E-mail inválido');
-    } else if (errorCode === 'auth/weak-password') {
-      alert('Senha fraca');
-    }
-  })
+  auth.createUserWithEmailAndPassword(email, password)
+    .then((user) => {
+      console.log('usuário', user);
+      alert('usuário criado');
+      verifyLogin();
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/email-already-in-use') {
+        alert('E-mail já cadastrado');
+      } else if (errorCode === 'auth/invalid-email') {
+        alert('E-mail inválido');
+      } else if (errorCode === 'auth/weak-password') {
+        alert('Senha fraca');
+      }
+    });
 };
