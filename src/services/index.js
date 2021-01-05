@@ -86,12 +86,3 @@ export const createRegister = (event) => {
     }
   })
 };
-
-export const redirectTologinOrRegister = (event) => {
-  event.preventDefault();
-  if (window.location.pathname == '/') {
-    redirectToPage('/register');
-    return;
-  }
-  redirectToPage('/');
-};
