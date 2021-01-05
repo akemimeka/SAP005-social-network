@@ -2,8 +2,8 @@ import { createRegister, googleLogin } from '../../services/index.js';
 import { redirectToPage } from '../../router.js';
 
 export const Register = () => {
-
   const rootElement = document.createElement('div');
+
   const templateRegister = `
     <header class="header-register">
       <i class="icon-arrow fas fa-chevron-left"></i>
@@ -21,19 +21,23 @@ export const Register = () => {
         <input class="input-confirm-password" type="password" name="confirm-password" minlength="8" id="confirm-password" placeholder="A senha deve conter no mínimo 8 caracteres" required>
         <button class="btn-register" type="submit" id="btn-register">Registrar-se</button>
         <label class="option-register">Ou</label>
-        <button class="btn-register" type="button" id="btn-register-google">Registrar-se com conta G google</button>
+        <button id="btn-google">
+          <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
+          <span class="btn-google-text">Cadastre-se com conta Google</span>
+        </button>
       </form>
     </section>
     <p class="login-link">
     Já tem uma conta? <a href="#" id="login-link">Entrar</a>
     </p>
   `;
-  rootElement.innerHTML = templateRegister
+
+  rootElement.innerHTML = templateRegister;
 
   const registerButton = rootElement.querySelector('#btn-register');
   registerButton.addEventListener('click', createRegister);
 
-  const googleButton = rootElement.querySelector('#btn-register-google');
+  const googleButton = rootElement.querySelector('#btn-google');
   googleButton.addEventListener('click', googleLogin);
 
   const linkLogin = rootElement.querySelector('#login-link');
