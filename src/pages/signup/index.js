@@ -41,7 +41,10 @@ export const SignUp = () => {
   googleButton.addEventListener('click', googleLogin);
 
   const linkLogin = rootElement.querySelector('#login-link');
-  linkLogin.addEventListener('click', (event) => {event.preventDefault(); redirectToPage('/');});
+  linkLogin.addEventListener('click', (event) => {
+    event.preventDefault();
+    redirectToPage('/');
+  });
 
   return rootElement;
 };
