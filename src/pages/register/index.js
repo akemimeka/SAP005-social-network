@@ -1,4 +1,4 @@
-import { createRegister } from '../../services/index.js';
+import { createRegister, googleLogin } from '../../services/index.js';
 
 export const Register = () => {
   const rootElement = document.createElement('div');
@@ -34,6 +34,9 @@ export const Register = () => {
 
   const registerButton = rootElement.querySelector('#btn-register');
   registerButton.addEventListener('click', createRegister);
+
+  const googleButton = rootElement.querySelector('#btn-google');
+  googleButton.addEventListener('click', googleLogin);
 
   return rootElement;
 };
