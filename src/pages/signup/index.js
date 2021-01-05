@@ -6,7 +6,7 @@ export const SignUp = () => {
 
   const templateSignUp = `
     <header class="header-sign-up">
-      <i class="icon-arrow fas fa-chevron-left"></i>
+      <i class="icon-arrow fas fa-chevron-left" id="go-back-icon"></i>
       <h1 class="title-sign-up">Vamos começar!</h1>
     </header>
     <section>
@@ -39,6 +39,12 @@ export const SignUp = () => {
 
   const googleButton = rootElement.querySelector('#btn-google');
   googleButton.addEventListener('click', googleLogin);
+
+  const goBack = rootElement.querySelector('#go-back-icon');
+  goBack.addEventListener('click', (event) => {
+    event.preventDefault();
+    redirectToPage('/');
+  });
 
   const linkLogin = rootElement.querySelector('#login-link');
   linkLogin.addEventListener('click', (event) => {
