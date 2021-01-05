@@ -1,8 +1,8 @@
 import { createRegister } from '../../services/index.js';
 
 export const Register = () => {
-
   const rootElement = document.createElement('div');
+
   const templateRegister = `
     <header class="header-register">
       <i class="icon-arrow fas fa-chevron-left"></i>
@@ -21,8 +21,8 @@ export const Register = () => {
         <button class="btn-register" type="submit" id="btn-register">Registrar-se</button>
         <label class="option-register">Ou</label>
         <button id="btn-google">
-          <img class="btn-login-icon" src="../../img/google-icon.svg" alt="Google icon"/>
-          <span class="btn-login-text">Cadastrar com conta Google</span>
+          <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Google icon"/>
+          <span class="btn-google-text">Cadastrar com conta Google</span>
         </button>
       </form>
     </section>
@@ -30,7 +30,7 @@ export const Register = () => {
     Já tem uma conta? <a href="#">Entrar</a>
     </p>
   `;
-  rootElement.innerHTML = templateRegister
+  rootElement.innerHTML = templateRegister;
 
   const registerButton = rootElement.querySelector('#btn-register');
   registerButton.addEventListener('click', createRegister);

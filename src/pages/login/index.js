@@ -19,8 +19,8 @@ export const Login = () => {
       <button type="submit" class="btn-login" id="btn-login">Entrar</button>
       <label class="alternative">Ou</label>
       <button id="btn-google">
-        <img class="btn-login-icon" src="../../img/google-icon.svg" alt="Google icon"/>
-        <span class="btn-login-text">Entrar com conta Google</span>
+        <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Google icon"/>
+        <span class="btn-google-text">Entrar com conta Google</span>
       </button>
       </form>
     </section>
