@@ -1,5 +1,5 @@
 import { createRegister, googleLogin } from '../../services/index.js';
-import { redirectTologinOrRegister } from '../../router.js';
+import { redirectToPage } from '../../router.js';
 
 export const Register = () => {
 
@@ -37,7 +37,7 @@ export const Register = () => {
   googleButton.addEventListener('click', googleLogin);
 
   const linkLogin = rootElement.querySelector('#login-link');
-  linkLogin.addEventListener('click', redirectTologinOrRegister);
+  linkLogin.addEventListener('click', (event) => {event.preventDefault(); redirectToPage('/')});
 
   return rootElement;
 };

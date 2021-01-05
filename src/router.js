@@ -25,14 +25,5 @@ export const redirectToPage = (path) => {
   renderRoute();
 };
 
-export const redirectTologinOrRegister = (event) => {
-  event.preventDefault();
-  if (window.location.pathname == '/') {
-    redirectToPage('/register');
-    return;
-  }
-  redirectToPage('/');
-};
-
 window.addEventListener('popstate', () => renderRoute());
 window.addEventListener('load', () => renderRoute());
