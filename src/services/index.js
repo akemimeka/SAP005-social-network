@@ -4,7 +4,8 @@ import { redirectToPage } from '../router.js';
 
 const logoutButton = document.querySelector('#logout-btn');
 const auth = firebase.auth();
-// const firestore = firebase.firestore();
+const firestore = firebase.firestore();
+const usersCollection = firestore.collection('users');
 
 const verifyLogin = () => {
   auth.onAuthStateChanged((user) => {
@@ -23,9 +24,17 @@ export const googleLogin = (event) => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   auth.signInWithPopup(provider)
-    .then(() => {
+    .then((result) => {
+      const user = result.user;
       alert('usuário logado');
       verifyLogin();
+
+      usersCollection.doc(`${user.email}`)
+        .set({
+          name: user.displayName,
+          id: user.uid,
+          photo: user.photoURL,
+        }, { merge: true });
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -55,11 +64,11 @@ export const emailAndPasswordLogin = (event) => {
       if (errorCode === 'auth/invalid-email') {
         alert('Endereço de email não é válido');
       } else if (errorCode === 'auth/user-disabled.') {
-        alert ('O usuário correspondente ao e-mail fornecido foi desativado.');
+        alert('O usuário correspondente ao e-mail fornecido foi desativado.');
       } else if (errorCode === 'auth/user-not-found') {
-        alert ('Não há nenhum usuário correspondente ao e-mail fornecido.');
+        alert('Não há nenhum usuário correspondente ao e-mail fornecido.');
       } else if (errorCode === 'auth/wrong-password') {
-        alert ('A senha é inválida para o e-mail fornecido ou a conta correspondente ao e-mail não tem uma senha definida.');
+        alert('A senha é inválida para o e-mail fornecido ou a conta correspondente ao e-mail não tem uma senha definida.');
       } else {
         alert('Algo deu errado. Por favor, tente novamente.');
       }
