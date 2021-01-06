@@ -1,5 +1,5 @@
 import { createAccount, googleLogin } from '../../services/index.js';
-import { redirectToPage } from '../../router.js';
+import { onNavigate } from '../../utils/history.js';
 
 export const SignUp = () => {
   const rootElement = document.createElement('div');
@@ -43,13 +43,13 @@ export const SignUp = () => {
   const goBack = rootElement.querySelector('#go-back-icon');
   goBack.addEventListener('click', (event) => {
     event.preventDefault();
-    redirectToPage('/');
+    onNavigate('/');
   });
 
   const linkLogin = rootElement.querySelector('#login-link');
   linkLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    redirectToPage('/');
+    onNavigate('/');
   });
 
   return rootElement;
