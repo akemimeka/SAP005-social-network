@@ -5,6 +5,7 @@ import { redirectToPage } from '../router.js';
 const logoutButton = document.querySelector('#logout-btn');
 const auth = firebase.auth();
 const firestore = firebase.firestore();
+const reviewsCollection = firestore.collection('reviews');
 const usersCollection = firestore.collection('users');
 
 const verifyLogin = () => {
@@ -54,7 +55,7 @@ export const emailAndPasswordLogin = (event) => {
   const email = document.querySelector('#email-login').value;
   const password = document.querySelector('#password-login').value;
 
-  firebase.auth().signInWithEmailAndPassword(email, password)
+  auth.signInWithEmailAndPassword(email, password)
     .then((user) => {
       console.log('usuário', user);
       alert('usuário logado!');
@@ -99,5 +100,24 @@ export const createAccount = (event) => {
       } else if (errorCode === 'auth/weak-password') {
         alert('Senha fraca');
       }
+    });
+};
+
+export const createReview = (event) => {
+  event.preventDefault();
+  const bookName = document.querySelector('#book-name').value;
+  const bookAuthor = document.querySelector('#book-author').value;
+  const bookReview = document.querySelector('#book-review').value;
+
+  reviewsCollection.add({
+    title: bookName,
+    author: bookAuthor,
+    review: bookReview,
+  })
+    .then(() => {
+      alert('Resenha criada!');
+    })
+    .catch(() => {
+      alert('Algo deu errado. Por favor, tente novamente.');
     });
 };
