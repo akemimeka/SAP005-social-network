@@ -3,7 +3,7 @@ import { redirectToPage } from '../router.js';
 
 const logoutButton = document.querySelector('#logout-btn');
 const auth = firebase.auth();
-// const firestore = firebase.firestore();
+const firestore = firebase.firestore();
 
 const verifyLogin = () => {
   auth.onAuthStateChanged((user) => {
@@ -38,7 +38,7 @@ export const emailAndPasswordLogin = (event) => {
   const email = document.querySelector('#email-login').value;
   const password = document.querySelector('#password-login').value;
 
-  firebase.auth().signInWithEmailAndPassword(email, password)
+  auth.signInWithEmailAndPassword(email, password)
     .then((user) => {
       console.log('usuário', user);
       alert('usuário logado!');
@@ -48,11 +48,11 @@ export const emailAndPasswordLogin = (event) => {
       if (errorCode === 'auth/invalid-email') {
         alert('Endereço de email não é válido');
       } else if (errorCode === 'auth/user-disabled.') {
-        alert ('O usuário correspondente ao e-mail fornecido foi desativado.');
+        alert('O usuário correspondente ao e-mail fornecido foi desativado.');
       } else if (errorCode === 'auth/user-not-found') {
-        alert ('Não há nenhum usuário correspondente ao e-mail fornecido.');
+        alert('Não há nenhum usuário correspondente ao e-mail fornecido.');
       } else if (errorCode === 'auth/wrong-password') {
-        alert ('A senha é inválida para o e-mail fornecido ou a conta correspondente ao e-mail não tem uma senha definida.');
+        alert('A senha é inválida para o e-mail fornecido ou a conta correspondente ao e-mail não tem uma senha definida.');
       } else {
         alert('Algo deu errado. Por favor, tente novamente.');
       }
@@ -83,5 +83,24 @@ export const createRegister = (event) => {
       } else if (errorCode === 'auth/weak-password') {
         alert('Senha fraca');
       }
+    });
+};
+
+export const createReview = (event) => {
+  event.preventDefault();
+  const bookName = document.querySelector('#book-name').value;
+  const bookAuthor = document.querySelector('#book-author').value;
+  const bookReview = document.querySelector('#book-review').value;
+
+  db.collection('users').add({
+    first: 'Ada',
+    last: 'Lovelace',
+    born: 1815
+  })
+    .then((docRef) => {
+      console.log('Document written with ID: ', docRef.id);
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
     });
 };
