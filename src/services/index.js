@@ -1,10 +1,12 @@
-// ARQUIVO PARA FUNÇÕES CRUD (CREATE, READ, UPDATE & DELETE) RELACIONADAS AO FIREBASE
+/* eslint-disable no-alert */
+
 import { redirectToPage } from '../router.js';
 
 const logoutButton = document.querySelector('#logout-btn');
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const reviewsCollection = firestore.collection('reviews');
+const usersCollection = firestore.collection('users');
 
 const verifyLogin = () => {
   auth.onAuthStateChanged((user) => {
@@ -23,10 +25,24 @@ export const googleLogin = (event) => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   auth.signInWithPopup(provider)
-    .then(() => {
+    .then((result) => {
+      const user = result.user;
+      alert('usuário logado');
       verifyLogin();
+
+      usersCollection.doc(`${user.email}`)
+        .set({
+          name: user.displayName,
+          id: user.uid,
+          photo: user.photoURL,
+        }, { merge: true });
     })
-    .catch();
+    .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/account-exists-with-different-credential') {
+        alert('Essa conta já existe com uma credencial diferente');
+      }
+    });
 };
 
 logoutButton.addEventListener('click', () => {
@@ -60,10 +76,10 @@ export const emailAndPasswordLogin = (event) => {
     });
 };
 
-export const createRegister = (event) => {
+export const createAccount = (event) => {
   event.preventDefault();
-  const email = document.querySelector('#register-email').value;
-  const password = document.querySelector('#register-password').value;
+  const email = document.querySelector('#sign-up-email').value;
+  const password = document.querySelector('#sign-up-password').value;
   const confirmPassword = document.querySelector('#confirm-password').value;
   if (password !== confirmPassword) {
     alert('A senha digitada está diferente em um dos campos');

@@ -89,35 +89,35 @@ div.container {
 
 #btn-google {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  width: 13rem;
   height: 2.5rem;
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 2px;
   background-color: #fff;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
-.btn-login-icon {
+.btn-google-icon {
+  margin-right: 0.8rem;
   width: 1.2rem;
   height: auto;
 }
 
-.btn-login-text {
+.btn-google-text {
   font-size: 0.95rem;
   font-weight: 500;
   color: #757575;
 }
 
-.register-login {
+.sign-up-login {
   text-align: center;
   margin-bottom: 0.5rem;
 }
 
-/* REGISTER */
+/* SIGN UP */
 .icon-arrow {
   font-size: 1.5rem;
   margin: auto;
@@ -125,14 +125,14 @@ div.container {
   color: #000;
 }
 
-.header-register {
+.header-sign-up {
   display: inline;
   text-align: center;
   font-weight: normal;
   font-size: 12px;
 }
 
-.form-register {
+.form-sign-up {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -141,17 +141,17 @@ div.container {
   margin-bottom: 1rem;
 }
 
-.label-register-name,
-.label-register-email,
-.label-register-password,
+.label-sign-up-name,
+.label-sign-up-email,
+.label-sign-up-password,
 .label-confirm-password {
   margin-top: 1rem;
   margin-left: 1rem;
 }
 
-.input-register-name,
-.input-register-email,
-.input-register-password,
+.input-sign-up-name,
+.input-sign-up-email,
+.input-sign-up-password,
 .input-confirm-password {
   margin-top: 0.5rem;
   margin-left: 1rem;
@@ -159,7 +159,7 @@ div.container {
   padding: 0.2rem;
 }
 
-.btn-register {
+.btn-sign-up {
   width: 25vw;
   margin: 0 auto;
   margin-bottom: 1rem;
@@ -167,7 +167,7 @@ div.container {
   padding: 0.5rem;
 }
 
-.option-register {
+.option-sign-up {
   text-align: center;
 }
 

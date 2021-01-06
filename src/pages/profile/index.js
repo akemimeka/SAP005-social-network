@@ -1,5 +1,4 @@
 import { Post } from '../../components/post/index.js';
-import { Navbar } from '../../components/navbar/index.js';
 
 export const Profile = () => {
   const profileBody = document.createElement('div');
@@ -23,7 +22,6 @@ export const Profile = () => {
 
   profileBody.appendChild(profileHeader);
   profileBody.appendChild(Post());
-  profileBody.appendChild(Navbar());
 
   return profileBody;
 };
