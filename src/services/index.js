@@ -46,6 +46,7 @@ export const emailAndPasswordLogin = (event) => {
     .then((user) => {
       console.log('usuário', user);
       alert('usuário logado!');
+      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -76,6 +77,7 @@ export const createAccount = (event) => {
     .then((user) => {
       console.log('usuário', user);
       alert('usuário criado');
+      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;

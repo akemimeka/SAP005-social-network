@@ -18,11 +18,13 @@ const routes = {
 
 const renderRoute = () => {
   auth.onAuthStateChanged((user) => {
-    console.log(user);
-    console.log(user);
     let path = window.location.pathname;
-    if (!user) {
+    if (!user && path !== '/signup') {
       path = '/';
+      window.history.replaceState(null, null, path);
+    }
+    if (user && (path === '/' || path === '/signup')) {
+      path = '/feed';
       window.history.replaceState(null, null, path);
     }
     root.innerHTML = '';
