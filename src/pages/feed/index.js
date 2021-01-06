@@ -1,5 +1,4 @@
 import { Post } from '../../components/post/index.js';
-import { Navbar } from '../../components/navbar/index.js';
 
 export const Feed = () => {
   const feedBody = document.createElement('div');
@@ -11,7 +10,6 @@ export const Feed = () => {
 
   feedBody.appendChild(feedHeader);
   feedBody.appendChild(Post());
-  feedBody.appendChild(Navbar());
 
   return feedBody;
 };
