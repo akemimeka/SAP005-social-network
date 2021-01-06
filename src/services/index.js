@@ -4,6 +4,7 @@ import { redirectToPage } from '../router.js';
 const logoutButton = document.querySelector('#logout-btn');
 const auth = firebase.auth();
 const firestore = firebase.firestore();
+const reviewsCollection = firestore.collection('reviews');
 
 const verifyLogin = () => {
   auth.onAuthStateChanged((user) => {
@@ -92,15 +93,17 @@ export const createReview = (event) => {
   const bookAuthor = document.querySelector('#book-author').value;
   const bookReview = document.querySelector('#book-review').value;
 
-  db.collection('users').add({
-    first: 'Ada',
-    last: 'Lovelace',
-    born: 1815
+  reviewsCollection.add({
+    title: bookName,
+    author: bookAuthor,
+    review: bookReview,
   })
     .then((docRef) => {
-      console.log('Document written with ID: ', docRef.id);
+      console.log('Document written with ID: ', docRef);
+      alert('Resenha criada!');
     })
     .catch((error) => {
       console.error('Error adding document: ', error);
+      alert('Algo deu errado. Por favor, tente novamente.');
     });
 };
