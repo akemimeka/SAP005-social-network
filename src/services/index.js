@@ -98,12 +98,10 @@ export const createReview = (event) => {
     author: bookAuthor,
     review: bookReview,
   })
-    .then((docRef) => {
-      console.log('Document written with ID: ', docRef);
+    .then(() => {
       alert('Resenha criada!');
     })
-    .catch((error) => {
-      console.error('Error adding document: ', error);
+    .catch(() => {
       alert('Algo deu errado. Por favor, tente novamente.');
     });
 };
