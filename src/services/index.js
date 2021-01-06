@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 
-import { redirectToPage } from '../router.js';
+import { onNavigate } from '../utils/history.js';
 
 const logoutButton = document.querySelector('#logout-btn');
 const auth = firebase.auth();
@@ -12,10 +12,10 @@ const verifyLogin = () => {
   auth.onAuthStateChanged((user) => {
     if (user) {
       logoutButton.classList.remove('hidden');
-      redirectToPage('/feed');
+      onNavigate('/feed');
     } else {
       logoutButton.classList.add('hidden');
-      redirectToPage('/');
+      onNavigate('/');
     }
   });
 };
