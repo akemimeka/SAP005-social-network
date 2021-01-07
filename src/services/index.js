@@ -8,18 +8,6 @@ const firestore = firebase.firestore();
 const reviewsCollection = firestore.collection('reviews');
 const usersCollection = firestore.collection('users');
 
-const verifyLogin = () => {
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      logoutButton.classList.remove('hidden');
-      onNavigate('/feed');
-    } else {
-      logoutButton.classList.add('hidden');
-      onNavigate('/');
-    }
-  });
-};
-
 export const googleLogin = (event) => {
   event.preventDefault();
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -28,7 +16,6 @@ export const googleLogin = (event) => {
     .then((result) => {
       const user = result.user;
       alert('usuário logado');
-      verifyLogin();
 
       usersCollection.doc(`${user.email}`)
         .set({
@@ -36,6 +23,7 @@ export const googleLogin = (event) => {
           id: user.uid,
           photo: user.photoURL,
         }, { merge: true });
+        onNavigate('/feed')
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -47,7 +35,6 @@ export const googleLogin = (event) => {
 
 logoutButton.addEventListener('click', () => {
   auth.signOut();
-  verifyLogin();
 });
 
 export const emailAndPasswordLogin = (event) => {
@@ -59,6 +46,7 @@ export const emailAndPasswordLogin = (event) => {
     .then((user) => {
       console.log('usuário', user);
       alert('usuário logado!');
+      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -89,7 +77,7 @@ export const createAccount = (event) => {
     .then((user) => {
       console.log('usuário', user);
       alert('usuário criado');
-      verifyLogin();
+      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
