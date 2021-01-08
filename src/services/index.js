@@ -2,7 +2,6 @@
 
 import { onNavigate } from '../utils/history.js';
 
-const logoutButton = document.querySelector('#logout-btn');
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const reviewsCollection = firestore.collection('reviews');
@@ -33,9 +32,9 @@ export const googleLogin = (event) => {
     });
 };
 
-logoutButton.addEventListener('click', () => {
+export const signOut = () => {
   auth.signOut();
-});
+};
 
 export const emailAndPasswordLogin = (event) => {
   event.preventDefault();
