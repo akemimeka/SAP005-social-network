@@ -43,9 +43,11 @@ export const Post = () => {
 
       const editButton = postContainer.querySelector('#edit-button_' + i);
       const saveButton = postContainer.querySelector('#save-button_' + i);
+      const deleteButton = postContainer.querySelector('#delete-button');
       const reviewBookTitle = postContainer.querySelector('#review-book-title_' + i);
       const reviewBookAuthor = postContainer.querySelector('#review-book-author_' + i);
       const reviewText = postContainer.querySelector('#review-opinion_' + i);
+      const likeIcon = postContainer.querySelector('#like-icon');
 
       const editStylingToggle = (element) => {
         element.setAttribute('contenteditable', 'true');
@@ -56,19 +58,24 @@ export const Post = () => {
         const fieldList = [reviewBookTitle, reviewBookAuthor, reviewText];
 
         fieldList.forEach((field) => editStylingToggle(field));
+        reviewBookTitle.focus();
         editButton.classList.toggle('hidden');
         saveButton.classList.remove('hidden');
-      });
+    }
+ 
+  saveButton.addEventListener('click', saveEditedReview);
 
-      saveButton.addEventListener('click', saveEditedReview);
+  deleteButton.addEventListener('click', () => {
+    const popupToDelete = confirm('Tem certeza que você deseja deletar essa resenha?');
+
+    if (popupToDelete) {
+      // função para deletar resenha
     }
   });
 
-  // const likeIcon = document.querySelector('#icon-like');
-  // likeIcon.addEventListener('click', likeReview);
+  likeIcon.addEventListener('click', () => {
+    // função para adicionar like
+  });
 
-  // const deleteIcon = document.querySelector('#icon-delete');
-  // deleteIcon.addEventListener('click', deleteReview);
-  
   return postContainer;
 };
