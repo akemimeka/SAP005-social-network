@@ -1,8 +1,10 @@
-export const Post = () => {
-  const feedMain = document.createElement('main');
-  feedMain.className = 'feed-main';
+import { editReview } from '../../services/index.js';
 
-  feedMain.innerHTML = `
+export const Post = () => {
+  const postContainer = document.createElement('div');
+  postContainer.className = 'post-container';
+
+  postContainer.innerHTML = `
     <article class="review-post">
       <h3 class="review-meta-info">
         <p>
@@ -35,13 +37,15 @@ export const Post = () => {
     </article>
   `;
 
-  const likeIcon = document.querySelector('#icon-like');
-  const editIcon = document.querySelector('#icon-edit');
-  const deleteIcon = document.querySelector('#icon-delete');
+  document.addEventListener('DOMContentLoaded', () => {
+    // const likeIcon = document.querySelector('#icon-like');
+    const editIcon = document.querySelector('#icon-edit');
+    // const deleteIcon = document.querySelector('#icon-delete');
 
-  likeIcon.addEventListener('click', likeReview);
-  editIcon.addEventListener('click', editReview);
-  deleteIcon.addEventListener('click', deleteReview);
+    // likeIcon.addEventListener('click', likeReview);
+    editIcon.addEventListener('click', editReview);
+    // deleteIcon.addEventListener('click', deleteReview);
+  });
 
-  return feedMain;
+  return postContainer;
 };

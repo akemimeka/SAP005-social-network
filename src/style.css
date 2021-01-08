@@ -193,7 +193,8 @@ div.container {
 
 /* FEED */
 .feed-main,
-.profile-main {
+.profile-main,
+.post-container {
   margin-bottom: 4.5rem;
 }
 
