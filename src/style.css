@@ -235,13 +235,17 @@ div.container {
   display: block;
 }
 
-.top-icons-container {
-  padding-top: 0.5rem;
-  text-align: right;
+#edit-button,
+#delete-button,
+.edit-icon,
+.delete-icon,
+.check-icon {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
 }
 
-#icon-delete, #icon-edit {
-  margin-right: 0.5rem;
+.top-icons-container {
+  padding-top: 0.5rem;
 }
 
 .review-main-info {
@@ -250,7 +254,7 @@ div.container {
 
 .review-info-book-title,
 .review-info-book-author {
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
 }
 
 #review-book-title,
@@ -258,11 +262,19 @@ div.container {
   font-weight: bold;
 }
 
+.editable-content {
+  padding: 0.3rem;
+  border: 2px solid indianred;
+  border-radius: 5px;
+}
+
 .like-icon-container {
+  display: flex;
   padding: 0.5rem 1rem;
 }
 
-.icon-review {
+#like-icon {
+  margin-right: 0.5rem;
   font-size: 1.3rem;
 }
 
