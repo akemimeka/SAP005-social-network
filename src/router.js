@@ -4,6 +4,7 @@ import { Login } from './pages/login/index.js';
 import { Review } from './pages/review/index.js';
 import { Profile } from './pages/profile/index.js';
 import { Navbar } from './components/navbar/index.js';
+import { topHeader } from './components/top-header/index.js';
 
 const root = document.querySelector('#root');
 const auth = firebase.auth();
@@ -31,6 +32,7 @@ const renderRoute = () => {
     root.appendChild(routes[path]());
     if (path === '/feed' || path === '/review' || path === '/profile') {
       root.appendChild(Navbar());
+      root.appendChild(topHeader());
     }
   });
 };

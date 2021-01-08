@@ -2,7 +2,6 @@
 
 import { onNavigate } from '../utils/history.js';
 
-const logoutButton = document.querySelector('#logout-btn');
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const reviewsCollection = firestore.collection('reviews');
@@ -33,9 +32,9 @@ export const googleLogin = (event) => {
     });
 };
 
-logoutButton.addEventListener('click', () => {
+export const signOut = () => {
   auth.signOut();
-});
+};
 
 export const emailAndPasswordLogin = (event) => {
   event.preventDefault();
@@ -96,11 +95,19 @@ export const createReview = (event) => {
   const bookName = document.querySelector('#book-name').value;
   const bookAuthor = document.querySelector('#book-author').value;
   const bookReview = document.querySelector('#book-review').value;
+  const user = auth.currentUser;
+  const date = new Date();
 
   reviewsCollection.add({
+    user_information: {
+      name: user.displayName,
+      user_id: user.uid,
+      photo: user.photoURL,
+    },
     title: bookName,
     author: bookAuthor,
     review: bookReview,
+    date: date.toLocaleString(),
   })
     .then(() => {
       alert('Resenha criada!');
@@ -112,4 +119,10 @@ export const createReview = (event) => {
 
 export const saveEditedReview = () => {
   console.log('save');
+};
+
+export const getReviews = () => {
+  return reviewsCollection.get().then((queryReview) => {
+    return queryReview.docs;
+  });
 };
