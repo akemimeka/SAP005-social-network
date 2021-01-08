@@ -65,6 +65,7 @@ export const Post = () => {
     const fieldList = [reviewBookTitle, reviewBookAuthor, reviewText];
 
     fieldList.forEach((field) => editStylingToggle(field));
+    reviewBookTitle.focus();
     editButton.classList.toggle('hidden');
     saveButton.classList.remove('hidden');
   });
