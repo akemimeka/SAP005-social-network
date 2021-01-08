@@ -6,13 +6,18 @@ export const Navbar = () => {
 
   navbar.innerHTML = `
     <i id="icon-nav-feed" class="icon-nav fas fa-home"></i>
-    <i id="icon-nav-add" class="icon-nav fas fa-plus-circle"></i>
+    <i id="icon-nav-review" class="icon-nav fas fa-plus-circle"></i>
     <i id="icon-nav-profile" class="icon-nav fas fa-user-circle"></i>
   `;
 
   navbar.querySelector('#icon-nav-feed')
     .addEventListener('click', () => {
       onNavigate('/feed');
+    });
+
+  navbar.querySelector('#icon-nav-review')
+    .addEventListener('click', () => {
+      onNavigate('/review');
     });
 
   navbar.querySelector('#icon-nav-profile')
