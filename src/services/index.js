@@ -121,3 +121,9 @@ export const createReview = (event) => {
 export const saveEditedReview = () => {
   console.log('save');
 };
+
+export const getReviews = () => {
+  return reviewsCollection.get().then((queryReview) => {
+    return queryReview.docs;
+  });
+};
