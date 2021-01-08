@@ -11,16 +11,16 @@ export const Post = () => {
         <article class="review-post">
           <h3 class="review-meta-info">
             <div class="meta-info-container">
-              <img id="review-user-avatar_${i}" src="../../img/default_user_icon.jpg">
+              <img id="review-user-avatar_${i}" class="review-user-avatar" src="../../img/default_user_icon.jpg">
               <div>
-                <span id="review-author-username_${i}">${post.user_information.name}</span>
-                <time id="review-date_${i}">03 de Janeiro às 14:33</time>
+                <span id="review-author-username_${i}" class="review-author-username">${post.user_information.name}</span>
+                <time id="review-date_${i}" class="review-date">03 de Janeiro às 14:33</time>
               </div>
             </div>
             <div class="top-icons-container">
-              <button id="edit-button_${i}"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
-              <button id="save-button_${i}" class="hidden"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
-              <button id="delete-button_${i}"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>
+              <button id="edit-button_${i}" class="edit-button"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
+              <button id="save-button_${i}" class="save-button hidden"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
+              <button id="delete-button_${i}" class="delete-button"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>
             </div>
           </h3>
           <div class="review-main-info">
@@ -34,8 +34,8 @@ export const Post = () => {
               <p>${post.review}</p>
             </div>
           </div>
-          <div class="like-icon-container">
-            <i id="like-icon_${i}" class="far fa-heart"></i>
+          <div class="like-container">
+            <i id="like-icon_${i}" class="like-icon far fa-heart"></i>
             <div id="review-like-count_${i}">32</div>
           </div>
         </article>
