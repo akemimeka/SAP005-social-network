@@ -179,7 +179,7 @@ div.container {
 }
 
 /* NAVBAR */
-#top-nav {
+#top-header {
   display: flex;
   justify-content: flex-end;
   position: fixed;
@@ -189,7 +189,7 @@ div.container {
   background-color: #555;
 }
 
-.icon-top-nav {
+.icon-top-header {
   font-size: 1.5rem;
   color: #fff;
   margin-right: 20px;
