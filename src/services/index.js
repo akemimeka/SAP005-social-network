@@ -8,18 +8,6 @@ const firestore = firebase.firestore();
 const reviewsCollection = firestore.collection('reviews');
 const usersCollection = firestore.collection('users');
 
-const verifyLogin = () => {
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      logoutButton.classList.remove('hidden');
-      redirectToPage('/feed');
-    } else {
-      logoutButton.classList.add('hidden');
-      redirectToPage('/');
-    }
-  });
-};
-
 export const googleLogin = (event) => {
   event.preventDefault();
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -36,7 +24,7 @@ export const googleLogin = (event) => {
           photo: user.photoURL,
         }, { merge: true });
       onNavigate('/feed')
-        })
+    })
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
@@ -108,13 +96,15 @@ export const createReview = (event) => {
   const bookName = document.querySelector('#book-name').value;
   const bookAuthor = document.querySelector('#book-author').value;
   const bookReview = document.querySelector('#book-review').value;
-  const user = firebase.auth().currentUser;
+  const user = auth.currentUser;
   const date = new Date();
 
   reviewsCollection.add({
-    name: user.displayName,
-    user_id: user.uid,
-    photo: user.photoURL,
+    user_information: {
+      name: user.displayName,
+      user_id: user.uid,
+      photo: user.photoURL,
+    },
     title: bookName,
     author: bookAuthor,
     review: bookReview,
@@ -126,5 +116,4 @@ export const createReview = (event) => {
     .catch(() => {
       alert('Algo deu errado. Por favor, tente novamente.');
     });
-    console(time)
 };
