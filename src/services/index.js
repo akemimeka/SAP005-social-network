@@ -110,6 +110,6 @@ export const createReview = (event) => {
     });
 };
 
-export function editReview() {
-  console.log('oi');
-}
+export const editReview = () => {
+
+};
