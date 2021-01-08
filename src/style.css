@@ -19,10 +19,12 @@ a {
   text-decoration: none;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
   padding: 0.5rem;
   border: 1px solid #999;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
 }
 
@@ -97,7 +99,8 @@ div.container {
   border: none;
   border-radius: 2px;
   background-color: #fff;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 .btn-google-icon {
@@ -176,6 +179,22 @@ div.container {
 }
 
 /* NAVBAR */
+#top-nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #555;
+}
+
+.icon-top-nav {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-right: 20px;
+}
+
 #bottom-nav {
   display: flex;
   justify-content: space-around;
@@ -250,10 +269,10 @@ div.container {
   font-weight: normal;
 }
 
-.form-review { 
+.form-review {
   display: flex;
   flex-direction: column;
-  margin:auto;
+  margin: auto;
   margin-top: 3rem;
   width: 80vw;
   height: 60vh;
@@ -300,9 +319,9 @@ div.container {
   height: 8rem;
   margin-bottom: 1rem;
   background-color: #333;
-  padding: 3.5rem;     /* Remover após inserir img */
-  color: #fff;       /* Remover após inserir img */
-  text-align: center;  /* Remover após inserir img */
+  padding: 3.5rem; /* Remover após inserir img */
+  color: #fff; /* Remover após inserir img */
+  text-align: center; /* Remover após inserir img */
 }
 
 .profile-user-info {
