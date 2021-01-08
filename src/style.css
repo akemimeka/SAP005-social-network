@@ -225,6 +225,7 @@ div.container {
 .review-post {
   border: solid 1px #999;
   margin: 1rem;
+  margin-bottom: 2rem;
 }
 
 .review-meta-info {
