@@ -7,10 +7,13 @@ export const Post = () => {
   postContainer.innerHTML = `
     <article class="review-post">
       <h3 class="review-meta-info">
-        <p>
-          Publicado por <span id="review-author-username">Samara Tokki</span>
-          <time id="review-date">03 de Janeiro às 14:33</time>
-        </p>
+        <div class="meta-info-container">
+          <img id="review-user-avatar" src="../../img/default_user_icon.jpg">
+          <div>
+            <span id="review-author-username">Samara Tokki</span>
+            <time id="review-date">03 de Janeiro às 14:33</time>
+          </div>
+        </div>
         <div class="top-icons-container">
           <i id="icon-edit" class="icon-review fas fa-edit"></i>
           <i id="icon-delete" class="icon-review fas fa-trash-alt"></i>

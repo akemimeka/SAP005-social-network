@@ -215,6 +215,18 @@ div.container {
   font-size: 0.9rem;
 }
 
+.meta-info-container {
+  display: flex;
+  align-items: center;
+}
+
+#review-user-avatar {
+  width: 3rem;
+  height: auto;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+}
+
 #review-author-username {
   font-weight: bold;
 }
