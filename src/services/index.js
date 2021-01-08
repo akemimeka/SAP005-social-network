@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 
-import { redirectToPage } from '../router.js';
+import { onNavigate } from '../utils/history.js';
 
 const logoutButton = document.querySelector('#logout-btn');
 const auth = firebase.auth();
@@ -28,7 +28,6 @@ export const googleLogin = (event) => {
     .then((result) => {
       const user = result.user;
       alert('usuário logado');
-      verifyLogin();
 
       usersCollection.doc(`${user.email}`)
         .set({
@@ -36,7 +35,8 @@ export const googleLogin = (event) => {
           id: user.uid,
           photo: user.photoURL,
         }, { merge: true });
-    })
+      onNavigate('/feed')
+        })
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
@@ -47,7 +47,6 @@ export const googleLogin = (event) => {
 
 logoutButton.addEventListener('click', () => {
   auth.signOut();
-  verifyLogin();
 });
 
 export const emailAndPasswordLogin = (event) => {
@@ -59,6 +58,7 @@ export const emailAndPasswordLogin = (event) => {
     .then((user) => {
       console.log('usuário', user);
       alert('usuário logado!');
+      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -89,7 +89,7 @@ export const createAccount = (event) => {
     .then((user) => {
       console.log('usuário', user);
       alert('usuário criado');
-      verifyLogin();
+      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;

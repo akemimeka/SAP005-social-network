@@ -1,4 +1,4 @@
-import { redirectToPage } from '../../router.js';
+import { onNavigate } from '../../utils/history.js';
 
 export const Navbar = () => {
   const navbar = document.createElement('nav');
@@ -12,12 +12,12 @@ export const Navbar = () => {
 
   navbar.querySelector('#icon-nav-feed')
     .addEventListener('click', () => {
-      redirectToPage('/feed');
+      onNavigate('/feed');
     });
 
   navbar.querySelector('#icon-nav-profile')
     .addEventListener('click', () => {
-      redirectToPage('/profile');
+      onNavigate('/profile');
     });
 
   return navbar;
