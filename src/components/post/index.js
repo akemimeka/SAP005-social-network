@@ -50,7 +50,7 @@ export const Post = () => {
   const reviewBookTitle = postContainer.querySelector('#review-book-title');
   const reviewBookAuthor = postContainer.querySelector('#review-book-author');
   const reviewText = postContainer.querySelector('#review-opinion');
-  const likeIcon = document.querySelector('#like-icon');
+  const likeIcon = postContainer.querySelector('#like-icon');
 
   const editStylingToggle = (element) => {
     element.setAttribute('contenteditable', 'true');
