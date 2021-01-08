@@ -27,8 +27,10 @@ export const Post = () => {
           </p>
         </div>
       </div>
-      <div class="review-feedback">
-        <i class="icon-heart far fa-heart"></i>
+      <div class="review-icons-container">
+        <i id="icon-heart" class="icon-review far fa-heart"></i>
+        <i id="icon-edit" class="icon-review fas fa-edit"></i>
+        <i id="icon-delete" class="icon-review fas fa-trash-alt"></i>
       </div>
     </article>
   `;

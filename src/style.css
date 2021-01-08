@@ -234,13 +234,22 @@ div.container {
   font-weight: bold;
 }
 
-.review-feedback {
+.review-icons-container {
   padding: 0.5rem 1rem;
-  text-align: right;
 }
 
-.icon-heart {
+.icon-review {
   font-size: 1.3rem;
+}
+
+.fa-trash-alt {
+  position: absolute;
+  right: 2rem;
+}
+
+.fa-edit {
+  position: absolute;
+  right: 4rem;
 }
 
 /*REVIEW*/

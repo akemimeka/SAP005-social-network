@@ -1,8 +1,8 @@
 import { createReview } from '../../services/index.js';
+
 export const Review = () => {
-  // Coloque sua página
-  //document.querySelector('.bottom-nav').style.display = 'none';
   const rootElement = document.createElement('div');
+
   rootElement.className = 'container';
   rootElement.innerHTML = `
       <header>
