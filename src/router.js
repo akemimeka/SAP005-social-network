@@ -29,10 +29,10 @@ const renderRoute = () => {
     }
     root.innerHTML = '';
     root.appendChild(routes[path]());
-    if (path === '/feed' || path === '/new-post' || path === '/profile') {
+    if (path === '/feed' || path === '/review' || path === '/profile') {
       root.appendChild(Navbar());
     }
-  }) 
+  });
 };
 
 window.addEventListener('popstate', () => renderRoute());

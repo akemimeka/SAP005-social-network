@@ -191,9 +191,10 @@ div.container {
   color: #fff;
 }
 
-/* FEED */
+/* FEED / POST */
 .feed-main,
-.profile-main {
+.profile-main,
+.post-container {
   margin-bottom: 4.5rem;
 }
 
@@ -207,8 +208,6 @@ div.container {
 }
 
 .review-meta-info {
-  display: flex;
-  justify-content: space-between;
   padding: 0.5rem;
   border-bottom: solid 1px #999;
   background-color: #e0e0e0;
@@ -216,8 +215,38 @@ div.container {
   font-size: 0.9rem;
 }
 
+.meta-info-container {
+  display: flex;
+  align-items: center;
+}
+
+#review-user-avatar {
+  width: 3rem;
+  height: auto;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+}
+
 #review-author-username {
   font-weight: bold;
+}
+
+#review-date {
+  display: block;
+}
+
+#edit-button,
+#delete-button,
+#save-button,
+.edit-icon,
+.delete-icon,
+.check-icon {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.top-icons-container {
+  padding-top: 0.5rem;
 }
 
 .review-main-info {
@@ -226,7 +255,7 @@ div.container {
 
 .review-info-book-title,
 .review-info-book-author {
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
 }
 
 #review-book-title,
@@ -234,12 +263,19 @@ div.container {
   font-weight: bold;
 }
 
-.review-feedback {
-  padding: 0.5rem 1rem;
-  text-align: right;
+.editable-content {
+  padding: 0.3rem;
+  border: 2px solid indianred;
+  border-radius: 5px;
 }
 
-.icon-heart {
+.like-icon-container {
+  display: flex;
+  padding: 0.5rem 1rem;
+}
+
+#like-icon {
+  margin-right: 0.5rem;
   font-size: 1.3rem;
 }
 

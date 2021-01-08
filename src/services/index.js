@@ -23,7 +23,7 @@ export const googleLogin = (event) => {
           id: user.uid,
           photo: user.photoURL,
         }, { merge: true });
-      onNavigate('/feed')
+      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -116,4 +116,8 @@ export const createReview = (event) => {
     .catch(() => {
       alert('Algo deu errado. Por favor, tente novamente.');
     });
+};
+
+export const saveEditedReview = () => {
+  console.log('save');
 };
