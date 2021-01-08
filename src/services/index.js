@@ -23,7 +23,7 @@ export const googleLogin = (event) => {
           id: user.uid,
           photo: user.photoURL,
         }, { merge: true });
-        onNavigate('/feed')
+      onNavigate('/feed')
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -96,11 +96,19 @@ export const createReview = (event) => {
   const bookName = document.querySelector('#book-name').value;
   const bookAuthor = document.querySelector('#book-author').value;
   const bookReview = document.querySelector('#book-review').value;
+  const user = auth.currentUser;
+  const date = new Date();
 
   reviewsCollection.add({
+    user_information: {
+      name: user.displayName,
+      user_id: user.uid,
+      photo: user.photoURL,
+    },
     title: bookName,
     author: bookAuthor,
     review: bookReview,
+    date: date.toLocaleString(),
   })
     .then(() => {
       alert('Resenha criada!');
