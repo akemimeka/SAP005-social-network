@@ -52,22 +52,21 @@ export const Post = () => {
 
   const editButton = postContainer.querySelector('#edit-button');
   const saveButton = postContainer.querySelector('#save-button');
+  const reviewBookTitle = postContainer.querySelector('#review-book-title');
+  const reviewBookAuthor = postContainer.querySelector('#review-book-author');
+  const reviewText = postContainer.querySelector('#review-opinion');
 
   const editStylingToggle = (element) => {
     element.setAttribute('contenteditable', 'true');
     element.classList.toggle('editable-content');
-    editButton.classList.toggle('hidden');
-    saveButton.classList.remove('hidden');
   };
 
   editButton.addEventListener('click', () => {
-    const reviewBookTitle = postContainer.querySelector('#review-book-title');
-    const reviewBookAuthor = postContainer.querySelector('#review-book-author');
-    const reviewText = postContainer.querySelector('#review-opinion');
+    const fieldList = [reviewBookTitle, reviewBookAuthor, reviewText];
 
-    editStylingToggle(reviewBookTitle);
-    editStylingToggle(reviewBookAuthor);
-    editStylingToggle(reviewText);
+    fieldList.forEach((field) => editStylingToggle(field));
+    editButton.classList.toggle('hidden');
+    saveButton.classList.remove('hidden');
   });
 
   saveButton.addEventListener('click', saveEditedReview);

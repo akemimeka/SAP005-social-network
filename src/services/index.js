@@ -111,5 +111,5 @@ export const createReview = (event) => {
 };
 
 export const saveEditedReview = () => {
-  console.log('save')
+  console.log('save');
 };
