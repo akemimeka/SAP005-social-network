@@ -214,6 +214,7 @@ div.container {
 .feed-main,
 .profile-main,
 .post-container {
+  margin-top: 3.5rem;
   margin-bottom: 4.5rem;
 }
 
@@ -239,24 +240,24 @@ div.container {
   align-items: center;
 }
 
-#review-user-avatar {
+.review-user-avatar {
   width: 3rem;
   height: auto;
   margin-right: 0.5rem;
   border-radius: 50%;
 }
 
-#review-author-username {
+.review-author-username {
   font-weight: bold;
 }
 
-#review-date {
+.review-date {
   display: block;
 }
 
-#edit-button,
-#delete-button,
-#save-button,
+.edit-button,
+.save-button,
+.delete-button,
 .edit-icon,
 .delete-icon,
 .check-icon {
@@ -288,12 +289,12 @@ div.container {
   border-radius: 5px;
 }
 
-.like-icon-container {
+.like-container {
   display: flex;
   padding: 0.5rem 1rem;
 }
 
-#like-icon {
+.like-icon {
   margin-right: 0.5rem;
   font-size: 1.3rem;
 }
@@ -348,6 +349,7 @@ div.container {
 /* PROFILE */
 
 .profile-header {
+  margin-top: 3.5rem;
   width: 100vw;
 }
 
