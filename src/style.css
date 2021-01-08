@@ -208,8 +208,6 @@ div.container {
 }
 
 .review-meta-info {
-  display: flex;
-  justify-content: space-between;
   padding: 0.5rem;
   border-bottom: solid 1px #999;
   background-color: #e0e0e0;
@@ -219,6 +217,19 @@ div.container {
 
 #review-author-username {
   font-weight: bold;
+}
+
+#review-date {
+  display: block;
+}
+
+.top-icons-container {
+  padding-top: 0.5rem;
+  text-align: right;
+}
+
+#icon-delete, #icon-edit {
+  margin-right: 0.5rem;
 }
 
 .review-main-info {
@@ -235,22 +246,12 @@ div.container {
   font-weight: bold;
 }
 
-.review-icons-container {
+.like-icon-container {
   padding: 0.5rem 1rem;
 }
 
 .icon-review {
   font-size: 1.3rem;
-}
-
-.fa-trash-alt {
-  position: absolute;
-  right: 2rem;
-}
-
-.fa-edit {
-  position: absolute;
-  right: 4rem;
 }
 
 /*REVIEW*/

@@ -9,8 +9,12 @@ export const Post = () => {
       <h3 class="review-meta-info">
         <p>
           Publicado por <span id="review-author-username">Samara Tokki</span>
+          <time id="review-date">03 de Janeiro às 14:33</time>
         </p>
-        <time id="review-time-ago">18 min</time>
+        <div class="top-icons-container">
+          <i id="icon-edit" class="icon-review fas fa-edit"></i>
+          <i id="icon-delete" class="icon-review fas fa-trash-alt"></i>
+        </div>
       </h3>
       <div class="review-main-info">
         <div class="review-info-book-title">
@@ -29,23 +33,20 @@ export const Post = () => {
           </p>
         </div>
       </div>
-      <div class="review-icons-container">
+      <div class="like-icon-container">
         <i id="icon-like" class="icon-review far fa-heart"></i>
-        <i id="icon-edit" class="icon-review fas fa-edit"></i>
-        <i id="icon-delete" class="icon-review fas fa-trash-alt"></i>
       </div>
     </article>
   `;
 
-  document.addEventListener('DOMContentLoaded', () => {
-    // const likeIcon = document.querySelector('#icon-like');
-    const editIcon = document.querySelector('#icon-edit');
-    // const deleteIcon = document.querySelector('#icon-delete');
+  // const likeIcon = document.querySelector('#icon-like');
+  // likeIcon.addEventListener('click', likeReview);
 
-    // likeIcon.addEventListener('click', likeReview);
-    editIcon.addEventListener('click', editReview);
-    // deleteIcon.addEventListener('click', deleteReview);
-  });
+  const editIcon = postContainer.querySelector('#icon-edit');
+  editIcon.addEventListener('click', editReview);
+
+  // const deleteIcon = document.querySelector('#icon-delete');
+  // deleteIcon.addEventListener('click', deleteReview);
 
   return postContainer;
 };

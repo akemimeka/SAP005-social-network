@@ -111,5 +111,5 @@ export const createReview = (event) => {
 };
 
 export function editReview() {
-  alert('oi')
+  console.log('oi');
 }
