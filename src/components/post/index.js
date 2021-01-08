@@ -1,4 +1,4 @@
-import { editReview } from '../../services/index.js';
+// import { editReview } from '../../services/index.js';
 
 export const Post = () => {
   const postContainer = document.createElement('div');
@@ -15,8 +15,8 @@ export const Post = () => {
           </div>
         </div>
         <div class="top-icons-container">
-          <i id="icon-edit" class="icon-review fas fa-edit"></i>
-          <i id="icon-delete" class="icon-review fas fa-trash-alt"></i>
+          <button id="edit-button"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
+          <button id="delete-button"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>
         </div>
       </h3>
       <div class="review-main-info">
@@ -26,18 +26,19 @@ export const Post = () => {
         <div class="review-info-book-author">
           Autor(a): <span id="review-book-author">Brené Brown</span>
         </div>
-        <div id="review-info-book-opinion">
+        <div id="review-opinion">
           <p>
             Não se deixe enganar pela pegada autoajuda da obra. A Coragem de Ser Imperfeito é muito maior do que o gênero literário, apesar de ser também em determinada medida, um livro autoajuda. Como mencionei no parágrafo anterior, Brené Brown passou treze anos estudando o tema que permeia seus livros. Passou esses anos empregando uma metodologia acadêmica para a coletânea de dados, bem como para a abordagem de suas informações e pesquisas. A autora conversou com pessoas comuns, conversou com pais e professores, alunos, homens e mulheres que passavam, passaram com toda a certeza ainda passam por experiências relacionadas a vergonha e a vulnerabilidade. Mas ela foi mais fundo do que isso, além de entender, teorizar, organizar os dados que colheu, ela observa a sociedade e mostra que, mais uma vez, tudo está intimamente conectado.
           </p>
           <br>
           <p>
-            Ao nos mostrar o que é a vulnerabilidade, ela nos mostra também toda a carga positiva que podemos receber ao entrar com a cara e a coragem na arena da vida. Ao encorajar atos e ações, ao mostrar que somos imperfeitos e mostrar que não existe problema algum em se tornar, se mostrar vulnerável, ela também analisa como a sociedade, mesmo que indiretamente, julga e entende as tão assustadoras vulnerabilidade e vergonha. Muito mais do que trazer regras para uma vida melhor, conselhos para encontrar o amor, a paz interior e a coragem para ser imperfeito, a autora observa a sociedade e nos mostra que somos como somos por algo muito maior do que as tristezas da vida e os desencontros amorosos. As patologias encontradas na sociedade, reproduzidas no ambiente familiar, de trabalho e até nos relacionamentos amorosos, acaba nos distanciando de tudo o que deveria estar sempre em nosso campo de visão. Conselhos irão aparecer com toda a certeza, afinal, como disse, este também é um livro autoajuda, porém é através da observação, da análise do problema como um todo, dos exemplos e histórias de pessoas como nós, e de como a sociedade se manifesta que, guiados pelas palavras da autora, seremos capazes de encontrar nosso próprio caminho para uma vida plena.
+            Ao nos mostrar o que é a vulnerabilidade, ela nos mostra também toda a carga positiva que podemos receber ao entrar com a cara e a coragem na arena da vida. Ao encorajar atos e ações, ao mostrar que somos imperfeitos e mostrar que não existe problema algum em se tornar, se mostrar vulnerável, ela também analisa como a sociedade, mesmo que indiretamente, julga e entende as tão assustadoras vulnerabilidade e vergonha.
           </p>
         </div>
       </div>
       <div class="like-icon-container">
-        <i id="icon-like" class="icon-review far fa-heart"></i>
+        <i id="like-icon" class="far fa-heart"></i>
+        <div id="review-like-count">32</div>
       </div>
     </article>
   `;
@@ -45,11 +46,32 @@ export const Post = () => {
   // const likeIcon = document.querySelector('#icon-like');
   // likeIcon.addEventListener('click', likeReview);
 
-  const editIcon = postContainer.querySelector('#icon-edit');
-  editIcon.addEventListener('click', editReview);
-
   // const deleteIcon = document.querySelector('#icon-delete');
   // deleteIcon.addEventListener('click', deleteReview);
+
+  const editButton = postContainer.querySelector('#edit-button');
+  const editStylingToggle = (element) => {
+    element.setAttribute('contenteditable', 'true');
+    element.classList.toggle('editable-content');
+
+    if (editButton.innerHTML === '<i class="edit-icon fas fa-edit"></i>Editar resenha') {
+      editButton.innerHTML = '<i class="check-icon fas fa-check"></i>Salvar resenha';
+    } else {
+      editButton.innerHTML = '<i class="edit-icon fas fa-edit"></i>Editar resenha';
+    }
+  };
+
+  const editReview = () => {
+    const reviewBookTitle = postContainer.querySelector('#review-book-title');
+    const reviewBookAuthor = postContainer.querySelector('#review-book-author');
+    const reviewText = postContainer.querySelector('#review-opinion');
+
+    editStylingToggle(reviewBookTitle);
+    editStylingToggle(reviewBookAuthor);
+    editStylingToggle(reviewText);
+  };
+
+  editButton.addEventListener('click', editReview);
 
   return postContainer;
 };
