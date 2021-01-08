@@ -28,12 +28,20 @@ export const Post = () => {
         </div>
       </div>
       <div class="review-icons-container">
-        <i id="icon-heart" class="icon-review far fa-heart"></i>
+        <i id="icon-like" class="icon-review far fa-heart"></i>
         <i id="icon-edit" class="icon-review fas fa-edit"></i>
         <i id="icon-delete" class="icon-review fas fa-trash-alt"></i>
       </div>
     </article>
   `;
+
+  const likeIcon = document.querySelector('#icon-like');
+  const editIcon = document.querySelector('#icon-edit');
+  const deleteIcon = document.querySelector('#icon-delete');
+
+  likeIcon.addEventListener('click', likeReview);
+  editIcon.addEventListener('click', editReview);
+  deleteIcon.addEventListener('click', deleteReview);
 
   return feedMain;
 };
