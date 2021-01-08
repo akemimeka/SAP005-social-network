@@ -1,4 +1,4 @@
-// import { editReview } from '../../services/index.js';
+import { saveEditedReview } from '../../services/index.js';
 
 export const Post = () => {
   const postContainer = document.createElement('div');
@@ -16,6 +16,7 @@ export const Post = () => {
         </div>
         <div class="top-icons-container">
           <button id="edit-button"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
+          <button id="save-button" class="hidden"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
           <button id="delete-button"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>
         </div>
       </h3>
@@ -50,18 +51,16 @@ export const Post = () => {
   // deleteIcon.addEventListener('click', deleteReview);
 
   const editButton = postContainer.querySelector('#edit-button');
+  const saveButton = postContainer.querySelector('#save-button');
+
   const editStylingToggle = (element) => {
     element.setAttribute('contenteditable', 'true');
     element.classList.toggle('editable-content');
-
-    if (editButton.innerHTML === '<i class="edit-icon fas fa-edit"></i>Editar resenha') {
-      editButton.innerHTML = '<i class="check-icon fas fa-check"></i>Salvar resenha';
-    } else {
-      editButton.innerHTML = '<i class="edit-icon fas fa-edit"></i>Editar resenha';
-    }
+    editButton.classList.toggle('hidden');
+    saveButton.classList.remove('hidden');
   };
 
-  const editReview = () => {
+  editButton.addEventListener('click', () => {
     const reviewBookTitle = postContainer.querySelector('#review-book-title');
     const reviewBookAuthor = postContainer.querySelector('#review-book-author');
     const reviewText = postContainer.querySelector('#review-opinion');
@@ -69,9 +68,9 @@ export const Post = () => {
     editStylingToggle(reviewBookTitle);
     editStylingToggle(reviewBookAuthor);
     editStylingToggle(reviewText);
-  };
+  });
 
-  editButton.addEventListener('click', editReview);
+  saveButton.addEventListener('click', saveEditedReview);
 
   return postContainer;
 };

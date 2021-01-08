@@ -110,6 +110,6 @@ export const createReview = (event) => {
     });
 };
 
-export const editReview = () => {
-
+export const saveEditedReview = () => {
+  console.log('save')
 };

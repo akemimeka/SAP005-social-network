@@ -191,7 +191,7 @@ div.container {
   color: #fff;
 }
 
-/* FEED */
+/* FEED / POST */
 .feed-main,
 .profile-main,
 .post-container {
@@ -237,6 +237,7 @@ div.container {
 
 #edit-button,
 #delete-button,
+#save-button,
 .edit-icon,
 .delete-icon,
 .check-icon {
