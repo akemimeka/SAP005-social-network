@@ -21,9 +21,9 @@ export const Post = (isGetAll) => {
               </div>
             </div>
             <div class="top-icons-container">
-              <button id="edit-button_${i}"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
-              <button id="save-button_${i}" class="hidden"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
-              <button id="delete-button_${i}"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>
+              <button id="edit-button_${i}" class="edit-button"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
+              <button id="save-button_${i}" class="save-button hidden"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
+              <button id="delete-button_${i}" class="delete-button"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>
             </div>
           </h3>
           <div class="review-main-info">
@@ -37,8 +37,8 @@ export const Post = (isGetAll) => {
               <p>${post.review}</p>
             </div>
           </div>
-          <div class="like-icon-container">
-            <i id="like-icon_${i}" class="far fa-heart"></i>
+          <div class="like-container">
+            <i id="like-icon_${i}" class="like-icon far fa-heart"></i>
             <div id="review-like-count_${i}">32</div>
           </div>
         </article>
@@ -59,19 +59,23 @@ export const Post = (isGetAll) => {
         const fieldList = [reviewBookTitle, reviewBookAuthor, reviewText];
 
         fieldList.forEach((field) => editStylingToggle(field));
+        reviewBookTitle.focus();
         editButton.classList.toggle('hidden');
         saveButton.classList.remove('hidden');
-      });
+    }
+ 
+  saveButton.addEventListener('click', saveEditedReview);
 
-      saveButton.addEventListener('click', saveEditedReview);
-    });
+  deleteButton.addEventListener('click', () => {
+    const popupToDelete = confirm('Tem certeza que você deseja deletar essa resenha?');
+    if (popupToDelete) {
+      // função para deletar resenha
+    }
   });
 
-  // const likeIcon = document.querySelector('#icon-like');
-  // likeIcon.addEventListener('click', likeReview);
-
-  // const deleteIcon = document.querySelector('#icon-delete');
-  // deleteIcon.addEventListener('click', deleteReview);
-
+  likeIcon.addEventListener('click', () => {
+    // função para adicionar like
+  });
+      
   return postContainer;
 };
