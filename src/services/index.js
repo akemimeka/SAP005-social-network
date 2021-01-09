@@ -1,7 +1,5 @@
 /* eslint-disable no-alert */
 
-import { onNavigate } from '../utils/history.js';
-
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const reviewsCollection = firestore.collection('reviews');
@@ -22,7 +20,6 @@ export const googleLogin = (event) => {
           id: user.uid,
           photo: user.photoURL,
         }, { merge: true });
-      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -45,7 +42,6 @@ export const emailAndPasswordLogin = (event) => {
     .then((user) => {
       console.log('usuário', user);
       alert('usuário logado!');
-      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -76,7 +72,6 @@ export const createAccount = (event) => {
     .then((user) => {
       console.log('usuário', user);
       alert('usuário criado');
-      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -88,6 +83,8 @@ export const createAccount = (event) => {
         alert('Senha fraca');
       }
     });
+
+  return true;
 };
 
 export const createReview = (event) => {
@@ -121,8 +118,11 @@ export const saveEditedReview = () => {
   console.log('save');
 };
 
-export const getReviews = () => {
-  return reviewsCollection.get().then((queryReview) => {
-    return queryReview.docs;
-  });
+export const getReviews = (isGetAll) => {
+  let collec = reviewsCollection;
+  const user = auth.currentUser;
+  if (!isGetAll && user) {
+    collec = reviewsCollection.where('user_information.user_id', '==', user.uid);
+  }
+  return collec.get().then((queryReview) => queryReview.docs);
 };
