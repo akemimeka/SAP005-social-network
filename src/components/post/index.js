@@ -19,8 +19,8 @@ export const Post = (isGetAll) => {
             <div class="meta-info-container">
               <img id="review-user-avatar_${i}" class="review-user-avatar" src="${userPhoto}">
               <div>
-                <span id="review-author-username_${i}">${post.user_information.name}</span>
-                <time id="review-date_${i}">${post.date}</time>
+                <span id="review-author-username_${i}" class="review-author-username">${post.user_information.name}</span>
+                <time id="review-date_${i}" class="review-date">${post.date}</time>
               </div>
             </div>
             <div class="top-icons-container">
