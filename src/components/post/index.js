@@ -8,7 +8,7 @@ export const Post = (isGetAll) => {
     if (!reviews.length) {
       alert('Você ainda não possui nenhuma resenha cadastrada. Clique no botão de adicionar e crie uma resenha!');
     }
-    reviews.forEach(([i, review]) => {
+    Object.entries(reviews).forEach(([i, review]) => {
       const post = review.data();
       postContainer.innerHTML += `
         <article class="review-post">
@@ -46,11 +46,11 @@ export const Post = (isGetAll) => {
 
       const editButton = postContainer.querySelector(`#edit-button_${i}`);
       const saveButton = postContainer.querySelector(`#save-button_${i}`);
-      const deleteButton = postContainer.querySelector(`delete-button_${i}`);
+      const deleteButton = postContainer.querySelector(`#delete-button_${i}`);
       const reviewBookTitle = postContainer.querySelector(`#review-book-title_${i}`);
       const reviewBookAuthor = postContainer.querySelector(`#review-book-author_${i}`);
       const reviewText = postContainer.querySelector(`#review-opinion_${i}`);
-      const likeIcon = postContainer.querySelector(`like-icon_${i}`);
+      const likeIcon = postContainer.querySelector(`#like-icon_${i}`);
 
       const editStylingToggle = (element) => {
         element.setAttribute('contenteditable', 'true');
@@ -69,7 +69,7 @@ export const Post = (isGetAll) => {
       saveButton.addEventListener('click', saveEditedReview);
 
       deleteButton.addEventListener('click', () => {
-        const popupToDelete = confirm('Tem certeza que você deseja deletar essa resenha?');
+        const popupToDelete = window.confirm('Tem certeza que você deseja deletar essa resenha?');
         if (popupToDelete) {
           // função para deletar resenha
         }
@@ -78,8 +78,8 @@ export const Post = (isGetAll) => {
       likeIcon.addEventListener('click', () => {
         // função para adicionar like
       });
-    }
+    });
   });
-      
+
   return postContainer;
 };

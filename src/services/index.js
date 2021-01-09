@@ -119,10 +119,10 @@ export const saveEditedReview = () => {
 };
 
 export const getReviews = (isGetAll) => {
-  let collec = reviewsCollection;
+  let collection = reviewsCollection;
   const user = auth.currentUser;
   if (!isGetAll && user) {
-    collec = reviewsCollection.where('user_information.user_id', '==', user.uid);
+    collection = reviewsCollection.where('user_information.user_id', '==', user.uid);
   }
-  return collec.get().then((queryReview) => queryReview.docs);
+  return collection.get().then((queryReview) => queryReview.docs);
 };
