@@ -9,7 +9,7 @@ export const Feed = () => {
   `;
 
   feedBody.appendChild(feedHeader);
-  feedBody.appendChild(Post());
+  feedBody.appendChild(Post(true));
 
   return feedBody;
 };

@@ -21,7 +21,7 @@ export const Profile = () => {
   `;
 
   profileBody.appendChild(profileHeader);
-  profileBody.appendChild(Post());
+  profileBody.appendChild(Post(false));
 
   return profileBody;
 };
