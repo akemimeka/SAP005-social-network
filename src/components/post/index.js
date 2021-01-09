@@ -1,20 +1,23 @@
 import { saveEditedReview, getReviews } from '../../services/index.js';
 
-export const Post = () => {
+export const Post = (isGetAll) => {
   const postContainer = document.createElement('div');
   postContainer.className = 'post-container';
 
-  getReviews().then((reviews) => {
-    for (let i in reviews) {
-      let post = reviews[i].data();
+  getReviews(isGetAll).then((reviews) => {
+    if (!reviews.length) {
+      alert('Você ainda não possui nenhuma resenha cadastrada. Clique no botão de adicionar e crie uma resenha!');
+    }
+    reviews.forEach(([i, review]) => {
+      const post = review.data();
       postContainer.innerHTML += `
         <article class="review-post">
           <h3 class="review-meta-info">
             <div class="meta-info-container">
-              <img id="review-user-avatar_${i}" class="review-user-avatar" src="../../img/default_user_icon.jpg">
+              <img id="review-user-avatar_${i}" src="${post.user_information.photo}">
               <div>
-                <span id="review-author-username_${i}" class="review-author-username">${post.user_information.name}</span>
-                <time id="review-date_${i}" class="review-date">03 de Janeiro às 14:33</time>
+                <span id="review-author-username_${i}">${post.user_information.name}</span>
+                <time id="review-date_${i}">${post.date}</time>
               </div>
             </div>
             <div class="top-icons-container">
@@ -41,13 +44,11 @@ export const Post = () => {
         </article>
       `;
 
-      const editButton = postContainer.querySelector('#edit-button_' + i);
-      const saveButton = postContainer.querySelector('#save-button_' + i);
-      const deleteButton = postContainer.querySelector('#delete-button');
-      const reviewBookTitle = postContainer.querySelector('#review-book-title_' + i);
-      const reviewBookAuthor = postContainer.querySelector('#review-book-author_' + i);
-      const reviewText = postContainer.querySelector('#review-opinion_' + i);
-      const likeIcon = postContainer.querySelector('#like-icon');
+      const editButton = postContainer.querySelector(`#edit-button_${i}`);
+      const saveButton = postContainer.querySelector(`#save-button_${i}`);
+      const reviewBookTitle = postContainer.querySelector(`#review-book-title_${i}`);
+      const reviewBookAuthor = postContainer.querySelector(`#review-book-author_${i}`);
+      const reviewText = postContainer.querySelector(`#review-opinion_${i}`);
 
       const editStylingToggle = (element) => {
         element.setAttribute('contenteditable', 'true');
@@ -67,7 +68,6 @@ export const Post = () => {
 
   deleteButton.addEventListener('click', () => {
     const popupToDelete = confirm('Tem certeza que você deseja deletar essa resenha?');
-
     if (popupToDelete) {
       // função para deletar resenha
     }
@@ -76,6 +76,6 @@ export const Post = () => {
   likeIcon.addEventListener('click', () => {
     // função para adicionar like
   });
-
+      
   return postContainer;
 };
