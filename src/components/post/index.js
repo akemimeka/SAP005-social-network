@@ -8,7 +8,7 @@ export const Post = (isGetAll) => {
     if (!reviews.length) {
       alert('Você ainda não possui nenhuma resenha cadastrada. Clique no botão de adicionar e crie uma resenha!');
     }
-    Object.entries(reviews).forEach(([i, review]) => {
+    reviews.forEach(([i, review]) => {
       const post = review.data();
       postContainer.innerHTML += `
         <article class="review-post">
