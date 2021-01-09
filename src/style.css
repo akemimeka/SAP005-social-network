@@ -249,6 +249,7 @@ div.container {
 }
 
 .review-author-username {
+  font-size: 1rem;
   font-weight: bold;
 }
 

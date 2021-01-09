@@ -10,14 +10,17 @@ export const Post = (isGetAll) => {
     }
     Object.entries(reviews).forEach(([i, review]) => {
       const post = review.data();
+      let userPhoto = post.user_information.photo;
+      if (!userPhoto) { userPhoto = '../../img/default_user_icon.jpg'; }
+
       postContainer.innerHTML += `
         <article class="review-post">
           <h3 class="review-meta-info">
             <div class="meta-info-container">
-              <img id="review-user-avatar_${i}" src="${post.user_information.photo}">
+              <img id="review-user-avatar_${i}" class="review-user-avatar" src="${userPhoto}">
               <div>
-                <span id="review-author-username_${i}">${post.user_information.name}</span>
-                <time id="review-date_${i}">${post.date}</time>
+                <span id="review-author-username_${i}" class="review-author-username">${post.user_information.name}</span>
+                <time id="review-date_${i}" class="review-date">${post.date}</time>
               </div>
             </div>
             <div class="top-icons-container">
