@@ -22,7 +22,7 @@ export const Post = (isGetAll) => {
             </div>
             <div class="top-icons-container">
               <button id="edit-button_${i}" class="edit-button"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
-              <button id="save-button_${i}" class="save-button hidden"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
+              <button id="save-button_${i}" class="hidden save-button"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
               <button id="delete-button_${i}" class="delete-button"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>
             </div>
           </h3>
@@ -46,9 +46,11 @@ export const Post = (isGetAll) => {
 
       const editButton = postContainer.querySelector(`#edit-button_${i}`);
       const saveButton = postContainer.querySelector(`#save-button_${i}`);
+      const deleteButton = postContainer.querySelector(`delete-button_${i}`);
       const reviewBookTitle = postContainer.querySelector(`#review-book-title_${i}`);
       const reviewBookAuthor = postContainer.querySelector(`#review-book-author_${i}`);
       const reviewText = postContainer.querySelector(`#review-opinion_${i}`);
+      const likeIcon = postContainer.querySelector(`like-icon_${i}`);
 
       const editStylingToggle = (element) => {
         element.setAttribute('contenteditable', 'true');
@@ -62,19 +64,21 @@ export const Post = (isGetAll) => {
         reviewBookTitle.focus();
         editButton.classList.toggle('hidden');
         saveButton.classList.remove('hidden');
-    }
- 
-  saveButton.addEventListener('click', saveEditedReview);
+      });
 
-  deleteButton.addEventListener('click', () => {
-    const popupToDelete = confirm('Tem certeza que você deseja deletar essa resenha?');
-    if (popupToDelete) {
-      // função para deletar resenha
-    }
-  });
+      saveButton.addEventListener('click', saveEditedReview);
 
-  likeIcon.addEventListener('click', () => {
-    // função para adicionar like
+      deleteButton.addEventListener('click', () => {
+        const popupToDelete = confirm('Tem certeza que você deseja deletar essa resenha?');
+        if (popupToDelete) {
+          // função para deletar resenha
+        }
+      });
+
+      likeIcon.addEventListener('click', () => {
+        // função para adicionar like
+      });
+    }
   });
       
   return postContainer;
