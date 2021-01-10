@@ -114,10 +114,6 @@ export const createReview = (event) => {
     });
 };
 
-export const saveEditedReview = () => {
-  console.log('save');
-};
-
 export const getReviews = (isGetAll) => {
   let collection = reviewsCollection;
   const user = auth.currentUser;
@@ -128,4 +124,8 @@ export const getReviews = (isGetAll) => {
     .orderBy('date', 'desc')
     .get()
     .then((queryReview) => queryReview.docs);
+};
+
+export const saveEditedReview = (reviewId) => {
+  console.log(reviewId)
 };
