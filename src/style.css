@@ -340,6 +340,10 @@ div.container {
   padding: 0.5em;
 }
 
+.required{
+color: #ff0000;
+}
+
 .btn-review {
   width: 26vw;
   height: 5vh;

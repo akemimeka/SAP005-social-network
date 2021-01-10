@@ -94,24 +94,31 @@ export const createReview = (event) => {
   const bookReview = document.querySelector('#book-review').value;
   const user = auth.currentUser;
   const date = new Date();
-
-  reviewsCollection.add({
-    user_information: {
-      name: user.displayName,
-      user_id: user.uid,
-      photo: user.photoURL,
-    },
-    title: bookName,
-    author: bookAuthor,
-    review: bookReview,
-    date: date.toLocaleString(),
-  })
-    .then(() => {
-      alert('Resenha criada!');
+  if (bookName === null || bookName === undefined || bookName === '') {
+    alert('Por favor, escreva o nome do livro.');
+  } else if (bookAuthor === null || bookAuthor === undefined || bookAuthor === '') {
+    alert('Por favor, escreva o nome do autor.');
+  } else if (bookReview === null || bookReview === undefined || bookReview === '') {
+    alert('Por favor, escreva a resenha.');
+  } else {
+    reviewsCollection.add({
+      user_information: {
+        name: user.displayName,
+        user_id: user.uid,
+        photo: user.photoURL,
+      },
+      title: bookName,
+      author: bookAuthor,
+      review: bookReview,
+      date: date.toLocaleString(),
     })
-    .catch(() => {
-      alert('Algo deu errado. Por favor, tente novamente.');
-    });
+      .then(() => {
+        alert('Resenha criada!');
+      })
+      .catch(() => {
+        alert('Algo deu errado. Por favor, tente novamente.');
+      });
+  };
 };
 
 export const saveEditedReview = () => {
