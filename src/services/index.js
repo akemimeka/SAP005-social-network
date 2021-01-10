@@ -81,6 +81,8 @@ export const createAccount = (event) => {
         alert('E-mail inválido');
       } else if (errorCode === 'auth/weak-password') {
         alert('Senha fraca');
+      } else {
+        alert('Algo deu errado. Por favor, tente novamente.');
       }
     });
 
@@ -111,9 +113,13 @@ export const createReview = (event) => {
       author: bookAuthor,
       review: bookReview,
       date: date.toLocaleString(),
+      like: 0,
     })
       .then(() => {
-        alert('Resenha criada!');
+        document.querySelector('#book-name').value = '';
+        document.querySelector('#book-author').value = '';
+        document.querySelector('#book-review').value = '';
+        alert('Sua resenha foi publicada com sucesso!');
       })
       .catch(() => {
         alert('Algo deu errado. Por favor, tente novamente.');
