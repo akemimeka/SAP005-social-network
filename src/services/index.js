@@ -124,5 +124,8 @@ export const getReviews = (isGetAll) => {
   if (!isGetAll && user) {
     collection = reviewsCollection.where('user_information.user_id', '==', user.uid);
   }
-  return collection.get().then((queryReview) => queryReview.docs);
+  return collection
+    .orderBy('date', 'desc')
+    .get()
+    .then((queryReview) => queryReview.docs);
 };
