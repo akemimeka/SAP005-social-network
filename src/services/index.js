@@ -124,11 +124,23 @@ export const createReview = (event) => {
       .catch(() => {
         alert('Algo deu errado. Por favor, tente novamente.');
       });
-  };
+  }
 };
 
 export const saveEditedReview = () => {
   console.log('save');
+};
+
+export const deleteReview = (postId) => {
+  reviewsCollection
+    .doc(postId)
+    .delete()
+    .then(() => {
+      alert('Deletou!');
+    })
+    .catch(() => {
+      alert('Algo deu errado. Por favor, tente novamente.');
+    });
 };
 
 export const getReviews = (isGetAll) => {

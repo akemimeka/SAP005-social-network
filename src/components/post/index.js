@@ -1,4 +1,4 @@
-import { saveEditedReview, getReviews } from '../../services/index.js';
+import { saveEditedReview, getReviews, deleteReview } from '../../services/index.js';
 
 export const Post = (isGetAll) => {
   const postContainer = document.createElement('div');
@@ -73,8 +73,8 @@ export const Post = (isGetAll) => {
 
       deleteButton.addEventListener('click', () => {
         const popupToDelete = window.confirm('Tem certeza que você deseja deletar essa resenha?');
-        if (popupToDelete) {
-          // função para deletar resenha
+        if (popupToDelete === true) {
+          deleteReview(review.id);
         }
       });
 
