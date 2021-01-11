@@ -81,6 +81,8 @@ export const createAccount = (event) => {
         alert('E-mail inválido');
       } else if (errorCode === 'auth/weak-password') {
         alert('Senha fraca');
+      } else {
+        alert('Algo deu errado. Por favor, tente novamente.');
       }
     });
 
@@ -94,20 +96,47 @@ export const createReview = (event) => {
   const bookReview = document.querySelector('#book-review').value;
   const user = auth.currentUser;
   const date = new Date();
+  if (bookName === null || bookName === undefined || bookName === '') {
+    alert('Por favor, escreva o nome do livro.');
+  } else if (bookAuthor === null || bookAuthor === undefined || bookAuthor === '') {
+    alert('Por favor, escreva o nome do autor.');
+  } else if (bookReview === null || bookReview === undefined || bookReview === '') {
+    alert('Por favor, escreva a resenha.');
+  } else {
+    reviewsCollection.add({
+      user_information: {
+        name: user.displayName,
+        user_id: user.uid,
+        photo: user.photoURL,
+      },
+      title: bookName,
+      author: bookAuthor,
+      review: bookReview,
+      date: date.toLocaleString(),
+      like: 0,
+    })
+      .then(() => {
+        document.querySelector('#book-name').value = '';
+        document.querySelector('#book-author').value = '';
+        document.querySelector('#book-review').value = '';
+        alert('Sua resenha foi publicada com sucesso!');
+      })
+      .catch(() => {
+        alert('Algo deu errado. Por favor, tente novamente.');
+      });
+  }
+};
 
-  reviewsCollection.add({
-    user_information: {
-      name: user.displayName,
-      user_id: user.uid,
-      photo: user.photoURL,
-    },
-    title: bookName,
-    author: bookAuthor,
-    review: bookReview,
-    date: date.toLocaleString(),
-  })
+export const saveEditedReview = () => {
+  console.log('save');
+};
+
+export const deleteReview = (postId) => {
+  reviewsCollection
+    .doc(postId)
+    .delete()
     .then(() => {
-      alert('Resenha criada!');
+      alert('Deletou!');
     })
     .catch(() => {
       alert('Algo deu errado. Por favor, tente novamente.');
