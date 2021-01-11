@@ -126,6 +126,12 @@ export const getReviews = (isGetAll) => {
     .then((queryReview) => queryReview.docs);
 };
 
-export const saveEditedReview = (reviewId) => {
-  console.log(reviewId)
+export const saveEditedReview = (reviewId, editedTitle, editedAuthor, editedReview) => {
+  const reviewToEdit = reviewsCollection.doc(reviewId);
+
+  reviewToEdit.update({
+    title: editedTitle,
+    author: editedAuthor,
+    review: editedReview,
+  });
 };

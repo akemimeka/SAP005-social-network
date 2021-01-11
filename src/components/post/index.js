@@ -13,7 +13,7 @@ export const Post = (isGetAll) => {
       const user = post.user_information;
 
       postContainer.innerHTML += `
-        <article class="review-post" data-user-id=${user.user_id} data-review-id=${review.id}>
+        <article class="review-post" data-user-id=${user.user_id} data-review-id=${review.id} data-index=${i}>
           <h3 class="review-meta-info">
             <div class="meta-info-container">
               <img id="review-user-avatar" class="review-user-avatar" src="${user.photo || '../../img/default_user_icon.jpg'}">
@@ -87,7 +87,7 @@ export const Post = (isGetAll) => {
       editButtons.forEach((button) => {
         button.addEventListener('click', (event) => {
           const targetPost = event.target.closest('article');
-          const targetReviewId = targetPost.dataset['reviewId'];
+          const targetReviewId = targetPost.dataset.reviewId;
           const targetEditBtn = targetPost.querySelector('#edit-button');
           const targetSaveBtn = targetPost.querySelector('#save-button');
           const targetCancelBtn = targetPost.querySelector('#cancel-button');
@@ -110,6 +110,7 @@ export const Post = (isGetAll) => {
             const editedAuthor = reviewBookAuthor.innerText;
             const editedReview = reviewText.innerText;
             saveEditedReview(targetReviewId, editedTitle, editedAuthor, editedReview);
+
             fieldList.forEach((field) => backToNormalField(field));
             initialButtons(targetEditBtn, targetDeleteBtn, targetSaveBtn, targetCancelBtn);
           });
@@ -126,7 +127,7 @@ export const Post = (isGetAll) => {
         });
       });
 
-      const likeIcon = postContainer.querySelectorAll('.like-icon');
+      // const likeIcon = postContainer.querySelectorAll('.like-icon');
       // likeIcon.addEventListener('click', () => {
       //   // função para adicionar like
       // });
