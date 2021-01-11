@@ -127,22 +127,6 @@ export const createReview = (event) => {
   }
 };
 
-export const saveEditedReview = () => {
-  console.log('save');
-};
-
-export const deleteReview = (postId) => {
-  reviewsCollection
-    .doc(postId)
-    .delete()
-    .then(() => {
-      alert('Deletou!');
-    })
-    .catch(() => {
-      alert('Algo deu errado. Por favor, tente novamente.');
-    });
-};
-
 export const getReviews = (isGetAll) => {
   let collection = reviewsCollection;
   const user = auth.currentUser;
@@ -162,5 +146,25 @@ export const saveEditedReview = (reviewId, editedTitle, editedAuthor, editedRevi
     title: editedTitle,
     author: editedAuthor,
     review: editedReview,
+  });
+};
+
+export const deleteReview = (postId) => {
+  reviewsCollection
+    .doc(postId)
+    .delete()
+    .then(() => {
+      alert('Deletou!');
+    })
+    .catch(() => {
+      alert('Algo deu errado. Por favor, tente novamente.');
+    });
+};
+
+export const likeReview = (reviewId) => {
+  const reviewToLike = reviewsCollection.doc(reviewId);
+
+  reviewToLike.update({
+    likes: firebase.firestore.FieldValue.increment(1),
   });
 };
