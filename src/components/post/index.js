@@ -27,11 +27,11 @@ export const Post = (isGetAll) => {
             </div>
           </h3>
           <div class="review-main-info">
-            <div class="review-info-book-title">
-              Livro: <span id="review-book-title" class="review-book-title">${post.title}</span>
+            <div class="review-info-book-title">Livro:
+              <p id="review-book-title" class="review-book-title">${post.title}</p>
             </div>
-            <div class="review-info-book-author">
-              Autor(a): <span id="review-book-author" class="review-book-author">${post.author}</span>
+            <div class="review-info-book-author">Autor(a):
+              <p id="review-book-author" class="review-book-author">${post.author}</p>
             </div>
             <div id="review-opinion" class="review-opinion">
               <p>${post.review}</p>
@@ -128,9 +128,9 @@ export const Post = (isGetAll) => {
         });
       });
 
-      likeIcon.addEventListener('click', () => {
-        // função para adicionar like
-      });
+      // likeIcon.addEventListener('click', () => {
+      //   // função para adicionar like
+      // });
     });
   });
 
