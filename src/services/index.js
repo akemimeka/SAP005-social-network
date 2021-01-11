@@ -149,5 +149,18 @@ export const getReviews = (isGetAll) => {
   if (!isGetAll && user) {
     collection = reviewsCollection.where('user_information.user_id', '==', user.uid);
   }
-  return collection.get().then((queryReview) => queryReview.docs);
+  return collection
+    .orderBy('date', 'desc')
+    .get()
+    .then((queryReview) => queryReview.docs);
+};
+
+export const saveEditedReview = (reviewId, editedTitle, editedAuthor, editedReview) => {
+  const reviewToEdit = reviewsCollection.doc(reviewId);
+
+  reviewToEdit.update({
+    title: editedTitle,
+    author: editedAuthor,
+    review: editedReview,
+  });
 };
