@@ -59,6 +59,7 @@ export const Post = (isGetAll) => {
 
       const editButtons = postContainer.querySelectorAll('.edit-button');
       const deleteButtons = postContainer.querySelectorAll('.delete-button');
+      const likeIcon = postContainer.querySelectorAll('.like-icon');
 
       const changeToEditableField = (element) => {
         element.setAttribute('contenteditable', 'true');
@@ -127,10 +128,9 @@ export const Post = (isGetAll) => {
         });
       });
 
-      // const likeIcon = postContainer.querySelectorAll('.like-icon');
-      // likeIcon.addEventListener('click', () => {
-      //   // função para adicionar like
-      // });
+      likeIcon.addEventListener('click', () => {
+        // função para adicionar like
+      });
     });
   });
 
