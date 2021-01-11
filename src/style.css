@@ -260,8 +260,10 @@ div.container {
 .edit-button,
 .save-button,
 .delete-button,
+.cancel-button,
 .edit-icon,
 .delete-icon,
+.cancel-icon,
 .check-icon {
   margin-right: 0.5rem;
   font-size: 0.8rem;
