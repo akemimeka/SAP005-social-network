@@ -1,7 +1,7 @@
 import { onNavigate } from '../../utils/history.js';
 import { signOut } from '../../services/index.js';
 
-export const topHeader = () => {
+export const topHeaderNav = () => {
   const topHeader = document.createElement('header');
   topHeader.setAttribute('id', 'top-header');
 
