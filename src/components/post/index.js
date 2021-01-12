@@ -105,6 +105,7 @@ export const Post = (review) => {
     deleteButton.addEventListener('click', () => {
       const popupToDelete = window.confirm('Tem certeza que você deseja deletar essa resenha?');
       if (popupToDelete) {
+        postContainer.querySelector(`[data-review-id='${review.id}']`).remove();
         deleteReview(review.id);
       }
     });
