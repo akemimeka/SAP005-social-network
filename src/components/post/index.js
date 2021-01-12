@@ -45,7 +45,13 @@ export const Post = (review) => {
 
   const likeIconWrap = postContainer.querySelector('#like-icon-wrap');
   const likeIcon = likeIconWrap.querySelector(`#like-icon-${review.id}`);
+  const likeCountWrap = postContainer.querySelector('#review-like-count');
+  const likeCount = post.likes;
+
   likeIcon.addEventListener('click', () => {
+    // Refatorar posteriormente pois está mostrando apenas 1 like a mais,
+    // mas continua computando os cliques no firestore.
+    likeCountWrap.innerText = likeCount + 1;
     likeReview(review.id);
   });
 
