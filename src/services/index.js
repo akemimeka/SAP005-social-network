@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 export const googleLogin = (event) => {
   event.preventDefault();
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -5,8 +6,6 @@ export const googleLogin = (event) => {
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
       const user = result.user;
-      alert('usuário logado');
-
       firebase.firestore().collection('users').doc(user.email)
         .set({
           name: user.displayName,
@@ -32,9 +31,7 @@ export const emailAndPasswordLogin = (event) => {
   const password = document.querySelector('#password-login').value;
 
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((user) => {
-      console.log('usuário', user);
-      alert('usuário logado!');
+    .then(() => {
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -59,8 +56,8 @@ const saveInfoProfile = (userName) => {
     displayName: userName,
     photoURL: '../img/default_user_icon.jpg',
   })
-    .then(() => console.log('perfil atualizado'))
-    .catch(() => console.log('não rolou'));
+    .then()
+    .catch();
 };
 
 const saveUserInfo = (user, email, userName) => {
@@ -70,8 +67,6 @@ const saveUserInfo = (user, email, userName) => {
       id: user.uid,
       photo: '../img/default_user_icon.jpg',
     }, { merge: true });
-
-  alert('usuário salvo');
 };
 
 export const createAccount = (event) => {
@@ -87,10 +82,7 @@ export const createAccount = (event) => {
   }
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((user) => {
-      console.log('usuário', user);
-      return user;
-    })
+    .then((user) => user)
     .then((loggedUser) => {
       saveInfoProfile(userName);
       saveUserInfo(loggedUser.user, email, userName);
@@ -104,7 +96,6 @@ export const createAccount = (event) => {
       } else if (errorCode === 'auth/weak-password') {
         alert('Senha fraca');
       } else {
-        console.log(error);
         alert('Algo deu errado. Por favor, tente novamente.');
       }
     });
@@ -118,7 +109,6 @@ export const createReview = (event) => {
   const bookAuthor = document.querySelector('#book-author').value;
   const bookReview = document.querySelector('#book-review').value;
   const user = firebase.auth().currentUser;
-  const date = new Date();
   if (bookName === null || bookName === undefined || bookName === '') {
     alert('Por favor, escreva o nome do livro.');
   } else if (bookAuthor === null || bookAuthor === undefined || bookAuthor === '') {
@@ -135,7 +125,7 @@ export const createReview = (event) => {
       title: bookName,
       author: bookAuthor,
       review: bookReview,
-      date: date.toLocaleString('pt-BR'),
+      date: new Date().toLocaleString('pt-BR'),
       likes: 0,
     })
       .then(() => {
@@ -177,7 +167,7 @@ export const deleteReview = (postId) => {
     .doc(postId)
     .delete()
     .then(() => {
-      alert('Deletou!');
+      alert('Deletado com sucesso.');
     })
     .catch(() => {
       alert('Algo deu errado. Por favor, tente novamente.');
