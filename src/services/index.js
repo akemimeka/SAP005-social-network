@@ -1,20 +1,13 @@
-/* eslint-disable no-alert */
-
-const auth = firebase.auth();
-const firestore = firebase.firestore();
-const reviewsCollection = firestore.collection('reviews');
-const usersCollection = firestore.collection('users');
-
 export const googleLogin = (event) => {
   event.preventDefault();
   const provider = new firebase.auth.GoogleAuthProvider();
 
-  auth.signInWithPopup(provider)
+  firebase.auth().signInWithPopup(provider)
     .then((result) => {
       const user = result.user;
       alert('usuário logado');
 
-      usersCollection.doc(user.email)
+      firebase.firestore().collection('users').doc(user.email)
         .set({
           name: user.displayName,
           id: user.uid,
@@ -30,7 +23,7 @@ export const googleLogin = (event) => {
 };
 
 export const signOut = () => {
-  auth.signOut();
+  firebase.auth().signOut();
 };
 
 export const emailAndPasswordLogin = (event) => {
@@ -38,7 +31,7 @@ export const emailAndPasswordLogin = (event) => {
   const email = document.querySelector('#email-login').value;
   const password = document.querySelector('#password-login').value;
 
-  auth.signInWithEmailAndPassword(email, password)
+  firebase.auth().signInWithEmailAndPassword(email, password)
     .then((user) => {
       console.log('usuário', user);
       alert('usuário logado!');
@@ -60,7 +53,7 @@ export const emailAndPasswordLogin = (event) => {
 };
 
 const saveInfoProfile = (userName) => {
-  const userProfile = auth.currentUser;
+  const userProfile = firebase.auth().currentUser;
 
   userProfile.updateProfile({
     displayName: userName,
@@ -71,7 +64,7 @@ const saveInfoProfile = (userName) => {
 };
 
 const saveUserInfo = (user, email, userName) => {
-  usersCollection.doc(email)
+  firebase.firestore().collection('users').doc(email)
     .set({
       name: userName,
       id: user.uid,
@@ -93,7 +86,7 @@ export const createAccount = (event) => {
     return false;
   }
 
-  auth.createUserWithEmailAndPassword(email, password)
+  firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((user) => {
       console.log('usuário', user);
       return user;
@@ -124,7 +117,7 @@ export const createReview = (event) => {
   const bookName = document.querySelector('#book-name').value;
   const bookAuthor = document.querySelector('#book-author').value;
   const bookReview = document.querySelector('#book-review').value;
-  const user = auth.currentUser;
+  const user = firebase.auth().currentUser;
   const date = new Date();
   if (bookName === null || bookName === undefined || bookName === '') {
     alert('Por favor, escreva o nome do livro.');
@@ -133,7 +126,7 @@ export const createReview = (event) => {
   } else if (bookReview === null || bookReview === undefined || bookReview === '') {
     alert('Por favor, escreva a resenha.');
   } else {
-    reviewsCollection.add({
+    firebase.firestore().collection('reviews').add({
       user_information: {
         name: user.displayName,
         user_id: user.uid,
@@ -158,10 +151,10 @@ export const createReview = (event) => {
 };
 
 export const getReviews = (isGetAll) => {
-  let collection = reviewsCollection;
-  const user = auth.currentUser;
+  let collection = firebase.firestore().collection('reviews');
+  const user = firebase.auth().currentUser;
   if (!isGetAll && user) {
-    collection = reviewsCollection.where('user_information.user_id', '==', user.uid);
+    collection = firebase.firestore().collection('reviews').where('user_information.user_id', '==', user.uid);
   }
   return collection
     .orderBy('date', 'desc')
@@ -170,7 +163,7 @@ export const getReviews = (isGetAll) => {
 };
 
 export const saveEditedReview = (reviewId, editedTitle, editedAuthor, editedReview) => {
-  const reviewToEdit = reviewsCollection.doc(reviewId);
+  const reviewToEdit = firebase.firestore().collection('reviews').doc(reviewId);
 
   reviewToEdit.update({
     title: editedTitle,
@@ -180,7 +173,7 @@ export const saveEditedReview = (reviewId, editedTitle, editedAuthor, editedRevi
 };
 
 export const deleteReview = (postId) => {
-  reviewsCollection
+  firebase.firestore().collection('reviews')
     .doc(postId)
     .delete()
     .then(() => {
@@ -192,7 +185,7 @@ export const deleteReview = (postId) => {
 };
 
 export const likeReview = (reviewId) => {
-  const reviewToLike = reviewsCollection.doc(reviewId);
+  const reviewToLike = firebase.firestore().collection('reviews').doc(reviewId);
 
   reviewToLike.update({
     likes: firebase.firestore.FieldValue.increment(1),
