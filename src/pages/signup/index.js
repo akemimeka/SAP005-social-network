@@ -12,7 +12,7 @@ export const SignUp = () => {
     <section>
       <form class="form-sign-up">
         <label class="label-sign-up-name" for="username">Nome</label>
-        <input class="input-sign-up-name" type="text" name="username" required>
+        <input class="input-sign-up-name" id="user-name" type="text" name="username" required>
         <label class="label-sign-up-email" for="email">E-mail</label>
         <input class="input-sign-up-email" type="email" name="email" id="sign-up-email" required> 
         <label class="label-sign-up-password" for"password">Senha</label>

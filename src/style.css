@@ -303,6 +303,14 @@ div.container {
   font-size: 1.3rem;
 }
 
+.like-icon:hover {
+  color: darkcyan;
+}
+
+.current-user-like-icon {
+  color: #999;
+}
+
 /*REVIEW*/
 
 .title-review {
