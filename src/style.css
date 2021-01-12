@@ -32,6 +32,10 @@ textarea {
   display: none;
 }
 
+.required {
+  color: #ff0000;
+}
+
 /*LOGIN*/
 div.container {
   width: 90vw;
@@ -348,10 +352,6 @@ div.container {
   font-size: 1rem;
   height: 15vh;
   padding: 0.5em;
-}
-
-.required{
-color: #ff0000;
 }
 
 .btn-review {
