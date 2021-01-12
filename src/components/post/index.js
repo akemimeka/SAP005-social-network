@@ -21,12 +21,7 @@ export const Post = (review) => {
             <time id="review-date" class="review-date">${post.date}</time>
           </div>
         </div>
-        <div class="top-icons-container" id="buttons-container">
-          ${currentUserId === user.user_id ? `<button id="edit-button-${review.id}" class="edit-button"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
-            <button id="save-button-${review.id}" class="hidden save-button"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
-            <button id="cancel-button-${review.id}" class="hidden cancel-button"><i class="cancel-icon fas fa-times"></i>Cancelar edição</button>
-            <button id="delete-button-${review.id}" class="delete-button"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>` : ''}
-          </div>
+        <div class="top-icons-container" id="buttons-container"></div>
       </h3>
       <div class="review-main-info">
         <div class="review-info-book-title">Livro:
@@ -39,15 +34,48 @@ export const Post = (review) => {
           <p>${post.review}</p>
         </div>
       </div>
-      <div class="like-container">
-      ${currentUserId === user.user_id ? `<i id="like-icon-${review.id}" class="far fa-heart"></i><div id="review-like-count">${post.likes}</div>` : `
-        <i id="like-icon-${review.id}" class="like-icon far fa-heart"></i>
-        <div id="review-like-count">${post.likes}</div>`}
+      <div id="like-container" class="like-container">
+        <span id="like-icon-wrap">
+          <i id="like-icon-${review.id}" class="like-icon far fa-heart"></i>
+        </span>
+        <div id="review-like-count">${post.likes}</div>
       </div>
     </article>
   `;
 
+  const likeIconWrap = postContainer.querySelector('#like-icon-wrap');
+  const likeIcon = likeIconWrap.querySelector(`#like-icon-${review.id}`);
+  const likeCountWrap = postContainer.querySelector('#review-like-count');
+  const likeCount = post.likes;
+
+  likeIcon.addEventListener('click', () => {
+    // Refatorar posteriormente pois está mostrando apenas 1 like a mais,
+    // mas continua computando os cliques no firestore.
+    likeCountWrap.innerText = likeCount + 1;
+    likeReview(review.id);
+  });
+
   if (currentUserId === user.user_id) {
+    const buttonsContainer = postContainer.querySelector('#buttons-container');
+    buttonsContainer.innerHTML = `
+      <button id="edit-button-${review.id}" class="edit-button">
+        <i class="edit-icon fas fa-edit"></i>Editar resenha
+      </button>
+      <button id="save-button-${review.id}" class="hidden save-button">
+        <i class="check-icon fas fa-check"></i>Salvar resenha
+      </button>
+      <button id="cancel-button-${review.id}" class="hidden cancel-button">
+        <i class="cancel-icon fas fa-times"></i>Cancelar edição
+      </button>
+      <button id="delete-button-${review.id}" class="delete-button">
+        <i class="delete-icon fas fa-trash-alt"></i>Deletar resenha
+      </button>
+    `;
+
+    likeIconWrap.innerHTML = `
+      <i id="user-like-icon-${review.id}" class="like-icon far fa-heart"></i>
+    `;
+
     const editButton = postContainer.querySelector(`#edit-button-${review.id}`);
     const deleteButton = postContainer.querySelector(`#delete-button-${review.id}`);
     const saveButton = postContainer.querySelector(`#save-button-${review.id}`);
@@ -55,6 +83,7 @@ export const Post = (review) => {
     const reviewBookTitle = postContainer.querySelector(`#review-book-title-${review.id}`);
     const reviewBookAuthor = postContainer.querySelector(`#review-book-author-${review.id}`);
     const reviewText = postContainer.querySelector(`#review-opinion-${review.id}`);
+    const userLikeIcon = postContainer.querySelector(`#user-like-icon-${review.id}`);
     const fieldList = [reviewBookTitle, reviewBookAuthor, reviewText];
 
     const changeToEditableField = (element) => {
@@ -109,12 +138,9 @@ export const Post = (review) => {
         deleteReview(review.id);
       }
     });
-  }
 
-  const likeIcon = postContainer.querySelector(`#like-icon-${review.id}`);
-  likeIcon.addEventListener('click', () => {
-    likeReview(review.id);
-  });
+    userLikeIcon.classList.add('current-user-like-icon');
+  }
 
   return postContainer;
 };

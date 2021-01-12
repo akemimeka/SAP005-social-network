@@ -14,7 +14,7 @@ export const googleLogin = (event) => {
       const user = result.user;
       alert('usuário logado');
 
-      usersCollection.doc(`${user.email}`)
+      usersCollection.doc(user.email)
         .set({
           name: user.displayName,
           id: user.uid,
@@ -59,19 +59,48 @@ export const emailAndPasswordLogin = (event) => {
     });
 };
 
+const saveInfoProfile = (userName) => {
+  const userProfile = auth.currentUser;
+
+  userProfile.updateProfile({
+    displayName: userName,
+    photoURL: '../img/default_user_icon.jpg',
+  })
+    .then(() => console.log('perfil atualizado'))
+    .catch(() => console.log('não rolou'));
+};
+
+const saveUserInfo = (user, email, userName) => {
+  usersCollection.doc(email)
+    .set({
+      name: userName,
+      id: user.uid,
+      photo: '../img/default_user_icon.jpg',
+    }, { merge: true });
+
+  alert('usuário salvo');
+};
+
 export const createAccount = (event) => {
   event.preventDefault();
+  const userName = document.querySelector('#user-name').value;
   const email = document.querySelector('#sign-up-email').value;
   const password = document.querySelector('#sign-up-password').value;
   const confirmPassword = document.querySelector('#confirm-password').value;
+
   if (password !== confirmPassword) {
     alert('A senha digitada está diferente em um dos campos');
     return false;
   }
+
   auth.createUserWithEmailAndPassword(email, password)
     .then((user) => {
       console.log('usuário', user);
-      alert('usuário criado');
+      return user;
+    })
+    .then((loggedUser) => {
+      saveInfoProfile(userName);
+      saveUserInfo(loggedUser.user, email, userName);
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -82,6 +111,7 @@ export const createAccount = (event) => {
       } else if (errorCode === 'auth/weak-password') {
         alert('Senha fraca');
       } else {
+        console.log(error);
         alert('Algo deu errado. Por favor, tente novamente.');
       }
     });
