@@ -1,4 +1,5 @@
 import { Post } from '../../components/post/index.js';
+import { getReviews } from '../../services/index.js';
 
 export const Profile = () => {
   const profileBody = document.createElement('div');
@@ -21,7 +22,14 @@ export const Profile = () => {
   `;
 
   profileBody.appendChild(profileHeader);
-  profileBody.appendChild(Post(false));
 
+  getReviews(false).then((reviews) => {
+    if (!reviews.length) {
+      alert('Você ainda não possui nenhuma resenha cadastrada. Clique no botão de adicionar e crie uma resenha!');
+    }
+    reviews.forEach((review) => {
+      profileBody.appendChild(Post(review));
+    });
+  });
   return profileBody;
 };

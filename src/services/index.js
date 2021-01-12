@@ -112,8 +112,8 @@ export const createReview = (event) => {
       title: bookName,
       author: bookAuthor,
       review: bookReview,
-      date: date.toLocaleString(),
-      like: 0,
+      date: date.toLocaleString('pt-BR'),
+      likes: 0,
     })
       .then(() => {
         document.querySelector('#book-name').value = '';

@@ -1,4 +1,5 @@
 import { Post } from '../../components/post/index.js';
+import { getReviews } from '../../services/index.js';
 
 export const Feed = () => {
   const feedBody = document.createElement('div');
@@ -9,7 +10,12 @@ export const Feed = () => {
   `;
 
   feedBody.appendChild(feedHeader);
-  feedBody.appendChild(Post(true));
+
+  getReviews(true).then((reviews) => {
+    reviews.forEach((review) => {
+      feedBody.appendChild(Post(review));
+    });
+  });
 
   return feedBody;
 };

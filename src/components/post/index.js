@@ -1,63 +1,61 @@
 import {
   saveEditedReview,
-  getReviews,
   deleteReview,
   likeReview,
 } from '../../services/index.js';
 
-export const Post = (isGetAll) => {
+export const Post = (review) => {
   const postContainer = document.createElement('div');
   postContainer.className = 'post-container';
+  const currentUserId = firebase.auth().currentUser.uid;
+  const post = review.data();
+  const user = post.user_information;
 
-  getReviews(isGetAll).then((reviews) => {
-    if (!reviews.length) {
-      alert('Você ainda não possui nenhuma resenha cadastrada. Clique no botão de adicionar e crie uma resenha!');
-    }
-    const currentUserId = firebase.auth().currentUser.uid;
-    Object.entries(reviews).forEach(([i, review]) => {
-      const post = review.data();
-      const user = post.user_information;
-
-      postContainer.innerHTML += `
-        <article class="review-post" data-user-id=${user.user_id} data-review-id=${review.id} data-index=${i}>
-          <h3 class="review-meta-info">
-            <div class="meta-info-container">
-              <img id="review-user-avatar" class="review-user-avatar" src="${user.photo || '../../img/default_user_icon.jpg'}">
-              <div>
-                <span id="review-author-username" class="review-author-username">${user.name}</span>
-                <time id="review-date" class="review-date">${post.date}</time>
-              </div>
-            </div>
-            <div class="top-icons-container" id="buttons-container">
-              ${currentUserId === user.user_id ? `<button id="edit-button" class="edit-button"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
-                <button id="save-button" class="hidden save-button"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
-                <button id="cancel-button" class="hidden cancel-button"><i class="cancel-icon fas fa-times"></i>Cancelar edição</button>
-                <button id="delete-button" class="delete-button"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>` : ''}
-              </div>
-          </h3>
-          <div class="review-main-info">
-            <div class="review-info-book-title">Livro:
-              <p id="review-book-title" class="review-book-title">${post.title}</p>
-            </div>
-            <div class="review-info-book-author">Autor(a):
-              <p id="review-book-author" class="review-book-author">${post.author}</p>
-            </div>
-            <div id="review-opinion" class="review-opinion">
-              <p>${post.review}</p>
-            </div>
+  postContainer.innerHTML = `
+    <article class="review-post" data-user-id=${user.user_id} data-review-id=${review.id}>
+      <h3 class="review-meta-info">
+        <div class="meta-info-container">
+          <img id="review-user-avatar" class="review-user-avatar" src="${user.photo || '../../img/default_user_icon.jpg'}">
+          <div>
+            <span id="review-author-username" class="review-author-username">${user.name}</span>
+            <time id="review-date" class="review-date">${post.date}</time>
           </div>
-          <div class="like-container">
-          ${currentUserId === user.user_id ? `<i id="like-icon" class="far fa-heart"></i><div id="review-like-count">${post.likes}</div>` : `
-            <i id="like-icon" class="like-icon far fa-heart"></i>
-            <div id="review-like-count">${post.likes}</div>`}
+        </div>
+        <div class="top-icons-container" id="buttons-container">
+          ${currentUserId === user.user_id ? `<button id="edit-button-${review.id}" class="edit-button"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
+            <button id="save-button-${review.id}" class="hidden save-button"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
+            <button id="cancel-button-${review.id}" class="hidden cancel-button"><i class="cancel-icon fas fa-times"></i>Cancelar edição</button>
+            <button id="delete-button-${review.id}" class="delete-button"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>` : ''}
           </div>
-        </article>
-      `;
-    });
+      </h3>
+      <div class="review-main-info">
+        <div class="review-info-book-title">Livro:
+          <p id="review-book-title-${review.id}" class="review-book-title">${post.title}</p>
+        </div>
+        <div class="review-info-book-author">Autor(a):
+          <p id="review-book-author-${review.id}" class="review-book-author">${post.author}</p>
+        </div>
+        <div id="review-opinion-${review.id}" class="review-opinion">
+          <p>${post.review}</p>
+        </div>
+      </div>
+      <div class="like-container">
+      ${currentUserId === user.user_id ? `<i id="like-icon-${review.id}" class="far fa-heart"></i><div id="review-like-count">${post.likes}</div>` : `
+        <i id="like-icon-${review.id}" class="like-icon far fa-heart"></i>
+        <div id="review-like-count">${post.likes}</div>`}
+      </div>
+    </article>
+  `;
 
-    const editButtons = postContainer.querySelectorAll('.edit-button');
-    const deleteButtons = postContainer.querySelectorAll('.delete-button');
-    const likeIcon = postContainer.querySelectorAll('.like-icon');
+  if (currentUserId === user.user_id) {
+    const editButton = postContainer.querySelector(`#edit-button-${review.id}`);
+    const deleteButton = postContainer.querySelector(`#delete-button-${review.id}`);
+    const saveButton = postContainer.querySelector(`#save-button-${review.id}`);
+    const cancelButton = postContainer.querySelector(`#cancel-button-${review.id}`);
+    const reviewBookTitle = postContainer.querySelector(`#review-book-title-${review.id}`);
+    const reviewBookAuthor = postContainer.querySelector(`#review-book-author-${review.id}`);
+    const reviewText = postContainer.querySelector(`#review-opinion-${review.id}`);
+    const fieldList = [reviewBookTitle, reviewBookAuthor, reviewText];
 
     const changeToEditableField = (element) => {
       element.setAttribute('contenteditable', 'true');
@@ -83,58 +81,38 @@ export const Post = (isGetAll) => {
       cancelBtn.classList.remove('hidden');
     };
 
-    editButtons.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        const targetPost = event.target.closest('article');
-        const targetReviewId = targetPost.dataset.reviewId;
-        const targetEditBtn = targetPost.querySelector('#edit-button');
-        const targetSaveBtn = targetPost.querySelector('#save-button');
-        const targetCancelBtn = targetPost.querySelector('#cancel-button');
-        const targetDeleteBtn = targetPost.querySelector('#delete-button');
-        const reviewBookTitle = targetPost.querySelector('#review-book-title');
-        const reviewBookAuthor = targetPost.querySelector('#review-book-author');
-        const reviewText = targetPost.querySelector('#review-opinion');
-        const fieldList = [reviewBookTitle, reviewBookAuthor, reviewText];
-        fieldList.forEach((field) => changeToEditableField(field));
-        reviewBookTitle.focus();
-        editingButtons(targetEditBtn, targetDeleteBtn, targetSaveBtn, targetCancelBtn);
-
-        targetCancelBtn.addEventListener('click', () => {
-          fieldList.forEach((field) => backToNormalField(field));
-          initialButtons(targetEditBtn, targetDeleteBtn, targetSaveBtn, targetCancelBtn);
-        });
-
-        targetSaveBtn.addEventListener('click', () => {
-          const editedTitle = reviewBookTitle.innerText;
-          const editedAuthor = reviewBookAuthor.innerText;
-          const editedReview = reviewText.innerText;
-          saveEditedReview(targetReviewId, editedTitle, editedAuthor, editedReview);
-
-          fieldList.forEach((field) => backToNormalField(field));
-          initialButtons(targetEditBtn, targetDeleteBtn, targetSaveBtn, targetCancelBtn);
-        });
-      });
+    editButton.addEventListener('click', () => {
+      fieldList.forEach((field) => changeToEditableField(field));
+      reviewBookTitle.focus();
+      editingButtons(editButton, deleteButton, saveButton, cancelButton);
     });
 
-    deleteButtons.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        const targetPost = event.target.closest('article');
-        const targetReviewId = targetPost.dataset.reviewId;
-        const popupToDelete = window.confirm('Tem certeza que você deseja deletar essa resenha?');
-        if (popupToDelete) {
-          deleteReview(targetReviewId);
-        }
-      });
+    cancelButton.addEventListener('click', () => {
+      fieldList.forEach((field) => backToNormalField(field));
+      initialButtons(editButton, deleteButton, saveButton, cancelButton);
     });
 
-    likeIcon.forEach((icon) => {
-      icon.addEventListener('click', (event) => {
-        const targetPost = event.target.closest('article');
-        const targetReviewId = targetPost.dataset.reviewId;
+    saveButton.addEventListener('click', () => {
+      const editedTitle = reviewBookTitle.innerText;
+      const editedAuthor = reviewBookAuthor.innerText;
+      const editedReview = reviewText.innerText;
+      saveEditedReview(review.id, editedTitle, editedAuthor, editedReview);
 
-        likeReview(targetReviewId);
-      });
+      fieldList.forEach((field) => backToNormalField(field));
+      initialButtons(editButton, deleteButton, saveButton, cancelButton);
     });
+
+    deleteButton.addEventListener('click', () => {
+      const popupToDelete = window.confirm('Tem certeza que você deseja deletar essa resenha?');
+      if (popupToDelete) {
+        deleteReview(review.id);
+      }
+    });
+  }
+
+  const likeIcon = postContainer.querySelector(`#like-icon-${review.id}`);
+  likeIcon.addEventListener('click', () => {
+    likeReview(review.id);
   });
 
   return postContainer;
