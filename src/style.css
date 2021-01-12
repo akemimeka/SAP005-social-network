@@ -402,3 +402,32 @@ div.container {
   padding: 0.5rem;
   border: solid 1px #999;
 }
+
+/*FIRST REVIEW*/
+
+ .review-container {
+  width: 100vw;
+  height: 35vh;
+  margin: auto;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.first-review {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 1rem;
+  width: 90vw;
+  height: 20vh;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.first-review-text {
+  font-size: 1rem;
+}

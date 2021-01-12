@@ -4,6 +4,8 @@ import { getReviews } from '../../services/index.js';
 export const Profile = () => {
   const profileBody = document.createElement('div');
   const profileHeader = document.createElement('header');
+  const profileBodyNewReview = document.createElement('div');
+  profileBodyNewReview.className = 'review-container';
   profileHeader.className = 'profile-header';
 
   profileHeader.innerHTML = `
@@ -21,11 +23,19 @@ export const Profile = () => {
     </div>
   `;
 
+  profileBodyNewReview.innerHTML = `
+      <div class="first-review">
+        <p class="first-review-text">
+          Você ainda não possui nenhuma resenha cadastrada, clique no botão abaixo <i class="fas fa-plus-circle"></i> para criar sua primeira resenha!
+        </p>
+      </div>
+  `;
+
   profileBody.appendChild(profileHeader);
 
   getReviews(false).then((reviews) => {
     if (!reviews.length) {
-      alert('Você ainda não possui nenhuma resenha cadastrada. Clique no botão de adicionar e crie uma resenha!');
+      profileBody.appendChild(profileBodyNewReview);
     }
     reviews.forEach((review) => {
       profileBody.appendChild(Post(review));
