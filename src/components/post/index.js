@@ -21,12 +21,7 @@ export const Post = (review) => {
             <time id="review-date" class="review-date">${post.date}</time>
           </div>
         </div>
-        <div class="top-icons-container" id="buttons-container">
-          ${currentUserId === user.user_id ? `<button id="edit-button-${review.id}" class="edit-button"><i class="edit-icon fas fa-edit"></i>Editar resenha</button>
-            <button id="save-button-${review.id}" class="hidden save-button"><i class="check-icon fas fa-check"></i>Salvar resenha</button>
-            <button id="cancel-button-${review.id}" class="hidden cancel-button"><i class="cancel-icon fas fa-times"></i>Cancelar edição</button>
-            <button id="delete-button-${review.id}" class="delete-button"><i class="delete-icon fas fa-trash-alt"></i>Deletar resenha</button>` : ''}
-          </div>
+        <div class="top-icons-container" id="buttons-container"></div>
       </h3>
       <div class="review-main-info">
         <div class="review-info-book-title">Livro:
@@ -48,6 +43,22 @@ export const Post = (review) => {
   `;
 
   if (currentUserId === user.user_id) {
+    const buttonsContainer = postContainer.querySelector('#buttons-container');
+    buttonsContainer.innerHTML = `
+      <button id="edit-button-${review.id}" class="edit-button">
+        <i class="edit-icon fas fa-edit"></i>Editar resenha
+      </button>
+      <button id="save-button-${review.id}" class="hidden save-button">
+        <i class="check-icon fas fa-check"></i>Salvar resenha
+      </button>
+      <button id="cancel-button-${review.id}" class="hidden cancel-button">
+        <i class="cancel-icon fas fa-times"></i>Cancelar edição
+      </button>
+      <button id="delete-button-${review.id}" class="delete-button">
+        <i class="delete-icon fas fa-trash-alt"></i>Deletar resenha
+      </button>
+    `;
+
     const editButton = postContainer.querySelector(`#edit-button-${review.id}`);
     const deleteButton = postContainer.querySelector(`#delete-button-${review.id}`);
     const saveButton = postContainer.querySelector(`#save-button-${review.id}`);
