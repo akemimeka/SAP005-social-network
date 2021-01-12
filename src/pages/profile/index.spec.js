@@ -1,9 +1,9 @@
-import { Feed } from './index.js';
+import { Profile } from './index.js';
 import { getReviews } from '../../services/index.js';
 
-describe('Feed', () => {
+describe('profile', () => {
   it('should be a function', () => {
-    expect(typeof Feed).toBe('function');
+    expect(typeof Profile).toBe('function');
   });
 });
 
