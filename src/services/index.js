@@ -97,17 +97,15 @@ export const createAccount = (userName, email, password, confirmPassword) => {
   return true;
 };
 
-export const createReview = (event) => {
-  event.preventDefault();
-  const bookName = document.querySelector('#book-name').value;
-  const bookAuthor = document.querySelector('#book-author').value;
-  const bookReview = document.querySelector('#book-review').value;
+export const createReview = (formReview, titleValue, authorValue, reviewValue) => {
   const user = firebase.auth().currentUser;
-  if (bookName === null || bookName === undefined || bookName === '') {
+  const date = new Date();
+
+  if (!titleValue) {
     alert('Por favor, escreva o nome do livro.');
-  } else if (bookAuthor === null || bookAuthor === undefined || bookAuthor === '') {
+  } else if (!authorValue) {
     alert('Por favor, escreva o nome do autor.');
-  } else if (bookReview === null || bookReview === undefined || bookReview === '') {
+  } else if (!reviewValue) {
     alert('Por favor, escreva a resenha.');
   } else {
     firebase.firestore().collection('reviews').add({
@@ -116,19 +114,19 @@ export const createReview = (event) => {
         user_id: user.uid,
         photo: user.photoURL,
       },
-      title: bookName,
-      author: bookAuthor,
-      review: bookReview,
-      date: new Date().toLocaleString('pt-BR'),
+      
+      title: titleValue,
+      author: authorValue,
+      review: reviewValue,
+      date: date.toLocaleString('pt-BR'),
       likes: 0,
     })
       .then(() => {
-        document.querySelector('#book-name').value = '';
-        document.querySelector('#book-author').value = '';
-        document.querySelector('#book-review').value = '';
+        formReview.reset();
         alert('Sua resenha foi publicada com sucesso!');
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log(error);
         alert('Algo deu errado. Por favor, tente novamente.');
       });
   }
