@@ -69,13 +69,7 @@ const saveUserInfo = (user, email, userName) => {
     }, { merge: true });
 };
 
-export const createAccount = (event) => {
-  event.preventDefault();
-  const userName = document.querySelector('#user-name').value;
-  const email = document.querySelector('#sign-up-email').value;
-  const password = document.querySelector('#sign-up-password').value;
-  const confirmPassword = document.querySelector('#confirm-password').value;
-
+export const createAccount = (userName, email, password, confirmPassword) => {
   if (password !== confirmPassword) {
     alert('A senha digitada está diferente em um dos campos');
     return false;

@@ -35,7 +35,14 @@ export const SignUp = () => {
   rootElement.innerHTML = templateSignUp;
 
   const signUpButton = rootElement.querySelector('#btn-sign-up');
-  signUpButton.addEventListener('click', createAccount);
+  signUpButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const userName = document.querySelector('#user-name').value;
+    const email = document.querySelector('#sign-up-email').value;
+    const password = document.querySelector('#sign-up-password').value;
+    const confirmPassword = document.querySelector('#confirm-password').value;
+    createAccount(userName, email, password, confirmPassword);
+  });
 
   const googleButton = rootElement.querySelector('#btn-google');
   googleButton.addEventListener('click', googleLogin);
