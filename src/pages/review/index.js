@@ -9,20 +9,31 @@ export const Review = () => {
         <h2 class="title-review">Publicar nova resenha</h2>
       </header>
       <section>
-        <form class="form-review">
-        <label class="label-review">Livro: <span class="required">*</span></label>
-        <input type="text" class="input-book" id="book-name" name="book" required>
-        <label class="label-review">Autor: <span class="required">*</span></label>
-        <input type="text" class="input-book" id="book-author" name="author" required>
-        <label class="label-review">Resenha: <span class="required">*</span></label>
-        <textarea class="review" id="book-review" required></textarea>
-        <button type="submit" class="btn-review" id="btn-review">Publicar</button>
+        <form class="form-review" id="form-review">
+          <label class="label-review">Livro: <span class="required">*</span></label>
+          <input type="text" class="input-book" id="book-name" name="book" required>
+          <label class="label-review">Autor: <span class="required">*</span></label>
+          <input type="text" class="input-book" id="book-author" name="author" required>
+          <label class="label-review">Resenha: <span class="required">*</span></label>
+          <textarea class="review" id="book-review" required></textarea>
+          <button type="submit" class="btn-review" id="btn-review">Publicar</button>
         </form>
       <section>
   `;
 
+  const formReview = rootElement.querySelector('#form-review');
+  const bookName = rootElement.querySelector('#book-name');
+  const bookAuthor = rootElement.querySelector('#book-author');
+  const bookReview = rootElement.querySelector('#book-review');
   const reviewButton = rootElement.querySelector('#btn-review');
-  reviewButton.addEventListener('click', createReview);
+
+  reviewButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const titleValue = bookName.value;
+    const authorValue = bookAuthor.value;
+    const reviewValue = bookReview.value;
+    createReview(formReview, titleValue, authorValue, reviewValue);
+  });
 
   return rootElement;
 };
