@@ -126,8 +126,7 @@ export const createReview = (formReview, titleValue, authorValue, reviewValue) =
         formReview.reset();
         alert('Sua resenha foi publicada com sucesso!');
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         alert('Algo deu errado. Por favor, tente novamente.');
       });
   }
