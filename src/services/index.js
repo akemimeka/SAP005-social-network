@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 export const googleLogin = (event) => {
   event.preventDefault();
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -5,8 +6,6 @@ export const googleLogin = (event) => {
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
       const user = result.user;
-      alert('usuário logado');
-
       firebase.firestore().collection('users').doc(user.email)
         .set({
           name: user.displayName,
@@ -32,9 +31,7 @@ export const emailAndPasswordLogin = (event) => {
   const password = document.querySelector('#password-login').value;
 
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((user) => {
-      console.log('usuário', user);
-      alert('usuário logado!');
+    .then(() => {
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -59,8 +56,8 @@ const saveInfoProfile = (userName) => {
     displayName: userName,
     photoURL: '../img/default_user_icon.jpg',
   })
-    .then(() => console.log('perfil atualizado'))
-    .catch(() => console.log('não rolou'));
+    .then()
+    .catch();
 };
 
 const saveUserInfo = (user, email, userName) => {
@@ -70,27 +67,16 @@ const saveUserInfo = (user, email, userName) => {
       id: user.uid,
       photo: '../img/default_user_icon.jpg',
     }, { merge: true });
-
-  alert('usuário salvo');
 };
 
-export const createAccount = (event) => {
-  event.preventDefault();
-  const userName = document.querySelector('#user-name').value;
-  const email = document.querySelector('#sign-up-email').value;
-  const password = document.querySelector('#sign-up-password').value;
-  const confirmPassword = document.querySelector('#confirm-password').value;
-
+export const createAccount = (userName, email, password, confirmPassword) => {
   if (password !== confirmPassword) {
     alert('A senha digitada está diferente em um dos campos');
     return false;
   }
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((user) => {
-      console.log('usuário', user);
-      return user;
-    })
+    .then((user) => user)
     .then((loggedUser) => {
       saveInfoProfile(userName);
       saveUserInfo(loggedUser.user, email, userName);
@@ -104,7 +90,6 @@ export const createAccount = (event) => {
       } else if (errorCode === 'auth/weak-password') {
         alert('Senha fraca');
       } else {
-        console.log(error);
         alert('Algo deu errado. Por favor, tente novamente.');
       }
     });
@@ -129,6 +114,7 @@ export const createReview = (formReview, titleValue, authorValue, reviewValue) =
         user_id: user.uid,
         photo: user.photoURL,
       },
+      
       title: titleValue,
       author: authorValue,
       review: reviewValue,
@@ -173,7 +159,7 @@ export const deleteReview = (postId) => {
     .doc(postId)
     .delete()
     .then(() => {
-      alert('Deletou!');
+      alert('Deletado com sucesso.');
     })
     .catch(() => {
       alert('Algo deu errado. Por favor, tente novamente.');

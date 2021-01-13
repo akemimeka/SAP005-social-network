@@ -32,6 +32,10 @@ textarea {
   display: none;
 }
 
+.required {
+  color: #ff0000;
+}
+
 /*LOGIN*/
 div.container {
   width: 90vw;
@@ -350,10 +354,6 @@ div.container {
   padding: 0.5em;
 }
 
-.required{
-color: #ff0000;
-}
-
 .btn-review {
   width: 26vw;
   height: 5vh;
@@ -401,4 +401,33 @@ color: #ff0000;
   margin: 0 1rem;
   padding: 0.5rem;
   border: solid 1px #999;
+}
+
+/*FIRST REVIEW*/
+
+ .review-container {
+  width: 100vw;
+  height: 35vh;
+  margin: auto;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.first-review {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 1rem;
+  width: 90vw;
+  height: 20vh;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.first-review-text {
+  font-size: 1rem;
 }

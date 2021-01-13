@@ -11,13 +11,13 @@ export const SignUp = () => {
     </header>
     <section>
       <form class="form-sign-up">
-        <label class="label-sign-up-name" for="username">Nome</label>
+        <label class="label-sign-up-name" for="username">Nome: <span class="required">*</span></label>
         <input class="input-sign-up-name" id="user-name" type="text" name="username" required>
-        <label class="label-sign-up-email" for="email">E-mail</label>
+        <label class="label-sign-up-email" for="email">E-mail: <span class="required">*</span></label>
         <input class="input-sign-up-email" type="email" name="email" id="sign-up-email" required> 
-        <label class="label-sign-up-password" for"password">Senha</label>
+        <label class="label-sign-up-password" for"password">Senha: <span class="required">*</span></label>
         <input class="input-sign-up-password" type="password" name="password" minlength="8" id="sign-up-password" placeholder="A senha deve conter no mínimo 8 caracteres" required>
-        <label class="label-confirm-password" for="confirm-password">Confirmar senha</label>
+        <label class="label-confirm-password" for="confirm-password">Confirmar senha: <span class="required">*</span></label>
         <input class="input-confirm-password" type="password" name="confirm-password" minlength="8" id="confirm-password" placeholder="A senha deve conter no mínimo 8 caracteres" required>
         <button class="btn-sign-up" type="submit" id="btn-sign-up">Registrar-se</button>
         <label class="option-sign-up">Ou</label>
@@ -35,7 +35,14 @@ export const SignUp = () => {
   rootElement.innerHTML = templateSignUp;
 
   const signUpButton = rootElement.querySelector('#btn-sign-up');
-  signUpButton.addEventListener('click', createAccount);
+  signUpButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const userName = document.querySelector('#user-name').value;
+    const email = document.querySelector('#sign-up-email').value;
+    const password = document.querySelector('#sign-up-password').value;
+    const confirmPassword = document.querySelector('#confirm-password').value;
+    createAccount(userName, email, password, confirmPassword);
+  });
 
   const googleButton = rootElement.querySelector('#btn-google');
   googleButton.addEventListener('click', googleLogin);
