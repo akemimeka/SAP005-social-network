@@ -24,9 +24,10 @@ exports[`Review should load the page 1`] = `
         
     <form
       class="form-review"
+      id="form-review"
     >
       
-        
+          
       <label
         class="label-review"
       >
@@ -38,7 +39,7 @@ exports[`Review should load the page 1`] = `
         </span>
       </label>
       
-        
+          
       <input
         class="input-book"
         id="book-name"
@@ -47,7 +48,7 @@ exports[`Review should load the page 1`] = `
         type="text"
       />
       
-        
+          
       <label
         class="label-review"
       >
@@ -59,7 +60,7 @@ exports[`Review should load the page 1`] = `
         </span>
       </label>
       
-        
+          
       <input
         class="input-book"
         id="book-author"
@@ -68,7 +69,7 @@ exports[`Review should load the page 1`] = `
         type="text"
       />
       
-        
+          
       <label
         class="label-review"
       >
@@ -80,14 +81,14 @@ exports[`Review should load the page 1`] = `
         </span>
       </label>
       
-        
+          
       <textarea
         class="review"
         id="book-review"
         required=""
       />
       
-        
+          
       <button
         class="btn-review"
         id="btn-review"
