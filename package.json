@@ -17,6 +17,11 @@
     "test": "jest --verbose --coverage",
     "start": "firebase serve --only hosting"
   },
+  "jest": {
+    "setupFiles": [
+      "./jestSetup.js"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
