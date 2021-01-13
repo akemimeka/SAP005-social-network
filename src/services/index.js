@@ -114,7 +114,6 @@ export const createReview = (formReview, titleValue, authorValue, reviewValue) =
         user_id: user.uid,
         photo: user.photoURL,
       },
-      
       title: titleValue,
       author: authorValue,
       review: reviewValue,
