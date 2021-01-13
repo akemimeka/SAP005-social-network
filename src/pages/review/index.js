@@ -12,7 +12,7 @@ export const Review = () => {
         <form class="form-review">
         <label class="label-review">Livro: <span class="required">*</span></label>
         <input type="text" class="input-book" id="book-name" name="book" required>
-        <label class="label-review">Autor: <span class="required">*</span></label>
+        <label class="label-review">Autor(a): <span class="required">*</span></label>
         <input type="text" class="input-book" id="book-author" name="author" required>
         <label class="label-review">Resenha: <span class="required">*</span></label>
         <textarea class="review" id="book-review" required></textarea>
