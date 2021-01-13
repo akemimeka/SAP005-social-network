@@ -6,13 +6,12 @@ describe('Review', () => {
     expect(typeof Review).toBe('function');
   });
 
-  it('loads the page', () => {
+  it('should load the page', () => {
     expect(Review()).toMatchSnapshot();
   });
 
-  it('clicks to send review', () => {
-    const reviewPage = Review();
-    reviewPage.querySelector('#btn-review').dispatchEvent(new Event('click'));
-    expect(createReview).toHaveBeenCalled();
+  it('should have a button with click event to save the review', () => {
+    Review().querySelector('#btn-review').dispatchEvent(new Event('click'));
+    expect(createReview()).toHaveBeenCalled();
   });
 });

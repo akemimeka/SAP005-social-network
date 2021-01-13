@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Review should load the page 1`] = `
+<div
+  class="container"
+>
+  
+      
+  <header>
+    
+        
+    <h2
+      class="title-review"
+    >
+      Publicar nova resenha
+    </h2>
+    
+      
+  </header>
+  
+      
+  <section>
+    
+        
+    <form
+      class="form-review"
+    >
+      
+        
+      <label
+        class="label-review"
+      >
+        Livro: 
+        <span
+          class="required"
+        >
+          *
+        </span>
+      </label>
+      
+        
+      <input
+        class="input-book"
+        id="book-name"
+        name="book"
+        required=""
+        type="text"
+      />
+      
+        
+      <label
+        class="label-review"
+      >
+        Autor: 
+        <span
+          class="required"
+        >
+          *
+        </span>
+      </label>
+      
+        
+      <input
+        class="input-book"
+        id="book-author"
+        name="author"
+        required=""
+        type="text"
+      />
+      
+        
+      <label
+        class="label-review"
+      >
+        Resenha: 
+        <span
+          class="required"
+        >
+          *
+        </span>
+      </label>
+      
+        
+      <textarea
+        class="review"
+        id="book-review"
+        required=""
+      />
+      
+        
+      <button
+        class="btn-review"
+        id="btn-review"
+        type="submit"
+      >
+        Publicar
+      </button>
+      
+        
+    </form>
+    
+      
+    <section>
+      
+  
+    </section>
+  </section>
+</div>
+`;
