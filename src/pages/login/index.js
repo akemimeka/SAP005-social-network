@@ -28,14 +28,21 @@ export const Login = () => {
         Ainda não tem uma conta? <a href="#" id="sign-up-login">Registrar-se</a>
       </p>
   `;
-
+  const loginButton = rootElement.querySelector('#btn-login');
   const googleButton = rootElement.querySelector('#btn-google');
+  const linkSignUp = rootElement.querySelector('#sign-up-login');
+  const email = rootElement.querySelector('#email-login');
+  const password = rootElement.querySelector('#password-login');
+
   googleButton.addEventListener('click', googleLogin);
 
-  const loginButton = rootElement.querySelector('#btn-login');
-  loginButton.addEventListener('click', emailAndPasswordLogin);
+  loginButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const emailValue = email.value;
+    const passwordValue = password.value;
+    emailAndPasswordLogin(emailValue, passwordValue);
+  });
 
-  const linkSignUp = rootElement.querySelector('#sign-up-login');
   linkSignUp.addEventListener('click', (event) => {
     event.preventDefault();
     onNavigate('/signup');
