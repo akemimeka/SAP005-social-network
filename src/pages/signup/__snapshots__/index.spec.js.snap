@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp should load the page 1`] = `
+<div>
+  
+    
+  <header
+    class="header-sign-up"
+  >
+    
+      
+    <i
+      class="icon-arrow fas fa-chevron-left"
+      id="go-back-icon"
+    />
+    
+      
+    <h1
+      class="title-sign-up"
+    >
+      Vamos começar!
+    </h1>
+    
+    
+  </header>
+  
+    
+  <section>
+    
+      
+    <form
+      class="form-sign-up"
+    >
+      
+        
+      <label
+        class="label-sign-up-name"
+        for="username"
+      >
+        Nome: 
+        <span
+          class="required"
+        >
+          *
+        </span>
+      </label>
+      
+        
+      <input
+        class="input-sign-up-name"
+        id="user-name"
+        name="username"
+        required=""
+        type="text"
+      />
+      
+        
+      <label
+        class="label-sign-up-email"
+        for="email"
+      >
+        E-mail: 
+        <span
+          class="required"
+        >
+          *
+        </span>
+      </label>
+      
+        
+      <input
+        class="input-sign-up-email"
+        id="sign-up-email"
+        name="email"
+        required=""
+        type="email"
+      />
+       
+        
+      <label
+        class="label-sign-up-password"
+        for"password"=""
+      >
+        Senha: 
+        <span
+          class="required"
+        >
+          *
+        </span>
+      </label>
+      
+        
+      <input
+        class="input-sign-up-password"
+        id="sign-up-password"
+        minlength="8"
+        name="password"
+        placeholder="A senha deve conter no mínimo 8 caracteres"
+        required=""
+        type="password"
+      />
+      
+        
+      <label
+        class="label-confirm-password"
+        for="confirm-password"
+      >
+        Confirmar senha: 
+        <span
+          class="required"
+        >
+          *
+        </span>
+      </label>
+      
+        
+      <input
+        class="input-confirm-password"
+        id="confirm-password"
+        minlength="8"
+        name="confirm-password"
+        placeholder="A senha deve conter no mínimo 8 caracteres"
+        required=""
+        type="password"
+      />
+      
+        
+      <button
+        class="btn-sign-up"
+        id="btn-sign-up"
+        type="submit"
+      >
+        Registrar-se
+      </button>
+      
+        
+      <label
+        class="option-sign-up"
+      >
+        Ou
+      </label>
+      
+        
+      <button
+        id="btn-google"
+      >
+        
+          
+        <img
+          alt="Ícone do Google"
+          class="btn-google-icon"
+          src="../../img/google-icon.svg"
+        />
+        
+          
+        <span
+          class="btn-google-text"
+        >
+          Cadastre-se com conta Google
+        </span>
+        
+        
+      </button>
+      
+      
+    </form>
+    
+    
+  </section>
+  
+    
+  <p
+    class="login-link"
+  >
+    
+    Já tem uma conta? 
+    <a
+      href="#"
+      id="login-link"
+    >
+      Entrar
+    </a>
+    
+    
+  </p>
+  
+  
+</div>
+`;
