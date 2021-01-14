@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feed should load the page 1`] = `
+<div>
+  <header>
+    <h1
+      class="title"
+    >
+      Livros
+    </h1>
+  </header>
+</div>
+`;
