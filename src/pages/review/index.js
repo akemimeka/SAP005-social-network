@@ -31,7 +31,7 @@ export const Review = () => {
     event.preventDefault();
     const titleValue = bookName.value;
     const authorValue = bookAuthor.value;
-    const reviewValue = bookReview.value;
+    const reviewValue = bookReview.value.replace(/\n/g, '<br>\n');
     createReview(formReview, titleValue, authorValue, reviewValue);
   });
 
