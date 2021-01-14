@@ -169,22 +169,5 @@ export const likeReview = (reviewId) => {
   const reviewToLike = firebase.firestore().collection('reviews').doc(reviewId);
   reviewToLike.update({
     likes: firebase.firestore.FieldValue.increment(1),
-  })
-    .then(() => {
-      firebase.firestore().collection('reviews').doc(reviewId)
-        .onSnapshot((doc) => {
-          const myData = doc.data();
-          console.log(myData)
-          // likeCountWrap.textContent = myData.likes;
-        });
-    })
-    .catch();
+  });
 };
-
-// export const updateLike = (reviewId) => {
-//   const reviewToLike = firebase.firestore().doc(`reviews/${review.id}`);
-
-//   reviewToLike.onSnapshot((doc) => {
-//     const docInfo = doc.data();
-//   });
-// };

@@ -2,7 +2,6 @@ import {
   saveEditedReview,
   deleteReview,
   likeReview,
-  // updateLike,
 } from '../../services/index.js';
 
 export const Post = (review) => {
@@ -45,9 +44,8 @@ export const Post = (review) => {
   `;
 
   const likeIconWrap = postContainer.querySelector('#like-icon-wrap');
-  const likeIcon = likeIconWrap.querySelector(`#like-icon-${review.id}`);
+  const likeIcon = postContainer.querySelector(`#like-icon-${review.id}`);
   const likeCountWrap = postContainer.querySelector(`#review-like-count-${review.id}`);
-  const likeCount = Number(post.likes);
   const docRef = firebase.firestore().doc(`reviews/${review.id}`);
 
   likeIcon.addEventListener('click', () => {
@@ -55,14 +53,14 @@ export const Post = (review) => {
     likeReview(review.id);
   });
 
-  // const updateLike = () => {
-  //   docRef.onSnapshot((doc) => {
-  //     const myData = doc.data();
-  //     likeCountWrap.textContent = myData.likes;
-  //   });
-  // };
+  const updateLike = () => {
+    docRef.onSnapshot((doc) => {
+      const myData = doc.data();
+      likeCountWrap.textContent = myData.likes;
+    });
+  };
 
-  // updateLike();
+  updateLike();
 
   if (currentUserId === user.user_id) {
     const buttonsContainer = postContainer.querySelector('#buttons-container');
