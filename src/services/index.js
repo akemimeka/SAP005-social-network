@@ -167,8 +167,15 @@ export const deleteReview = (postId) => {
 
 export const likeReview = (reviewId) => {
   const reviewToLike = firebase.firestore().collection('reviews').doc(reviewId);
-
   reviewToLike.update({
     likes: firebase.firestore.FieldValue.increment(1),
   });
 };
+
+// export const updateLike = (reviewId) => {
+//   const reviewToLike = firebase.firestore().doc(`reviews/${review.id}`);
+
+//   reviewToLike.onSnapshot((doc) => {
+//     const docInfo = doc.data();
+//   });
+// };

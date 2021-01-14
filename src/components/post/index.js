@@ -2,6 +2,7 @@ import {
   saveEditedReview,
   deleteReview,
   likeReview,
+  // updateLike,
 } from '../../services/index.js';
 
 export const Post = (review) => {
@@ -38,22 +39,29 @@ export const Post = (review) => {
         <span id="like-icon-wrap">
           <i id="like-icon-${review.id}" class="like-icon far fa-heart"></i>
         </span>
-        <div id="review-like-count">${post.likes}</div>
+        <div id="review-like-count-${review.id}">${post.likes}</div>
       </div>
     </article>
   `;
 
   const likeIconWrap = postContainer.querySelector('#like-icon-wrap');
   const likeIcon = likeIconWrap.querySelector(`#like-icon-${review.id}`);
-  const likeCountWrap = postContainer.querySelector('#review-like-count');
-  const likeCount = post.likes;
+  const likeCountWrap = postContainer.querySelector(`#review-like-count-${review.id}`);
+  const likeCount = Number(post.likes);
+  const docRef = firebase.firestore().doc(`reviews/${review.id}`);
 
   likeIcon.addEventListener('click', () => {
-    // Refatorar posteriormente pois está mostrando apenas 1 like a mais,
-    // mas continua computando os cliques no firestore.
-    likeCountWrap.innerText = likeCount + 1;
-    likeReview(review.id);
+    likeReview(review.id, likeCount);
   });
+
+  const updateLike = () => {
+    docRef.onSnapshot((doc) => {
+      const myData = doc.data();
+      likeCountWrap.textContent = myData.likes;
+    });
+  };
+
+  updateLike();
 
   if (currentUserId === user.user_id) {
     const buttonsContainer = postContainer.querySelector('#buttons-container');
