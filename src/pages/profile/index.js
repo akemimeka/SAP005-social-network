@@ -40,6 +40,6 @@ export const Profile = () => {
     reviews.forEach((review) => {
       profileBody.appendChild(Post(review));
     });
-  });
+  }).catch(() => {});
   return profileBody;
 };

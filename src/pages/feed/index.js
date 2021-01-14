@@ -5,9 +5,7 @@ export const Feed = () => {
   const feedBody = document.createElement('div');
   const feedHeader = document.createElement('header');
 
-  feedHeader.innerHTML = `
-    <h1 class="title">Livros</h1>
-  `;
+  feedHeader.innerHTML = '<h1 class="title">Livros</h1>';
 
   feedBody.appendChild(feedHeader);
 
@@ -15,7 +13,7 @@ export const Feed = () => {
     reviews.forEach((review) => {
       feedBody.appendChild(Post(review));
     });
-  });
+  }).catch(() => {});
 
   return feedBody;
 };

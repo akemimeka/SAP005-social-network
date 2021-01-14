@@ -1,14 +1,33 @@
 import { Profile } from './index.js';
-import { getReviews } from '../../services/index.js';
+import * as post from '../../components/post/index.js';
+import * as services from '../../services/index.js';
 
-describe('profile', () => {
+describe('Profile', () => {
   it('should be a function', () => {
     expect(typeof Profile).toBe('function');
   });
-});
 
-describe('getReviews', () => {
-  it('getReviews should be a function', () => {
-    expect(typeof getReviews).toBe('function');
+  it('should load the page', () => {
+    services.getReviews = jest.fn(() => Promise.resolve(true));
+    expect(Profile()).toMatchSnapshot();
+  });
+
+  it('should be called getReviews with false parameter', () => {
+    services.getReviews = jest.fn(() => Promise.resolve([]));
+    Profile();
+    expect(services.getReviews).toHaveBeenCalledTimes(1);
+  });
+
+  it('should be  called Post after called Feed and getReviews have false parameter', () => {
+    services.getReviews = jest.fn(() => Promise.resolve([]));
+    Profile();
+    expect(services.getReviews).toHaveBeenCalledWith(false);
+  });
+
+  it('should have return the header html when getR', () => {
+    services.getReviews = jest.fn(() => Promise.resolve([{}]));
+    post.Post = jest.fn(() => document.createElement('div'));
+    Profile();
+    expect(services.getReviews).toHaveBeenCalledWith(false);
   });
 });

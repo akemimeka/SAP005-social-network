@@ -51,7 +51,7 @@ export const emailAndPasswordLogin = (emailValue, passwordValue) => {
   }
 };
 
-const saveInfoProfile = (userName) => {
+export const saveInfoProfile = (userName) => {
   const userProfile = firebase.auth().currentUser;
 
   userProfile.updateProfile({
