@@ -25,28 +25,30 @@ export const signOut = () => {
   firebase.auth().signOut();
 };
 
-export const emailAndPasswordLogin = (event) => {
-  event.preventDefault();
-  const email = document.querySelector('#email-login').value;
-  const password = document.querySelector('#password-login').value;
-
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => {
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      if (errorCode === 'auth/invalid-email') {
-        alert('Endereço de email não é válido');
-      } else if (errorCode === 'auth/user-disabled.') {
-        alert('O usuário correspondente ao e-mail fornecido foi desativado.');
-      } else if (errorCode === 'auth/user-not-found') {
-        alert('Não há nenhum usuário correspondente ao e-mail fornecido.');
-      } else if (errorCode === 'auth/wrong-password') {
-        alert('A senha é inválida para o e-mail fornecido ou a conta correspondente ao e-mail não tem uma senha definida.');
-      } else {
-        alert('Algo deu errado. Por favor, tente novamente.');
-      }
-    });
+export const emailAndPasswordLogin = (emailValue, passwordValue) => {
+  if (!emailValue) {
+    alert('Por favor, digite o endereço de email.');
+  } else if (!passwordValue) {
+    alert('Por favor, digite sua senha.');
+  } else {
+    firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
+      .then(() => {
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        if (errorCode === 'auth/invalid-email') {
+          alert('Endereço de email não é válido');
+        } else if (errorCode === 'auth/user-disabled.') {
+          alert('O usuário correspondente ao e-mail fornecido foi desativado.');
+        } else if (errorCode === 'auth/user-not-found') {
+          alert('Não há nenhum usuário correspondente ao e-mail fornecido.');
+        } else if (errorCode === 'auth/wrong-password') {
+          alert('A senha é inválida para o e-mail fornecido ou a conta correspondente ao e-mail não tem uma senha definida.');
+        } else {
+          alert('Algo deu errado. Por favor, tente novamente.');
+        }
+      });
+  }
 };
 
 const saveInfoProfile = (userName) => {
@@ -124,8 +126,7 @@ export const createReview = (formReview, titleValue, authorValue, reviewValue) =
         formReview.reset();
         alert('Sua resenha foi publicada com sucesso!');
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         alert('Algo deu errado. Por favor, tente novamente.');
       });
   }

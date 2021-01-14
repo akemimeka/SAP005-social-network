@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should load the page 1`] = `
+<div
+  class="container"
+>
+  
+      
+  <header>
+    
+        
+    <h2
+      class="title-login"
+    >
+      Bookshelf
+    </h2>
+    
+      
+  </header>
+  
+      
+  <section>
+    
+        
+    <form
+      class="form-login"
+    >
+      
+          
+      <label
+        class="label-enter"
+      >
+        Entrar
+      </label>
+      
+          
+      <label
+        class="label-login"
+      >
+        E-mail: 
+        <span
+          class="required"
+        >
+          *
+        </span>
+      </label>
+      
+          
+      <input
+        class="input-login"
+        id="email-login"
+        name="email-login"
+        required=""
+        type="email"
+      />
+      
+          
+      <label
+        class="label-login"
+      >
+        Senha: 
+        <span
+          class="required"
+        >
+          *
+        </span>
+      </label>
+      
+          
+      <input
+        class="input-login"
+        id="password-login"
+        minlength="8"
+        name="password-login"
+        required=""
+        type="password"
+      />
+      
+          
+      <button
+        class="btn-login"
+        id="btn-login"
+        type="submit"
+      >
+        Entrar
+      </button>
+      
+          
+      <label
+        class="alternative"
+      >
+        Ou
+      </label>
+      
+          
+      <button
+        id="btn-google"
+      >
+        
+            
+        <img
+          alt="Ícone do Google"
+          class="btn-google-icon"
+          src="../../img/google-icon.svg"
+        />
+        
+            
+        <span
+          class="btn-google-text"
+        >
+          Entre com conta Google
+        </span>
+        
+          
+      </button>
+      
+        
+    </form>
+    
+      
+  </section>
+  
+      
+  <p
+    class="sign-up-login"
+  >
+    
+        Ainda não tem uma conta? 
+    <a
+      href="#"
+      id="sign-up-login"
+    >
+      Registrar-se
+    </a>
+    
+      
+  </p>
+  
+  
+</div>
+`;
