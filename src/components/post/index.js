@@ -52,17 +52,17 @@ export const Post = (review) => {
 
   likeIcon.addEventListener('click', () => {
     likeIcon.className = 'like-icon fas fa-heart';
-    likeReview(review.id, likeCount);
+    likeReview(review.id);
   });
 
-  const updateLike = () => {
-    docRef.onSnapshot((doc) => {
-      const myData = doc.data();
-      likeCountWrap.textContent = myData.likes;
-    });
-  };
+  // const updateLike = () => {
+  //   docRef.onSnapshot((doc) => {
+  //     const myData = doc.data();
+  //     likeCountWrap.textContent = myData.likes;
+  //   });
+  // };
 
-  updateLike();
+  // updateLike();
 
   if (currentUserId === user.user_id) {
     const buttonsContainer = postContainer.querySelector('#buttons-container');
