@@ -52,7 +52,7 @@ exports[`Review should load the page 1`] = `
       <label
         class="label-review"
       >
-        Autor: 
+        Autor(a): 
         <span
           class="required"
         >
