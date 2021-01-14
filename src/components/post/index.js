@@ -51,6 +51,7 @@ export const Post = (review) => {
   const docRef = firebase.firestore().doc(`reviews/${review.id}`);
 
   likeIcon.addEventListener('click', () => {
+    likeIcon.className = 'like-icon fas fa-heart';
     likeReview(review.id, likeCount);
   });
 
