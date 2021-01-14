@@ -1,5 +1,5 @@
 /* IMPORT FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* CSS RESET */
 * {
@@ -10,7 +10,8 @@
 
 /* GENERAL STYLING */
 body {
-  font-family: "Roboto", sans-serif;
+  background-color: #fdf5dd;
+  font-family: 'Work Sans', sans-serif;
   font-size: 16px;
   color: #000;
 }
@@ -22,10 +23,7 @@ a {
 input,
 button,
 textarea {
-  padding: 0.5rem;
-  border: 1px solid #999;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .hidden {
@@ -33,75 +31,83 @@ textarea {
 }
 
 .required {
-  color: #ff0000;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #d31900;
 }
 
 /*LOGIN*/
-div.container {
+/* div.container {
   width: 90vw;
   height: 90vh;
   margin: auto;
   padding: 1rem;
   margin-bottom: 3.5rem;
   margin-top: 5rem;
+} */
+
+.bookshelf-logo {
+  display: block;
+  position: relative;
+  top: -1rem;
+  margin: 0 auto;
+  max-width: 80vw;
+}
+
+.enter {
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .form-login {
+  max-width: 30rem;
   display: flex;
   flex-direction: column;
-  margin: auto;
-  margin-top: 3rem;
-  width: 80vw;
-  height: 60vh;
+  position:relative;
+  top: -1.5rem;
+  margin: 0 auto;
   margin-bottom: 1rem;
-}
-
-.label-enter {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-  text-align: center;
+  padding: 0 2rem;
 }
 
 .label-login {
   margin-top: 1rem;
-  margin-left: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .input-login {
-  margin-top: 0.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  background-color: #fdf5dd;
+  border: none;
+  border-bottom: solid 1px #000;
   font-size: 1rem;
-  padding: 0.5em;
-}
-
-.title-login {
-  text-align: center;
-  font-weight: normal;
+  padding: 0.5rem 0;
+  outline: none;
 }
 
 .btn-login {
-  width: 20vw;
-  height: 5vh;
-  margin: 0 auto;
-  margin-top: 1rem;
+  margin: 1rem auto;
+  padding: 0.6rem 2rem;
+  border: none;
+  background-color: #000;
+  color: #fdf5dd;
+  font-size: 1rem;
 }
 
 .alternative {
-  margin-top: 0.5rem;
   text-align: center;
-  margin-bottom: 0.5rem;
 }
 
-#btn-google {
+.btn-google {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 2.5rem;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 2px;
   background-color: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -114,8 +120,8 @@ div.container {
 }
 
 .btn-google-text {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 400;
   color: #757575;
 }
 

@@ -6,21 +6,19 @@ export const Login = () => {
   rootElement.className = 'container';
 
   rootElement.innerHTML = `
-      <header>
-        <h2 class="title-login">Bookshelf</h2>
-      </header>
+      <img class="bookshelf-logo" src='../../img/logo-bookshelf.gif' />
       <section>
+          <p class="enter"></p>
         <form class="form-login">
-          <label class="label-enter">Entrar</label>
-          <label class="label-login">E-mail: <span class="required">*</span></label>
+          <label class="label-login">E-mail <span class="required">*</span></label>
           <input type="email" class="input-login" id="email-login" name="email-login" required>
-          <label class="label-login">Senha: <span class="required">*</span></label>
+          <label class="label-login">Senha <span class="required">*</span></label>
           <input type="password" class="input-login" id="password-login" minlength="8" name="password-login" required>
-          <button type="submit" class="btn-login" id="btn-login">Entrar</button>
-          <label class="alternative">Ou</label>
-          <button id="btn-google">
+          <button type="submit" class="btn-login" id="btn-login">Login</button>
+          <p class="alternative">ou</p>
+          <button id="btn-google" class="btn-google">
             <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
-            <span class="btn-google-text">Entre com conta Google</span>
+            <span class="btn-google-text">Entrar com conta Google</span>
           </button>
         </form>
       </section>
