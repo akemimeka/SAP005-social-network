@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post should load the page 1`] = `
+<div
+  class="post-container"
+>
+  
+    
+  <article
+    class="review-post"
+    data-review-id="123"
+    data-user-id="1"
+  >
+    
+      
+    <h3
+      class="review-meta-info"
+    >
+      
+        
+      <div
+        class="meta-info-container"
+      >
+        
+          
+        <img
+          class="review-user-avatar"
+          id="review-user-avatar"
+          src="/default.jpg"
+        />
+        
+          
+        <div>
+          
+            
+          <span
+            class="review-author-username"
+            id="review-author-username"
+          >
+            João
+          </span>
+          
+            
+          <time
+            class="review-date"
+            id="review-date"
+          >
+            12/01/2021 16:27:18
+          </time>
+          
+          
+        </div>
+        
+        
+      </div>
+      
+        
+      <div
+        class="top-icons-container"
+        id="buttons-container"
+      >
+        
+      
+        <button
+          class="edit-button"
+          id="edit-button-123"
+        >
+          
+        
+          <i
+            class="edit-icon fas fa-edit"
+          />
+          Editar resenha
+      
+        </button>
+        
+      
+        <button
+          class="hidden save-button"
+          id="save-button-123"
+        >
+          
+        
+          <i
+            class="check-icon fas fa-check"
+          />
+          Salvar resenha
+      
+        </button>
+        
+      
+        <button
+          class="hidden cancel-button"
+          id="cancel-button-123"
+        >
+          
+        
+          <i
+            class="cancel-icon fas fa-times"
+          />
+          Cancelar edição
+      
+        </button>
+        
+      
+        <button
+          class="delete-button"
+          id="delete-button-123"
+        >
+          
+        
+          <i
+            class="delete-icon fas fa-trash-alt"
+          />
+          Deletar resenha
+      
+        </button>
+        
+    
+      </div>
+      
+      
+    </h3>
+    
+      
+    <div
+      class="review-main-info"
+    >
+      
+        
+      <div
+        class="review-info-book-title"
+      >
+        Livro:
+          
+        <p
+          class="review-book-title"
+          id="review-book-title-123"
+        >
+          1984
+        </p>
+        
+        
+      </div>
+      
+        
+      <div
+        class="review-info-book-author"
+      >
+        Autor(a):
+          
+        <p
+          class="review-book-author"
+          id="review-book-author-123"
+        >
+          George Orwell
+        </p>
+        
+        
+      </div>
+      
+        
+      <div
+        class="review-opinion"
+        id="review-opinion-123"
+      >
+        
+          
+        <p>
+          lorem ipsum
+        </p>
+        
+        
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="like-container"
+      id="like-container"
+    >
+      
+        
+      <span
+        id="like-icon-wrap"
+      >
+        
+      
+        <i
+          class="like-icon far fa-heart current-user-like-icon"
+          id="user-like-icon-123"
+        />
+        
+    
+      </span>
+      
+        
+      <div
+        id="review-like-count"
+      >
+        1
+      </div>
+      
+      
+    </div>
+    
+    
+  </article>
+  
+  
+</div>
+`;
