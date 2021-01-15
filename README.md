@@ -26,7 +26,8 @@ A rede social desenvolvida tem como objetivo permitir que os usuários compartil
 
 💡 Organização
 
-Ao receber o projeto toda a organização das tarefas e processos foram realizadas utilizando o modelo de Kanban. Depois de toda a organização feita, definimos o tempo de cada tarefa e o que seria entregue em cada sprint, critérios de aceitação e definição de pronto. A estratégia de desenvolvimento usada foi pair programming, code review e sub-divisão das histórias de usuário. A aplicação desenvolvida a partir do mobile first.
+Ao receber o projeto toda a organização das tarefas e processos foram realizadas utilizando o modelo de Kanban. Depois de toda a organização feita, definimos o tempo de cada tarefa e o que seria entregue em cada sprint, critérios de aceitação e definição de pronto. A estratégia de desenvolvimento usada foi pair programming, code review e sub-divisão das histórias de usuário. A aplicação foi desenvolvida a partir do mobile first.
+
 
 ![Print da tela do trello](src/img/trello-print.png)
 
