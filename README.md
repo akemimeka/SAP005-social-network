@@ -69,7 +69,8 @@ Escolhemos ilustrações modernas que proporcionam páginas mais divertidas e in
 
 💡 Paleta de cores
 
-A paleta de cores foi desenvolvida a partir do tom de amarelo utilizado nas páginas (papel polén) e o preto que remete a cor da tinta impressa nos livros.
+A paleta de cores foi desenvolvida a partir do tom de amarelo utilizado nas páginas (papel pólen) e o preto que remete a cor da tinta impressa nos livros.
+
 
 ![Paleta de cores](src/img/color-palette.png)
 
