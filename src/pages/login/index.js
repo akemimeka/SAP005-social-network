@@ -6,27 +6,28 @@ export const Login = () => {
   rootElement.className = 'container';
 
   rootElement.innerHTML = `
-      <header>
-        <h2 class="title-login">Bookshelf</h2>
-      </header>
-      <section>
-        <form class="form-login">
-          <label class="label-enter">Entrar</label>
-          <label class="label-login">E-mail: <span class="required">*</span></label>
-          <input type="email" class="input-login" id="email-login" name="email-login" required>
-          <label class="label-login">Senha: <span class="required">*</span></label>
-          <input type="password" class="input-login" id="password-login" minlength="8" name="password-login" required>
-          <button type="submit" class="btn-login" id="btn-login">Entrar</button>
-          <label class="alternative">Ou</label>
-          <button id="btn-google">
-            <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
-            <span class="btn-google-text">Entre com conta Google</span>
-          </button>
-        </form>
-      </section>
-      <p class="sign-up-login">
-        Ainda não tem uma conta? <a href="#" id="sign-up-login">Registrar-se</a>
+    <div class="bookshelf-logo">
+      <img class="logo-login logo-book" src='../../img/logo-book.gif' />
+      <img class="logo-login logo-text" src='../../img/logo-written.png' />
+    </div>
+    <div class="form-bg">
+      <form class="form-login">
+        <label class="label-login">E-mail <span class="required">*</span></label>
+        <input type="email" class="input-login" id="email-login" name="email-login" required>
+        <label class="label-login">Senha <span class="required">*</span></label>
+        <input type="password" class="input-login" id="password-login" minlength="8" name="password-login" required>
+        <button type="submit" class="btn-login" id="btn-login">Entrar</button>
+        <button id="btn-google" class="btn-google">
+          <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
+          <span class="btn-google-text">Entrar com conta Google</span>
+        </button>
+      </form>
+      <p class="sign-up-question">
+      Ainda não tem uma conta?
+      <br>
+      <a href="#" id="sign-up-login" class="sign-up-link">Cadastre-se!</a>
       </p>
+    </div>
   `;
   const loginButton = rootElement.querySelector('#btn-login');
   const googleButton = rootElement.querySelector('#btn-google');
