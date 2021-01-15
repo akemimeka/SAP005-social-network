@@ -6,25 +6,28 @@ export const Login = () => {
   rootElement.className = 'container';
 
   rootElement.innerHTML = `
-      <img class="bookshelf-logo" src='../../img/logo-bookshelf.gif' />
-      <div class="black-bg">
-        <form class="form-login">
-          <label class="label-login">E-mail <span class="required">*</span></label>
-          <input type="email" class="input-login" id="email-login" name="email-login" required>
-          <label class="label-login">Senha <span class="required">*</span></label>
-          <input type="password" class="input-login" id="password-login" minlength="8" name="password-login" required>
-          <button type="submit" class="btn-login" id="btn-login">Login</button>
-          <button id="btn-google" class="btn-google">
-            <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
-            <span class="btn-google-text">Entrar com conta Google</span>
-          </button>
-        </form>
+    <div class="bookshelf-logo">
+      <img class="logo-login logo-book" src='../../img/logo-book.gif' />
+      <img class="logo-login logo-text" src='../../img/logo-written.png' />
+    </div>
+    <div class="form-bg">
+      <form class="form-login">
+        <label class="label-login">E-mail <span class="required">*</span></label>
+        <input type="email" class="input-login" id="email-login" name="email-login" required>
+        <label class="label-login">Senha <span class="required">*</span></label>
+        <input type="password" class="input-login" id="password-login" minlength="8" name="password-login" required>
+        <button type="submit" class="btn-login" id="btn-login">Entrar</button>
+        <button id="btn-google" class="btn-google">
+          <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
+          <span class="btn-google-text">Entrar com conta Google</span>
+        </button>
+      </form>
       <p class="sign-up-question">
-        Ainda não tem uma conta?
-        <br>
-        <a href="#" id="sign-up-login" class="sign-up-link">Cadastre-se!</a>
+      Ainda não tem uma conta?
+      <br>
+      <a href="#" id="sign-up-login" class="sign-up-link">Cadastre-se!</a>
       </p>
-      </div>
+    </div>
   `;
   const loginButton = rootElement.querySelector('#btn-login');
   const googleButton = rootElement.querySelector('#btn-google');
