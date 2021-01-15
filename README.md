@@ -32,7 +32,8 @@ Ao receber o projeto toda a organização das tarefas e processos foram realizad
 
 💡 Interface
 
-O principal objetivo foi desenvolver uma interface em que fossem exibidas apenas as funcionalidades necessárias de forma simples e amigável ao usuário. Queríamos que interface da aplicação fosse semelhante a uma página de livro.
+O principal objetivo foi desenvolver uma interface em que fossem exibidas apenas as funcionalidades necessárias de forma simples e amigável ao usuário. Queríamos que a interface da aplicação fosse semelhante a uma página de livro.
+
 
 💻 Wireframe inicial desktop
 
