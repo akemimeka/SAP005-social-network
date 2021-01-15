@@ -1,6 +1,6 @@
 # BOOKSHELF
 
-✨ Para acessar a aplicação [Clique aqui!]() ✨
+✨ Para acessar a aplicação [Clique aqui!](https://social-network-trio.web.app/) ✨
 
 ## Índice
 
@@ -50,11 +50,17 @@ O principal objetivo foi desenvolver uma interface em que fossem exibidas apenas
 
 💻 Interface final desktop
 
-![Interface final desktop]()
+![Interface final desktop](src/img/login-desktop.png)
+![Interface final desktop](src/img/cadastro-desktop.png)
+![Interface final desktop](src/img/feed-desktop.png)
+![Interface final desktop](src/img/perfil-desktop.png)
 
 📱 Interface final mobile
 
-![Interface final mobile]()
+![Interface final mobile](src/img/login-mobile.png)
+![Interface final mobile](src/img/cadastro-mobile.png)
+![Interface final mobile](src/img/feed-mobile.png)
+![Interface final mobile](src/img/perfil-mobile.png)
 
 💡 Logo
 
