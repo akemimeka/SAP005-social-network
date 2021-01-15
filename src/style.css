@@ -60,7 +60,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  flex-grow : 1;
+  flex-grow: 1;
   padding: 1.5rem 0;
 }
 
@@ -80,12 +80,12 @@ textarea {
 
 .form-bg {
   width: 100%;
-  flex-grow : 1;
+  flex-grow: 1;
   padding-top: 1.2rem;
   padding-bottom: 3rem;
   background-color: #fdf4dd;
   border-radius: 4rem 0 0 0;
-  box-shadow: 0 0 15px 4px rgba(0,0,0,0.15);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.15);
 }
 
 .form-login {
@@ -151,7 +151,7 @@ textarea {
 
 .btn-google:hover {
   background-color: #fdf4dd;
-  color:#000;
+  color: #000;
 }
 
 .btn-google-icon {
@@ -176,7 +176,6 @@ textarea {
   font-weight: 600;
   text-align: center;
 }
-
 
 /* SIGN UP */
 .container-sign-up {
@@ -369,50 +368,62 @@ textarea {
 }
 
 /*REVIEW*/
-
-.title-review {
-  text-align: center;
-  font-weight: normal;
+.container-review {
+  padding: 1.5rem 0;
 }
 
-.form-review {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  margin-top: 3rem;
-  width: 80vw;
-  height: 60vh;
-  margin-bottom: 1rem;
+.title-review {
+  margin-top: 3.2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.4rem;
 }
 
 .label-review {
   margin-top: 1rem;
-  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
 }
 
-.input-book {
-  margin-top: 0.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+.input-review {
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 0.3rem;
+  background-color: #f5e1b3;
   font-size: 1rem;
-  padding: 0.5em;
+  color: #000;
 }
 
-.review {
-  margin-top: 0.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  font-size: 1rem;
-  height: 15vh;
-  padding: 0.5em;
+.form-review {
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .btn-review {
-  width: 26vw;
-  height: 5vh;
-  margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  display: block;
+  width: 65vw;
+  margin: 1rem auto;
+  padding: 0.5rem 0rem;
+  border: solid 2px #000;
+  border-radius: 2rem;
+  background-color: #000;
+  color: #fdf4dd;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-review:hover {
+  background-color: #fdf4dd;
+  color: #000;
 }
 
 /* PROFILE */

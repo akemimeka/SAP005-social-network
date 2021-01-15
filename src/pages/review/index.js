@@ -3,22 +3,20 @@ import { createReview } from '../../services/index.js';
 export const Review = () => {
   const rootElement = document.createElement('div');
 
-  rootElement.className = 'container';
+  rootElement.className = 'container-review';
   rootElement.innerHTML = `
       <header>
         <h2 class="title-review">Publicar nova resenha</h2>
       </header>
-      <section>
         <form class="form-review" id="form-review">
-          <label class="label-review">Livro: <span class="required">*</span></label>
-          <input type="text" class="input-book" id="book-name" name="book" required>
-          <label class="label-review">Autor(a): <span class="required">*</span></label>
-          <input type="text" class="input-book" id="book-author" name="author" required>
-          <label class="label-review">Resenha: <span class="required">*</span></label>
-          <textarea class="review" id="book-review" required></textarea>
+          <label class="label-review">Título <span class="required">*</span></label>
+          <input type="text" class="input-review" id="book-name" name="book" required>
+          <label class="label-review">Autor(a) <span class="required">*</span></label>
+          <input type="text" class="input-review" id="book-author" name="author" required>
+          <label class="label-review">Resenha <span class="required">*</span></label>
+          <textarea class="input-review" id="book-review" rows="5" required></textarea>
           <button type="submit" class="btn-review" id="btn-review">Publicar</button>
         </form>
-      <section>
   `;
 
   const formReview = rootElement.querySelector('#form-review');
