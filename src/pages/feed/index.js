@@ -4,8 +4,11 @@ import { getReviews } from '../../services/index.js';
 export const Feed = () => {
   const feedBody = document.createElement('div');
   const feedHeader = document.createElement('header');
+  feedHeader.classList.add('feed-header');
 
-  feedHeader.innerHTML = '<h1 class="title">Livros</h1>';
+  feedHeader.innerHTML = `
+    <img class="feed-img" alt="Ilustração de uma mulher lendo, sentada no chão." src="../../img/feed-top-img.png" />
+  `;
 
   feedBody.appendChild(feedHeader);
 
