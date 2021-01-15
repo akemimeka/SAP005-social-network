@@ -6,87 +6,86 @@
 
 - [1. Introdução](#1-introdução)
 - [2. Sobre a aplicação](#2-sobre-a-aplicação)
-- [3. Tema](#3-tema)
-- [4. Identificação do usuário](#4-identificação-do-usuário)
-- [5. Processo de criação](#5-processo-de-criação)
-- [6. Testes](#6-testes)
-- [7. Tecnologias utilizadas](#7-tecnologias-utilizadas)
-- [8. Desenvolvedoras](#8-desenvolvedoras)
+- [3. Identificação do usuário](#3-identificação-do-usuário)
+- [4. Processo de criação](#4-processo-de-criação)
+- [5. Testes](#5-testes)
+- [6. Tecnologias utilizadas](#6-tecnologias-utilizadas)
+- [7. Desenvolvedoras](#7-desenvolvedoras)
 
 ---
 
 ## 1. Introdução
 
-O objetivo desse projeto era desenvolver uma aplicação que permita visualizar e manipular dados, e a partir de histórias de usuário fornecer funcionalidades que estivessem de acordo com a necessidade.
-O projeto proposto pela Laboratória foi realizado em duplas, e tralhamos com o banco de dados do Pokémon.
+Neste projeto realizamos a construção de uma rede social através da manipulação e persistência de dados através de um banco de dados não relacional e em tempo real.
+O projeto proposto pela Laboratória foi realizado em trio. A estratégia de desenvolvimento usada foi pair programming, code review e sub-divisão das histórias de usuário.
 
-## 2. Sobre a aplicação
+## 2. Sobre aplicação
 
-A intenção da aplicação é fornecer um guia estruturado para os fãs da franquia, com uma experiência de usuário clara e objetiva de realizar buscas pelo nome e efetuar a filtragem por forças, fraquezas, resistências, gerações ainda podendo o usuário ordenar por CP, além disso foi disponibilizado uma pesquisa sobre a história e curiosidades sobre a geografia deste mundo e convivência entre pokemons e humanos, para melhor compreensão e imersão sobre o assunto.
+A rede social desenvolvida tem como objetivo permitir que os usuários compartilhem suas experiências literárias criando resenhas, visualizar e curtir publicações de outros leitores.
 
-## 3. Tema
-
-## 4. Identificação do usuário
-
-## 5. Processo de criação
+## 4. Processo de criação
 
 💡 Organização
 
-Ao receber o projeto toda a organização das tarefas e processos foram realizadas utilizando o modelo de Kanban. Depois de toda a organização feita, definimos o tempo de cada tarefa e o que seria entregue em cada sprint. Além disso tiramos um tempo para definir os critérios de aceitação e a definição de pronto.
+Ao receber o projeto toda a organização das tarefas e processos foram realizadas utilizando o modelo de Kanban. Depois de toda a organização feita, definimos o tempo de cada tarefa e o que seria entregue em cada sprint, critérios de aceitação e definição de pronto. A estratégia de desenvolvimento usada foi pair programming, code review e sub-divisão das histórias de usuário.
 
-![Print da tela do Notion](src/assets/assets-readme/notion.png)
+![Print da tela do trello]()
 
 💡 Interface
 
-O principal objetivo foi desenvolver uma interface em que fossem exibidas apenas as funcionalidades necessárias de forma simples e amigável ao usuário. Optamos por apresentar as informações em formato de cards e deixar as informações o mais visual possível.
+O principal objetivo foi desenvolver uma interface em que fossem exibidas apenas as funcionalidades necessárias de forma simples e amigável ao usuário. Queriamos que interface da aplicação fosse semelhante a uma página de livro.
 
 💻 Wireframe inicial desktop
 
-![Wireframe inicial desktop](src/assets/assets-readme/wireframe-desktop.png)
+![Wireframe inicial desktop]()
 
 📱 Wireframe inicial mobile
 
-![Wireframe inicial mobile](src/assets/assets-readme/wireframe-mobile.png)
+![Wireframe inicial mobile]()
 
 💻 Interface final desktop
 
-![Interface final desktop](src/assets/assets-readme/interface-desktop-pokeguide.png)
+![Interface final desktop]()
 
 📱 Interface final mobile
 
-![Interface final mobile](src/assets/assets-readme/interface-mobile-pokeguide.png)
+![Interface final mobile]()
 
 💡 Logo
 
-Criamos uma logo que estivesse de acordo com o tema e que representasse a marca. Respeitamos a cor amarela que é utilizada pela marca e inserimos o Pikachu que é um dos Pokémons mais amados da franquia.
+Criamos uma logo que estivesse de acordo com o tema e que tivesse personalidade.
 
-![Logo](src/assets/pokeguide-logo.png)
+![Logo]()
+
+💡 Ilustrações
+
+Escolhemos ilustrações modernas que proporcionam páginas mais divertidas e inspiradoras, sem perder a identidade e tornar-se algo infantil.
 
 💡 Paleta de cores
 
-A paleta de cores foi desenvolvida a partir do tom de amarelo utilizado na logo, porém para não sobrecarregar o olhar do usuário, foram utilizados tons pasteis criando harmonia visual.
+A paleta de cores foi desenvolvida a partir do tom de amarelo utilizado nas páginas (papel polén) e o preto que remete a cor da tinta impressa nos livros.
 
-![Paleta de cores](src/assets/assets-readme/data-lovers-palett.jpeg)
+![Paleta de cores]()
 
-## 6. Testes
+## 5. Testes
 
 🔎 Usabilidade
 
 Realizamos testes com algumas das pessoas que se dispuseram testar a usabilidade durante o processo de desenvolvimento. Com isso, identificamos que:
 
-⚠️ Os usuários não estavam satisfeitos com o menu hambúrguer que foi proposto por ser mais uma etapa de click.
+⚠️ Os usuários apontaram que gostariam que além dos alertas avisando que todos os campos da resenha tinham que ser preenchidos, gostariam que tivesse algo visível antes do erro ocorrer.
 
-✔️ Como solução criamos um menu fixo acima da logo.
+✔️ Como solução deixamos asterisco ao lado da descrição de cada campo para indicar que o campo era obrigatório.
 
-⚠️ Os usuários acharam a quantidade de filtros exagerada, apontaram que não viam necessidade de filtrar pokémons por ordem alfabética ou numérica.
+⚠️ Os usuários acharam era necessário ter uma mensagem explicando no realizar publicações.
 
-✔️ Como solução removemos os filtros citados.
+✔️ Como solução no perfil do usuário acrescentamos uma mensagem com as instruções.
 
 🔎 Técnico
 
 Foram desenvolvidos testes unitários com jest para identificar possíveis falhas nas funções utilizadas, possibilitando a correção caso necessário antes de definir o produto como pronto.
 
-## 7. Tecnologias utilizadas
+## 6. Tecnologias utilizadas
 
 🔧 Para esse projeto foram usados:
 
@@ -99,7 +98,7 @@ Foram desenvolvidos testes unitários com jest para identificar possíveis falha
 - LocalStorage
 - EsLint
 
-## 8. Desenvolvedoras
+## 7. Desenvolvedoras
 
 👩 [Akemi Mitsueda](https://github.com/akemimeka)
 
