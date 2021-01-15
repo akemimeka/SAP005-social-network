@@ -313,8 +313,8 @@ textarea {
 }
 
 .top-icons-container {
+  margin: 1rem 0 0.7rem 0;
   text-align: center;
-  padding: 0.7rem 0;
 }
 
 .btn-post {
@@ -332,28 +332,39 @@ textarea {
 }
 
 .review-main-info {
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .review-info-book-title,
 .review-info-book-author {
-  margin-bottom: 1.3rem;
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-#review-book-title,
-#review-book-author {
-  font-weight: 600;
+.review-book-title,
+.review-book-author {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 400;
+  outline: none;
+  text-transform: initial;
+}
+
+.review-opinion {
+  line-height: 1.7rem;
 }
 
 .editable-content {
-  padding: 0.3rem;
-  border: 2px solid indianred;
-  border-radius: 5px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #f5e1b3;
 }
 
 .like-container {
   display: flex;
-  padding: 0.5rem 1rem;
+  padding: 2rem;
 }
 
 .like-icon {
@@ -366,7 +377,7 @@ textarea {
 }
 
 .current-user-like-icon {
-  color: #999;
+  color: #f5e1b3;
 }
 
 /*REVIEW*/
