@@ -7,8 +7,8 @@ export const Login = () => {
 
   rootElement.innerHTML = `
     <div class="bookshelf-logo">
-      <img class="logo-login logo-book" src='../../img/logo-book.gif' />
-      <img class="logo-login logo-text" src='../../img/logo-written.png' />
+      <img class="logo-login logo-book" alt="Logo Bookshelf" src='../../img/logo-book.gif' />
+      <img class="logo-login logo-text" alt="Logo Bookshelf" src='../../img/logo-written.png' />
     </div>
     <div class="form-bg">
       <form class="form-login">
