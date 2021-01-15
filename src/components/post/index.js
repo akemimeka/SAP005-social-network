@@ -151,6 +151,5 @@ export const Post = (review) => {
 
     userLikeIcon.classList.add('current-user-like-icon');
   }
-
   return postContainer;
 };
