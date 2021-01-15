@@ -14,7 +14,7 @@ export const Profile = () => {
     <div id="profile-banner">IMG-BANNER</div>
     <div class="profile-user-info">
       <h2 id="profile-user-name">${user.displayName}</h2>
-      <img class="profile-user-avatar" src="${user.photoURL || '../../img/default_user_icon.jpg'}">
+      <img class="profile-user-avatar" src="${user.photoURL}">
       <figure class="profile-favorite-quote">
         <blockquote id="profile-quote-text">
         Minha liberdade é escrever. A palavra é o meu domínio sobre o mundo.
