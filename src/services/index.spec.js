@@ -1,7 +1,7 @@
 import {
   googleLogin,
   signOut,
-  saveInfoProfile,
+  emailAndPasswordLogin,
   createAccount,
   createReview,
   getReviews,
@@ -10,62 +10,57 @@ import {
   likeReview,
 } from './index.js';
 
+beforeEach(() => jest.clearAllMocks());
+
 describe('googleLogin', () => {
   it('should be a function', () => {
     expect(typeof googleLogin).toBe('function');
   });
-  // it('should call Firebase', () => {
-  //   googleLogin();
-  //   expect(firebase.auth().signInWithPopup()).toBeCalled();
-  //   expect(googleLogin()).toBe(true);
-  // });
+  it('should call Firebase signInWithPopup function', () => {
+    googleLogin('provider');
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('signOut', () => {
   it('should be a function', () => {
     expect(typeof signOut).toBe('function');
   });
-  it('should call Firebase', () => {
+  it('should call Firebase signOut function', () => {
     signOut();
-    expect(firebase.auth).toHaveBeenCalled();
-    expect(signOut()).toBe(undefined);
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
   });
 });
 
-describe('saveInfoProfile', () => {
+describe('emailAndPasswordLogin', () => {
+  const emailValue = 'teste@teste23.com';
+  const passwordValue = '12345678';
   it('should be a function', () => {
-    expect(typeof saveInfoProfile).toBe('function');
+    expect(typeof emailAndPasswordLogin).toBe('function');
   });
-  // it('should call Firebase', () => {
-  //   saveInfoProfile();
-  //   expect(firebase).toHaveBeenCalled();
-  // });
+  it('should call Firebase emailAndPasswordLogin function', () => {
+    emailAndPasswordLogin(emailValue, passwordValue);
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('createAccount', () => {
   it('should be a function', () => {
     expect(typeof createAccount).toBe('function');
   });
-  // it('should call Firebase', () => {
-  //   createAccount();
-  //   expect(firebase.auth).toHaveBeenCalled();
-  // });
-  // it('should return undefined', () => {
-  //   createAccount();
-  //   expect(createAccount()).toBe(undefined);
-  // });
+  it('should call Firebase createAccount function', () => {
+    createAccount();
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('createReview', () => {
   it('should be a function', () => {
     expect(typeof createReview).toBe('function');
   });
-  it('should call Firebase', () => {
+  it('should call Firebase createReview function', () => {
     createReview();
-    expect(firebase.auth).toHaveBeenCalled();
-  });
-  it('should return undefined', () => {
-    expect(createReview()).toBe(undefined);
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
   });
 });
 
@@ -73,50 +68,22 @@ describe('getReviews', () => {
   it('should be a function', () => {
     expect(typeof getReviews).toBe('function');
   });
-  // it('should call Firebase', () => {
-  //   getReviews();
-  //   expect(firebase.firestore).toHaveBeenCalled();
-  // });
-  // it('should return undefined', () => {
-  //   expect(getReviews()).toBe(undefined);
-  // });
 });
 
 describe('saveEditedReview', () => {
   it('should be a function', () => {
     expect(typeof saveEditedReview).toBe('function');
   });
-  // it('should call Firebase', () => {
-  //   saveEditedReview();
-  //   expect(firebase.firestore).toHaveBeenCalled();
-  // });
-  // it('should return undefined', () => {
-  //   expect(saveEditedReview()).toBe(undefined);
-  // });
 });
 
 describe('deleteReview', () => {
   it('should be a function', () => {
     expect(typeof deleteReview).toBe('function');
   });
-  // it('should call Firebase', () => {
-  //   deleteReview();
-  //   expect(firebase.firestore).toHaveBeenCalled();
-  // });
-  // it('should return undefined', () => {
-  //   expect(deleteReview()).toBe(undefined);
-  // });
 });
 
 describe('likeReview', () => {
   it('should be a function', () => {
     expect(typeof likeReview).toBe('function');
   });
-  // it('should call Firebase', () => {
-  //   likeReview();
-  //   expect(firebase.firestore).toHaveBeenCalled();
-  // });
-  // it('should return undefined', () => {
-  //   expect(likeReview()).toBe(undefined);
-  // });
 });

@@ -1,3 +1,5 @@
+// profile test
+
 import { Profile } from './index.js';
 import * as post from '../../components/post/index.js';
 import * as services from '../../services/index.js';
@@ -12,19 +14,19 @@ describe('Profile', () => {
     expect(Profile()).toMatchSnapshot();
   });
 
-  it('should be called getReviews with false parameter', () => {
+  it('should be called getReviews once times after called profile', () => {
     services.getReviews = jest.fn(() => Promise.resolve([]));
     Profile();
     expect(services.getReviews).toHaveBeenCalledTimes(1);
   });
 
-  it('should be  called Post after called Feed and getReviews have false parameter', () => {
+  it('should be called getReviews with false parameter', () => {
     services.getReviews = jest.fn(() => Promise.resolve([]));
     Profile();
     expect(services.getReviews).toHaveBeenCalledWith(false);
   });
 
-  it('should have return the header html when getR', () => {
+  it('should be  called Post after called Feed and getReviews have false parameter', () => {
     services.getReviews = jest.fn(() => Promise.resolve([{}]));
     post.Post = jest.fn(() => document.createElement('div'));
     Profile();
