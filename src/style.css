@@ -184,9 +184,6 @@ textarea {
 
 .icon-arrow {
   font-size: 1.5rem;
-}
-
-.icon-arrow {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -244,7 +241,7 @@ textarea {
   width: 100vw;
   padding: 0.5rem 1rem;
   background-color: #fdf4dd;
-  box-shadow: 0 2px 15px 4px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 15px 4px rgba(0, 0, 0, 0.15);
 }
 
 .logo-header {

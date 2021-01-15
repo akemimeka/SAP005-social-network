@@ -8,7 +8,6 @@ export const Profile = () => {
   const user = firebase.auth().currentUser;
   profileBodyNewReview.className = 'review-container';
   profileHeader.className = 'profile-header';
-  console.log(user);
 
   profileHeader.innerHTML = `
     <div id="profile-banner">IMG-BANNER</div>
