@@ -1,5 +1,6 @@
 /* IMPORT FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
 
 /* CSS RESET */
 * {
@@ -437,31 +438,35 @@ textarea {
   width: 100vw;
 }
 
-#profile-banner {
-  height: 8rem;
-  margin-bottom: 1rem;
-  background-color: #333;
-  padding: 3.5rem; /* Remover após inserir img */
-  color: #fff; /* Remover após inserir img */
-  text-align: center; /* Remover após inserir img */
+.profile-cover {
+  position: absolute;
+  right: 0.5rem;
+  top: 4rem;
+  height: 14.5rem;
 }
 
 .profile-user-info {
-  margin: 1.5rem 1rem 3rem 1rem;
+  margin: 1.5rem 2rem 3rem 2rem;
 }
 
-#profile-user-name {
-  margin-bottom: 0.5rem;
+.user-name {
+  margin-top: 21rem;
+  margin-bottom: 4rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .profile-favorite-quote {
-  padding: 1rem;
-  background-color: #eeeeee;
+  padding: 1.5rem;
+  background-color: #f5e1b3;
 }
 
-#profile-quote-text {
+.quote-text {
+  font-family: "Caveat", cursive;
+  text-align: justify;
   margin-bottom: 0.7rem;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 }
 
 .profile-user-posts-title {
@@ -469,14 +474,6 @@ textarea {
   margin: 0 1rem;
   padding: 0.5rem;
   border: solid 1px #999;
-}
-
-.profile-user-avatar {
-  width: 10vw;
-  height: 17vh;
-  margin-right: 0.5rem;
-  border-radius: 50%;
-  margin-left: 0.5rem;
 }
 
 /*FIRST REVIEW*/
