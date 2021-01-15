@@ -15,7 +15,7 @@ export const Review = () => {
           <input type="text" class="input-review" id="book-author" name="author" required>
           <label class="label-review">Resenha <span class="required">*</span></label>
           <textarea class="input-review" id="book-review" rows="5" required></textarea>
-          <button type="submit" class="btn-review" id="btn-review">Publicar</button>
+          <button type="submit" class="btn-base btn-review" id="btn-review">Publicar</button>
         </form>
   `;
 

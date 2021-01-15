@@ -14,21 +14,21 @@ export const Post = (review) => {
 
   postContainer.innerHTML = `
     <article class="review-post" data-user-id=${user.user_id} data-review-id=${review.id}>
-      <h3 class="review-meta-info">
+      <div class="review-meta-info">
         <div class="meta-info-container">
           <img id="review-user-avatar" class="review-user-avatar" src="${user.photo || '../../img/default_user_icon.jpg'}">
           <div>
-            <span id="review-author-username" class="review-author-username">${user.name}</span>
+            <p id="review-author-username" class="review-author-username">${user.name}</p>
             <time id="review-date" class="review-date">${post.date}</time>
           </div>
         </div>
-        <div class="top-icons-container" id="buttons-container"></div>
-      </h3>
+        <div id="buttons-container"></div>
+      </div>
       <div class="review-main-info">
-        <div class="review-info-book-title">Livro:
+        <div class="review-info-book-title">Título
           <p id="review-book-title-${review.id}" class="review-book-title">${post.title}</p>
         </div>
-        <div class="review-info-book-author">Autor(a):
+        <div class="review-info-book-author">Autor(a)
           <p id="review-book-author-${review.id}" class="review-book-author">${post.author}</p>
         </div>
         <div id="review-opinion-${review.id}" class="review-opinion">
@@ -65,17 +65,19 @@ export const Post = (review) => {
 
   if (currentUserId === user.user_id) {
     const buttonsContainer = postContainer.querySelector('#buttons-container');
+    buttonsContainer.classList.add('top-icons-container');
+
     buttonsContainer.innerHTML = `
-      <button id="edit-button-${review.id}" class="edit-button">
+      <button id="edit-button-${review.id}" class="btn-base btn-post">
         <i class="edit-icon fas fa-edit"></i>Editar resenha
       </button>
-      <button id="save-button-${review.id}" class="hidden save-button">
+      <button id="save-button-${review.id}" class="hidden btn-base btn-post">
         <i class="check-icon fas fa-check"></i>Salvar resenha
       </button>
-      <button id="cancel-button-${review.id}" class="hidden cancel-button">
+      <button id="cancel-button-${review.id}" class="hidden btn-base btn-post">
         <i class="cancel-icon fas fa-times"></i>Cancelar edição
       </button>
-      <button id="delete-button-${review.id}" class="delete-button">
+      <button id="delete-button-${review.id}" class="btn-base btn-post">
         <i class="delete-icon fas fa-trash-alt"></i>Deletar resenha
       </button>
     `;
