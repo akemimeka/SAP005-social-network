@@ -19,8 +19,8 @@ export const SignUp = () => {
       <input class="input-begin" type="password" name="password" minlength="8" id="sign-up-password" placeholder="Mínimo de 8 caracteres" required>
       <label class="label-begin" for="confirm-password">Confirmar senha<span class="required"> *</span></label>
       <input class="input-begin" type="password" name="confirm-password" minlength="8" id="confirm-password" placeholder="Mínimo de 8 caracteres" required>
-      <button class="btn-begin" type="submit" id="btn-sign-up">Cadastrar</button>
-      <button id="btn-google" class="btn-google">
+      <button class="btn-base btn-begin" type="submit" id="btn-sign-up">Cadastrar</button>
+      <button id="btn-google" class="btn-base btn-google">
         <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
         <span class="btn-google-text">Cadastrar com conta Google</span>
       </button>
