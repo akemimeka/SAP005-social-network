@@ -6,14 +6,12 @@
 
 - [1. Introdução](#1-introdução)
 - [2. Sobre a aplicação](#2-sobre-a-aplicação)
-- [3. Identificação dos usuários](#3-identificação-dos-usuários)
-- [4. Histórias de usuários](#4-histórias-de-usuários)
+- [3. Tema](#3-tema)
+- [4. Identificação do usuário](#4-identificação-do-usuário)
 - [5. Processo de criação](#5-processo-de-criação)
 - [6. Testes](#6-testes)
-- [7. Desenvolvimento](#7-desenvolvimento)
+- [7. Tecnologias utilizadas](#7-tecnologias-utilizadas)
 - [8. Desenvolvedoras](#8-desenvolvedoras)
-
----
 
 ---
 
@@ -22,39 +20,19 @@
 O objetivo desse projeto era desenvolver uma aplicação que permita visualizar e manipular dados, e a partir de histórias de usuário fornecer funcionalidades que estivessem de acordo com a necessidade.
 O projeto proposto pela Laboratória foi realizado em duplas, e tralhamos com o banco de dados do Pokémon.
 
- <p align="center">
- <img src="https://media1.giphy.com/media/13G7hmmFr9yuxG/giphy.gif" width=340 height=220 frameBorder="0"></img>
- </p>
-
 ## 2. Sobre a aplicação
 
 A intenção da aplicação é fornecer um guia estruturado para os fãs da franquia, com uma experiência de usuário clara e objetiva de realizar buscas pelo nome e efetuar a filtragem por forças, fraquezas, resistências, gerações ainda podendo o usuário ordenar por CP, além disso foi disponibilizado uma pesquisa sobre a história e curiosidades sobre a geografia deste mundo e convivência entre pokemons e humanos, para melhor compreensão e imersão sobre o assunto.
 
-## 3. Identificação dos usuários
+## 3. Tema
 
-Para identificar quem seriam os usuários da plataforma, realizamos pesquisas utilizando o [Google Forms](https://www.google.com/forms/about/), no qual foi possível identificar as reais necessidades de cada usuário e com base nesses dados definimos as histórias de usuários.
-
-![Pesquisa com usuários](src/assets/assets-readme/pesquisa-usuários.png)
-
-## 4. Histórias de usuários
-
-🔎 Com base nas necessidades dos usuários chegamos a cinco histórias de usuários:
-
-1.  Eu como usuário, quero visualizar facilmente as informações de todos os pokemons, e conseguir filtrar por tipo.
-
-2.  Eu como usuário, gostaria de filtrar pokémons por força e fraquezas.
-
-3.  Eu como usuário, gostaria de separar pokemons por gerações.
-
-4.  Eu como usuário, quero uma busca genérica de pokémons exibindo os resultados aproximados ao nome digitado.
-
-5.  Eu como usuário, quero ordenar pokémons por força.
+## 4. Identificação do usuário
 
 ## 5. Processo de criação
 
 💡 Organização
 
-Ao receber o projeto toda a organização das tarefas e processos foram realizadas utilizando o modelo de Kanban. Depois de toda a organização feita, definimos o tempo de cada tarefa e o que seria entregue em cada sprint.Além disso tiramos um tempo para definir os critérios de aceitação e a definição de pronto.
+Ao receber o projeto toda a organização das tarefas e processos foram realizadas utilizando o modelo de Kanban. Depois de toda a organização feita, definimos o tempo de cada tarefa e o que seria entregue em cada sprint. Além disso tiramos um tempo para definir os critérios de aceitação e a definição de pronto.
 
 ![Print da tela do Notion](src/assets/assets-readme/notion.png)
 
@@ -128,7 +106,3 @@ Foram desenvolvidos testes unitários com jest para identificar possíveis falha
 👩 [Caroline Costa](https://github.com/CarolineSCosta)
 
 👩 [Jessica Cavalcante](https://github.com/JessicaCavalcante)
-
- <p align="center">
- <img src="https://media2.giphy.com/media/10LKovKon8DENq/giphy.gif" width=340 height=220 frameBorder="0"></img>
- </p>
