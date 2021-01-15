@@ -26,7 +26,7 @@ A rede social desenvolvida tem como objetivo permitir que os usuários compartil
 
 💡 Organização
 
-Ao receber o projeto toda a organização das tarefas e processos foram realizadas utilizando o modelo de Kanban. Depois de toda a organização feita, definimos o tempo de cada tarefa e o que seria entregue em cada sprint, critérios de aceitação e definição de pronto. A estratégia de desenvolvimento usada foi pair programming, code review e sub-divisão das histórias de usuário. A aplicação desenvolvida a partir do mobile first.
+Ao receber o projeto toda a organização das tarefas e processos foram realizadas utilizando o modelo de Kanban. Depois de toda a organização feita, definimos o tempo de cada tarefa e o que seria entregue em cada sprint, critérios de aceitação e definição de pronto. A estratégia de desenvolvimento usada foi pair programming, code review e sub-divisão das histórias de usuário. A aplicação foi desenvolvida seguindo a técnica mobile first.
 
 ![Print da tela do trello](src/img/trello-print.png)
 
@@ -68,7 +68,7 @@ Escolhemos ilustrações modernas que proporcionam páginas mais divertidas e in
 
 💡 Paleta de cores
 
-A paleta de cores foi desenvolvida a partir do tom de amarelo utilizado nas páginas (papel polén) e o preto que remete a cor da tinta impressa nos livros.
+Com base no tom de amarelo utilizado nas páginas (papel pólen) e o preto que remete a cor da tinta impressa nos livros desenvolvemos a paleta de cores.
 
 ![Paleta de cores](src/img/color-palette.png)
 
