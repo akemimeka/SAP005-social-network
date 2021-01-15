@@ -16,8 +16,8 @@ export const Login = () => {
         <input type="email" class="input-begin" id="email-login" name="email-login" required>
         <label class="label-begin">Senha <span class="required">*</span></label>
         <input type="password" class="input-begin" id="password-login" minlength="8" name="password-login" required>
-        <button type="submit" class="btn-begin" id="btn-login">Entrar</button>
-        <button id="btn-google" class="btn-google">
+        <button type="submit" class="btn-base btn-begin" id="btn-login">Entrar</button>
+        <button id="btn-google" class="btn-base btn-google">
           <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
           <span class="btn-google-text">Entrar com conta Google</span>
         </button>
