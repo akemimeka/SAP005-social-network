@@ -2,13 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
 
-/* REFERÊNCIAS PARA MEDIA QUERIES */
-/*
-Mobile maior -- max-width: 600px
-Tablet retrato -- min-width: 601px
-Tablet paisagem e Desktop -- min-width: 900px
-*/
-
 /* CSS RESET */
 * {
   margin: 0;
@@ -70,11 +63,6 @@ textarea {
   display: none;
 }
 
-@media (min-width: 900px) {
-  html {
-    font-size: 16.5px;
-  }
-}
 
 /*LOGIN*/
 .container-login {
@@ -87,7 +75,7 @@ textarea {
 .bookshelf-logo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   flex-grow: 1;
   padding: 1.5rem 0;
 }
@@ -144,14 +132,14 @@ textarea {
 
 .btn-begin {
   display: block;
-  width: 16rem;
+  width: 65vw;
   margin: 1rem auto;
   font-weight: 500;
   font-size: 1rem;
 }
 
 .btn-google {
-  width: 16rem;
+  width: 65vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,29 +170,6 @@ textarea {
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
-}
-
-@media (min-width: 900px) {
-  .container-login {
-    flex-flow: row;
-  }
-
-  .bookshelf-logo {
-    padding: 0 3rem;
-    width: 50vw;
-  }
-
-  .logo-book {
-    max-width: 9rem;
-  }
-
-  .logo-text {
-    max-width: 13rem;
-  }
-
-  .form-login {
-    justify-content: center;
-  }
 }
 
 /* SIGN UP */
@@ -243,7 +208,7 @@ textarea {
 /* FOOTER */
 .github-footer {
   width: 100vw;
-  position: fixed;
+  position: absolute;
   background-color: #f5e1b3;
   bottom: 0;
   padding: 0.5rem;
@@ -262,29 +227,16 @@ textarea {
 }
 
 /* NAVBAR */
-.responsive-wrap-navbar {
-  width: 100%;
-  max-width: 25rem;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 2rem;
-}
-
 .top-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 0.5rem 2rem;
-  background-color: #fdf4dd;
-  box-shadow: 0 2px 15px 4px rgba(0, 0, 0, 0.15);
-}
-
-.responsive-wrap-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 25rem;
-  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding: 0.5rem 1rem;
+  background-color: #fdf4dd;
+  box-shadow: 0 2px 15px 4px rgba(0, 0, 0, 0.15);
 }
 
 .logo-header {
@@ -317,28 +269,11 @@ textarea {
 .feed-main,
 .profile-main,
 .post-container {
-  /* margin-top: 3.5rem; */
+  margin-top: 3.5rem;
   margin-bottom: 4.5rem;
 }
 
-/* FEED */
-.feed-header {
-  max-width: 100vw;
-  margin-top: 4rem;
-  text-align: center;
-}
-
-.feed-img {
-  max-width: 15rem;
-  height: auto;
-}
-
 /* POST COMPONENT */
-.post-container {
-  margin: 0 auto;
-  max-width: 28rem;
-}
-
 .review-post {
   margin-bottom: 5.5rem;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.15);
@@ -457,7 +392,7 @@ textarea {
   color: #000;
 }
 
-/*REVIEW PAGE*/
+/*REVIEW*/
 .container-review {
   padding: 1.5rem 0;
 }
@@ -503,7 +438,7 @@ textarea {
 
 .btn-review {
   display: block;
-  width: 13rem;
+  width: 65vw;
   margin: 1rem auto;
   font-weight: 500;
   font-size: 1rem;
@@ -515,47 +450,52 @@ textarea {
 }
 
 /* PROFILE */
+
 .profile-header {
   margin-top: 3.5rem;
-  max-width: 100vw;
+  width: 100vw;
 }
 
 .profile-cover {
   position: absolute;
   right: 0.5rem;
-  top: 5rem;
+  top: 4rem;
   height: 14.5rem;
 }
 
 .profile-user-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 25rem;
-  margin: 21rem auto 5rem auto;
+  margin: 1.5rem 2rem 3rem 2rem;
 }
 
 .user-name {
-  margin: 0 2rem 1rem 2rem;
+  margin-top: 21rem;
+  margin-bottom: 4rem;
   font-weight: 500;
   font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .profile-favorite-quote {
-  max-width: 33rem;
-  margin: 0 2rem 1rem 2rem;
   padding: 1.5rem;
-  border-radius: 0.7rem;
   background-color: #f5e1b3;
 }
 
 .quote-text {
   font-family: "Caveat", cursive;
+  text-align: justify;
   margin-bottom: 0.7rem;
   font-size: 1.5rem;
 }
 
+.profile-user-posts-title {
+  display: inline-block;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  border: solid 1px #999;
+}
+
 /*FIRST REVIEW*/
+
 .first-review {
   display: flex;
   margin: 1.5rem 2rem 3rem 2rem;
@@ -567,5 +507,5 @@ textarea {
 
 .first-review-text {
   font-size: 1rem;
-  line-height: 1.7rem;
+  text-align: justify;
 }
