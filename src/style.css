@@ -28,6 +28,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  border-bottom: solid 2px #000;
+}
+
 input,
 button,
 textarea {
@@ -55,7 +59,7 @@ div.container {
 .bookshelf-logo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   flex-grow : 1;
   padding: 1.5rem 0;
 }
@@ -173,9 +177,6 @@ div.container {
   text-align: center;
 }
 
-.sign-up-link:hover {
-  border-bottom: solid 2px #000;
-}
 
 /* SIGN UP */
 .icon-arrow {
@@ -233,6 +234,27 @@ div.container {
 
 .login-link {
   text-align: center;
+}
+
+/* FOOTER */
+.github-footer {
+  width: 100vw;
+  position: absolute;
+  background-color: #f5e1b3;
+  bottom: 0;
+  padding: 0.5rem;
+  text-align: center;
+  line-height: 1.2rem;
+  font-size: 0.8rem;
+}
+
+.github-icon {
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+.link-footer {
+  font-weight: 600;
 }
 
 /* NAVBAR */
