@@ -233,7 +233,7 @@ textarea {
   align-items: center;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   padding: 0.5rem 1rem;
   background-color: #fdf4dd;
   box-shadow: 0 2px 15px 4px rgba(0, 0, 0, 0.15);
@@ -269,9 +269,22 @@ textarea {
 .feed-main,
 .profile-main,
 .post-container {
-  margin-top: 3.5rem;
+  /* margin-top: 3.5rem; */
   margin-bottom: 4.5rem;
 }
+
+/* FEED */
+.feed-header {
+  max-width: 100vw;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.feed-img {
+  max-width: 15rem;
+  height: auto;
+}
+
 
 /* POST COMPONENT */
 .review-post {
@@ -495,7 +508,6 @@ textarea {
 }
 
 /*FIRST REVIEW*/
-
 .first-review {
   display: flex;
   margin: 1.5rem 2rem 3rem 2rem;
@@ -507,5 +519,5 @@ textarea {
 
 .first-review-text {
   font-size: 1rem;
-  text-align: justify;
+  line-height: 1.7rem;
 }
