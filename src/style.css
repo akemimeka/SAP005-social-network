@@ -216,7 +216,7 @@ textarea {
 /* FOOTER */
 .github-footer {
   width: 100vw;
-  position: absolute;
+  position: fixed;
   background-color: #f5e1b3;
   bottom: 0;
   padding: 0.5rem;
