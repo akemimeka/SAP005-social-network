@@ -6,11 +6,12 @@ export const Login = () => {
   rootElement.className = 'container-login';
 
   rootElement.innerHTML = `
-    <div class="bookshelf-logo">
-      <img class="logo-login logo-book" alt="Logo Bookshelf" src='../../img/logo-book.gif' />
-      <img class="logo-login logo-text" alt="Logo Bookshelf" src='../../img/logo-written-dark.png' />
-    </div>
-    <div class="form-bg">
+  <div class="bookshelf-logo">
+    <img class="logo-login logo-book" alt="Logo Bookshelf" src='../../img/logo-book.gif' />
+    <img class="logo-login logo-text" alt="Logo Bookshelf" src='../../img/logo-written-dark.png' />
+  </div>
+  <div class="form-bg">
+    <div class="responsive-wrap-login">
       <form class="form-login">
         <label class="label-begin">E-mail <span class="required">*</span></label>
         <input type="email" class="input-begin" id="email-login" name="email-login" required>
@@ -28,7 +29,9 @@ export const Login = () => {
       <a href="#" id="sign-up-login" class="link-begin">Cadastre-se!</a>
       </p>
     </div>
-  `;
+  </div>
+`;
+
   const loginButton = rootElement.querySelector('#btn-login');
   const googleButton = rootElement.querySelector('#btn-google');
   const linkSignUp = rootElement.querySelector('#sign-up-login');
