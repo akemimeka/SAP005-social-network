@@ -35,7 +35,11 @@ export const Login = () => {
   const email = rootElement.querySelector('#email-login');
   const password = rootElement.querySelector('#password-login');
 
-  googleButton.addEventListener('click', googleLogin);
+  googleButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    googleLogin(provider);
+  });
 
   loginButton.addEventListener('click', (event) => {
     event.preventDefault();
