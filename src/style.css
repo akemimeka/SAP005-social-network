@@ -9,7 +9,14 @@
 }
 
 /* GENERAL STYLING */
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
+  height: 100%;
+  width: 100%;
   background-color: #fdf4dd;
   font-family: "Work Sans", sans-serif;
   font-size: 16px;
@@ -39,7 +46,7 @@ textarea {
 
 /*LOGIN*/
 div.container {
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
 }
 
 .bookshelf-logo {
@@ -50,35 +57,42 @@ div.container {
   max-width: 80vw;
 }
 
-.enter {
-  font-size: 1rem;
-  text-align: center;
-  text-transform: uppercase;
+.black-bg {
+  width: 100%;
+  position: absolute;
+  top: 43vh;
+  bottom: 0;
+  padding-top: 1.5rem;
+  background-color: #000;
+  border-radius: 4rem 0 0 0;
 }
 
 .form-login {
   max-width: 30rem;
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: -1.5rem;
+  /* position: relative;
+  top: -1.5rem; */
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .label-login {
   margin-top: 1rem;
   font-size: 0.8rem;
   font-weight: 600;
+  color: #fdf4dd;
   text-transform: uppercase;
 }
 
 .input-login {
-  background-color: #fdf4dd;
   border: none;
-  border-bottom: solid 1px #000;
-  font-size: 1rem;
-  padding: 0.3rem 0;
+  border-bottom: solid 1px #fdf4dd;
   outline: none;
+  padding: 0.3rem 0;
+  background-color: #000;
+  font-size: 1rem;
+  color: #fdf4dd;
 }
 
 .btn-login {
@@ -86,22 +100,17 @@ div.container {
   width: 65vw;
   margin: 1rem auto;
   padding: 0.5rem 1rem;
-  border: solid 3px #000;
-  background-color: #000;
-  color: #fdf4dd;
+  border: solid 3px #fdf4dd;
+  background-color: #fdf4dd;
+  color: #000;
   font-weight: 500;
   font-size: 1rem;
   transition: 0.3s ease-in-out;
 }
 
 .btn-login:hover {
-  background-color: #fdf4dd;
-  color: #000;
-}
-
-.alternative {
-  margin: 0.7rem 0;
-  text-align: center;
+  background-color: #000;
+  color: #fdf4dd;
 }
 
 .btn-google {
@@ -111,11 +120,11 @@ div.container {
   align-items: center;
   height: 2.5rem;
   margin: 0 auto;
-  padding: 0.5rem 1rem;
-  border: none;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: solid 3px #fdf4dd;
   color: #222;
-  background-color: #fff;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  background-color: #fdf4dd;
   transition: 0.3s ease-in-out;
 }
 
@@ -136,19 +145,21 @@ div.container {
 }
 
 .sign-up-question {
+  color: #fdf4dd;
   font-size: 0.9rem;
   text-align: center;
   line-height: 1.5rem;
 }
 
 .sign-up-link {
+  color: #fdf4dd;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
 }
 
 .sign-up-link:hover {
-  border-bottom: solid 2px #000;
+  border-bottom: solid 2px #fdf4dd;
 }
 
 /* SIGN UP */

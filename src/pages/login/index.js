@@ -7,6 +7,7 @@ export const Login = () => {
 
   rootElement.innerHTML = `
       <img class="bookshelf-logo" src='../../img/logo-bookshelf.gif' />
+      <div class="black-bg">
         <form class="form-login">
           <label class="label-login">E-mail <span class="required">*</span></label>
           <input type="email" class="input-login" id="email-login" name="email-login" required>
@@ -23,6 +24,7 @@ export const Login = () => {
         <br>
         <a href="#" id="sign-up-login" class="sign-up-link">Cadastre-se!</a>
       </p>
+      </div>
   `;
   const loginButton = rootElement.querySelector('#btn-login');
   const googleButton = rootElement.querySelector('#btn-google');
