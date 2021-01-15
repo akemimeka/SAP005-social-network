@@ -5,6 +5,7 @@ import { Review } from './pages/review/index.js';
 import { Profile } from './pages/profile/index.js';
 import { Navbar } from './components/navbar/index.js';
 import { topHeaderNav } from './components/top-header/index.js';
+import { Footer } from './components/footer/index.js';
 
 const root = document.querySelector('#root');
 const auth = firebase.auth();
@@ -33,6 +34,8 @@ const renderRoute = () => {
     if (path === '/feed' || path === '/review' || path === '/profile') {
       root.appendChild(Navbar());
       root.appendChild(topHeaderNav());
+    } else if (path === '/' || path === '/signup') {
+      root.appendChild(Footer());
     }
   });
 };

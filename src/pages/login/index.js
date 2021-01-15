@@ -3,30 +3,31 @@ import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
   const rootElement = document.createElement('div');
-  rootElement.className = 'container';
+  rootElement.className = 'container-login';
 
   rootElement.innerHTML = `
-      <header>
-        <h2 class="title-login">Bookshelf</h2>
-      </header>
-      <section>
-        <form class="form-login">
-          <label class="label-enter">Entrar</label>
-          <label class="label-login">E-mail: <span class="required">*</span></label>
-          <input type="email" class="input-login" id="email-login" name="email-login" required>
-          <label class="label-login">Senha: <span class="required">*</span></label>
-          <input type="password" class="input-login" id="password-login" minlength="8" name="password-login" required>
-          <button type="submit" class="btn-login" id="btn-login">Entrar</button>
-          <label class="alternative">Ou</label>
-          <button id="btn-google">
-            <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
-            <span class="btn-google-text">Entre com conta Google</span>
-          </button>
-        </form>
-      </section>
-      <p class="sign-up-login">
-        Ainda não tem uma conta? <a href="#" id="sign-up-login">Registrar-se</a>
+    <div class="bookshelf-logo">
+      <img class="logo-login logo-book" alt="Logo Bookshelf" src='../../img/logo-book.gif' />
+      <img class="logo-login logo-text" alt="Logo Bookshelf" src='../../img/logo-written.png' />
+    </div>
+    <div class="form-bg">
+      <form class="form-login">
+        <label class="label-begin">E-mail <span class="required">*</span></label>
+        <input type="email" class="input-begin" id="email-login" name="email-login" required>
+        <label class="label-begin">Senha <span class="required">*</span></label>
+        <input type="password" class="input-begin" id="password-login" minlength="8" name="password-login" required>
+        <button type="submit" class="btn-begin" id="btn-login">Entrar</button>
+        <button id="btn-google" class="btn-google">
+          <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
+          <span class="btn-google-text">Entrar com conta Google</span>
+        </button>
+      </form>
+      <p class="question-begin">
+      Ainda não tem uma conta?
+      <br>
+      <a href="#" id="sign-up-login" class="link-begin">Cadastre-se!</a>
       </p>
+    </div>
   `;
   const loginButton = rootElement.querySelector('#btn-login');
   const googleButton = rootElement.querySelector('#btn-google');

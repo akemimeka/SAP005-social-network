@@ -5,19 +5,20 @@ export const Profile = () => {
   const profileBody = document.createElement('div');
   const profileHeader = document.createElement('header');
   const profileBodyNewReview = document.createElement('div');
+  const user = firebase.auth().currentUser;
   profileBodyNewReview.className = 'review-container';
   profileHeader.className = 'profile-header';
 
   profileHeader.innerHTML = `
-    <div id="profile-banner">IMG-BANNER</div>
+  <img id="profile-banner" class="profile-cover" alt="Capa de perfil" src='../../img/profile-cover-img.png' />
     <div class="profile-user-info">
-      <h2 id="profile-user-name">Samara Tokki</h2>
+      <p id="profile-user-name" class="user-name">${user.displayName}</p>
       <figure class="profile-favorite-quote">
-        <blockquote id="profile-quote-text">
-          Não confio em pessoas que não se amam e mesmo assim dizem "eu te amo". Eis o que diz um provérbio africano: tome cuidado quando uma pessoa nua lhe oferece uma camisa.
+        <blockquote id="profile-quote-text" class="quote-text">
+        "Minha liberdade é escrever. <br> A palavra é o meu domínio sobre o mundo."
         </blockquote>
-        <figcaption id="profile-quote-author">
-          &mdash; Maya Angelou
+        <figcaption id="profile-quote-author class="quote-author">
+          &mdash; Clarice Lispector
         </figcaption>
       </figure>
     </div>
@@ -28,7 +29,6 @@ export const Profile = () => {
         <p class="first-review-text">
           Você ainda não possui nenhuma resenha cadastrada, clique no botão abaixo <i class="fas fa-plus-circle"></i> para criar sua primeira resenha!
         </p>
-      </div>
   `;
 
   profileBody.appendChild(profileHeader);
