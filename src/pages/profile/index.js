@@ -10,15 +10,14 @@ export const Profile = () => {
   profileHeader.className = 'profile-header';
 
   profileHeader.innerHTML = `
-    <div id="profile-banner">IMG-BANNER</div>
+  <img id="profile-banner" class="profile-cover" alt="Capa de perfil" src='../../img/profile-cover-img.png' />
     <div class="profile-user-info">
-      <h2 id="profile-user-name">${user.displayName}</h2>
-      <img class="profile-user-avatar" src="${user.photoURL}">
+      <p id="profile-user-name" class="user-name">${user.displayName}</p>
       <figure class="profile-favorite-quote">
-        <blockquote id="profile-quote-text">
-        Minha liberdade é escrever. A palavra é o meu domínio sobre o mundo.
+        <blockquote id="profile-quote-text" class="quote-text">
+        "Minha liberdade é escrever. <br> A palavra é o meu domínio sobre o mundo."
         </blockquote>
-        <figcaption id="profile-quote-author">
+        <figcaption id="profile-quote-author class="quote-author">
           &mdash; Clarice Lispector
         </figcaption>
       </figure>
