@@ -478,27 +478,13 @@ textarea {
 
 /*FIRST REVIEW*/
 
-.review-container {
-  width: 100vw;
-  height: 35vh;
-  margin: auto;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
 .first-review {
   display: flex;
-  flex-direction: column;
-  margin: auto;
-  margin-top: 1rem;
-  width: 90vw;
-  height: 20vh;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  color: #856404;
-  background-color: #fff3cd;
-  border-color: #ffeeba;
+  margin: 1.5rem 2rem 3rem 2rem;
+  padding: 1rem;
+  color: #000;
+  background-color: #f8eac5;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.15);
 }
 
 .first-review-text {

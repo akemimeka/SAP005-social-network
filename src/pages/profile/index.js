@@ -29,7 +29,6 @@ export const Profile = () => {
         <p class="first-review-text">
           Você ainda não possui nenhuma resenha cadastrada, clique no botão abaixo <i class="fas fa-plus-circle"></i> para criar sua primeira resenha!
         </p>
-      </div>
   `;
 
   profileBody.appendChild(profileHeader);
