@@ -8,7 +8,7 @@ export const Login = () => {
   rootElement.innerHTML = `
     <div class="bookshelf-logo">
       <img class="logo-login logo-book" alt="Logo Bookshelf" src='../../img/logo-book.gif' />
-      <img class="logo-login logo-text" alt="Logo Bookshelf" src='../../img/logo-written.png' />
+      <img class="logo-login logo-text" alt="Logo Bookshelf" src='../../img/logo-written-dark.png' />
     </div>
     <div class="form-bg">
       <form class="form-login">
@@ -16,8 +16,8 @@ export const Login = () => {
         <input type="email" class="input-begin" id="email-login" name="email-login" required>
         <label class="label-begin">Senha <span class="required">*</span></label>
         <input type="password" class="input-begin" id="password-login" minlength="8" name="password-login" required>
-        <button type="submit" class="btn-begin" id="btn-login">Entrar</button>
-        <button id="btn-google" class="btn-google">
+        <button type="submit" class="btn-base btn-begin" id="btn-login">Entrar</button>
+        <button id="btn-google" class="btn-google btn-base">
           <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
           <span class="btn-google-text">Entrar com conta Google</span>
         </button>
