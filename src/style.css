@@ -202,8 +202,14 @@ textarea {
     max-width: 13rem;
   }
 
-  .form-login {
-    justify-content: center;
+  .form-bg {
+    width: 40vw;
+    height: auto;
+    display: flex;
+  }
+
+  .responsive-wrap-login {
+    margin: auto;
   }
 }
 

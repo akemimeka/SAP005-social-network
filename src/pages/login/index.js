@@ -11,22 +11,24 @@ export const Login = () => {
       <img class="logo-login logo-text" alt="Logo Bookshelf" src='../../img/logo-written-dark.png' />
     </div>
     <div class="form-bg">
-      <form class="form-login">
-        <label class="label-begin">E-mail <span class="required">*</span></label>
-        <input type="email" class="input-begin" id="email-login" name="email-login" required>
-        <label class="label-begin">Senha <span class="required">*</span></label>
-        <input type="password" class="input-begin" id="password-login" minlength="8" name="password-login" required>
-        <button type="submit" class="btn-base btn-begin" id="btn-login">Entrar</button>
-        <button id="btn-google" class="btn-google btn-base">
-          <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
-          <span class="btn-google-text">Entrar com conta Google</span>
-        </button>
-      </form>
-      <p class="question-begin">
-      Ainda não tem uma conta?
-      <br>
-      <a href="#" id="sign-up-login" class="link-begin">Cadastre-se!</a>
-      </p>
+      <div class="responsive-wrap-login">
+        <form class="form-login">
+          <label class="label-begin">E-mail <span class="required">*</span></label>
+          <input type="email" class="input-begin" id="email-login" name="email-login" required>
+          <label class="label-begin">Senha <span class="required">*</span></label>
+          <input type="password" class="input-begin" id="password-login" minlength="8" name="password-login" required>
+          <button type="submit" class="btn-base btn-begin" id="btn-login">Entrar</button>
+          <button id="btn-google" class="btn-google btn-base">
+            <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
+            <span class="btn-google-text">Entrar com conta Google</span>
+          </button>
+        </form>
+        <p class="question-begin">
+        Ainda não tem uma conta?
+        <br>
+        <a href="#" id="sign-up-login" class="link-begin">Cadastre-se!</a>
+        </p>
+      </div>
     </div>
   `;
   const loginButton = rootElement.querySelector('#btn-login');
