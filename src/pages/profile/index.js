@@ -15,7 +15,7 @@ export const Profile = () => {
       <p id="profile-user-name" class="user-name">${user.displayName}</p>
       <figure class="profile-favorite-quote">
         <blockquote id="profile-quote-text" class="quote-text">
-        "Minha liberdade é escrever. <br class="line-break"/> A palavra é o meu domínio sobre o mundo."
+        "Minha liberdade é escrever. <br> A palavra é o meu domínio sobre o mundo."
         </blockquote>
         <figcaption id="profile-quote-author class="quote-author">
           &mdash; Clarice Lispector
