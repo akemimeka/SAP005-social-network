@@ -26,21 +26,27 @@ A rede social desenvolvida tem como objetivo permitir que os usuários compartil
 
 💡 Organização
 
-Ao receber o projeto toda a organização das tarefas e processos foram realizadas utilizando o modelo de Kanban. Depois de toda a organização feita, definimos o tempo de cada tarefa e o que seria entregue em cada sprint, critérios de aceitação e definição de pronto. A estratégia de desenvolvimento usada foi pair programming, code review e sub-divisão das histórias de usuário.
+Ao receber o projeto toda a organização das tarefas e processos foram realizadas utilizando o modelo de Kanban. Depois de toda a organização feita, definimos o tempo de cada tarefa e o que seria entregue em cada sprint, critérios de aceitação e definição de pronto. A estratégia de desenvolvimento usada foi pair programming, code review e sub-divisão das histórias de usuário. A aplicação foi desenvolvida seguindo a técnica mobile first.
 
-![Print da tela do trello]()
+![Print da tela do trello](src/img/trello-print.png)
 
 💡 Interface
 
-O principal objetivo foi desenvolver uma interface em que fossem exibidas apenas as funcionalidades necessárias de forma simples e amigável ao usuário. Queriamos que interface da aplicação fosse semelhante a uma página de livro.
+O principal objetivo foi desenvolver uma interface em que fossem exibidas apenas as funcionalidades necessárias de forma simples e amigável ao usuário. Queríamos que interface da aplicação fosse semelhante a uma página de livro.
 
 💻 Wireframe inicial desktop
 
-![Wireframe inicial desktop]()
+![Wireframe inicial desktop](src/img/13-login-desktop.png)
+![Wireframe inicial desktop](src/img/14-registrar-desktop.png)
+![Wireframe inicial desktop](src/img/15-home-desktop.png)
+![Wireframe inicial desktop](src/img/16-perfil-desktop.png)
 
 📱 Wireframe inicial mobile
 
-![Wireframe inicial mobile]()
+![Wireframe inicial mobile](src/img/1-login.png)
+![Wireframe inicial mobile](src/img/2-registrar.png)
+![Wireframe inicial mobile](src/img/3-home.png)
+![Wireframe inicial mobile](src/img/4-perfil.png)
 
 💻 Interface final desktop
 
@@ -54,7 +60,7 @@ O principal objetivo foi desenvolver uma interface em que fossem exibidas apenas
 
 Criamos uma logo que estivesse de acordo com o tema e que tivesse personalidade.
 
-![Logo]()
+![Logo](src/img/logo.gif)
 
 💡 Ilustrações
 
@@ -62,9 +68,9 @@ Escolhemos ilustrações modernas que proporcionam páginas mais divertidas e in
 
 💡 Paleta de cores
 
-A paleta de cores foi desenvolvida a partir do tom de amarelo utilizado nas páginas (papel polén) e o preto que remete a cor da tinta impressa nos livros.
+Com base no tom de amarelo utilizado nas páginas (papel pólen) e o preto que remete a cor da tinta impressa nos livros desenvolvemos a paleta de cores.
 
-![Paleta de cores]()
+![Paleta de cores](src/img/color-palette.png)
 
 ## 4. Testes
 
@@ -94,7 +100,6 @@ Foram desenvolvidos testes unitários com jest para identificar possíveis falha
 - Firebase Hosting
 - Firebase Firestore
 - Firebase Auth
-- LocalStorage
 - EsLint
 
 ## 6. Desenvolvedoras
