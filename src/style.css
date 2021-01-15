@@ -235,20 +235,27 @@ textarea {
 }
 
 /* NAVBAR */
-#top-header {
+.top-header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
-  width: 100%;
-  padding: 1rem 0;
-  background-color: #555;
+  width: 100vw;
+  padding: 0.5rem 1rem;
+  background-color: #fdf4dd;
+  box-shadow: 0 2px 15px 4px rgba(0,0,0,0.15);
+}
+
+.logo-header {
+  height: 2rem;
+  width: auto;
 }
 
 .icon-top-header {
   font-size: 1.5rem;
-  color: #fff;
-  margin-right: 20px;
+  color: #000;
+  transition: 0.3s ease-in-out;
 }
 
 #bottom-nav {
@@ -258,12 +265,12 @@ textarea {
   bottom: 0;
   width: 100%;
   padding: 1rem 0;
-  background-color: #555;
+  background-color: #000;
 }
 
 .icon-nav {
   font-size: 1.5rem;
-  color: #fff;
+  color: #fdf4dd;
 }
 
 /* FEED / POST */
