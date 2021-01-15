@@ -37,7 +37,7 @@ export const Post = (review) => {
       </div>
       <div id="like-container" class="like-container">
         <span id="like-icon-wrap">
-          <i id="like-icon-${review.id}" class="like-icon far fa-heart"></i>
+          <i id="like-icon-${review.id}" class="like-icon like-icon-general far fa-heart"></i>
         </span>
         <div id="review-like-count-${review.id}">${post.likes}</div>
       </div>
