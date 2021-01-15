@@ -6,11 +6,10 @@
 
 - [1. Introdução](#1-introdução)
 - [2. Sobre a aplicação](#2-sobre-a-aplicação)
-- [3. Identificação do usuário](#3-identificação-do-usuário)
-- [4. Processo de criação](#4-processo-de-criação)
-- [5. Testes](#5-testes)
-- [6. Tecnologias utilizadas](#6-tecnologias-utilizadas)
-- [7. Desenvolvedoras](#7-desenvolvedoras)
+- [3. Processo de criação](#3-processo-de-criação)
+- [4. Testes](#4-testes)
+- [5. Tecnologias utilizadas](#5-tecnologias-utilizadas)
+- [6. Desenvolvedoras](#6-desenvolvedoras)
 
 ---
 
@@ -23,7 +22,7 @@ O projeto proposto pela Laboratória foi realizado em trio. A estratégia de des
 
 A rede social desenvolvida tem como objetivo permitir que os usuários compartilhem suas experiências literárias criando resenhas, visualizar e curtir publicações de outros leitores.
 
-## 4. Processo de criação
+## 3. Processo de criação
 
 💡 Organização
 
@@ -67,7 +66,7 @@ A paleta de cores foi desenvolvida a partir do tom de amarelo utilizado nas pág
 
 ![Paleta de cores]()
 
-## 5. Testes
+## 4. Testes
 
 🔎 Usabilidade
 
@@ -85,7 +84,7 @@ Realizamos testes com algumas das pessoas que se dispuseram testar a usabilidade
 
 Foram desenvolvidos testes unitários com jest para identificar possíveis falhas nas funções utilizadas, possibilitando a correção caso necessário antes de definir o produto como pronto.
 
-## 6. Tecnologias utilizadas
+## 5. Tecnologias utilizadas
 
 🔧 Para esse projeto foram usados:
 
@@ -98,7 +97,7 @@ Foram desenvolvidos testes unitários com jest para identificar possíveis falha
 - LocalStorage
 - EsLint
 
-## 7. Desenvolvedoras
+## 6. Desenvolvedoras
 
 👩 [Akemi Mitsueda](https://github.com/akemimeka)
 
