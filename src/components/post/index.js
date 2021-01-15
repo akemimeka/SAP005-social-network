@@ -14,21 +14,21 @@ export const Post = (review) => {
 
   postContainer.innerHTML = `
     <article class="review-post" data-user-id=${user.user_id} data-review-id=${review.id}>
-      <div class="review-meta-info">
+      <h3 class="review-meta-info">
         <div class="meta-info-container">
           <img id="review-user-avatar" class="review-user-avatar" src="${user.photo || '../../img/default_user_icon.jpg'}">
           <div>
-            <p id="review-author-username" class="review-author-username">${user.name}</p>
+            <span id="review-author-username" class="review-author-username">${user.name}</span>
             <time id="review-date" class="review-date">${post.date}</time>
           </div>
         </div>
-        <div id="buttons-container"></div>
-      </div>
+        <div class="top-icons-container" id="buttons-container"></div>
+      </h3>
       <div class="review-main-info">
-        <div class="review-info-book-title">Título
+        <div class="review-info-book-title">Livro:
           <p id="review-book-title-${review.id}" class="review-book-title">${post.title}</p>
         </div>
-        <div class="review-info-book-author">Autor(a)
+        <div class="review-info-book-author">Autor(a):
           <p id="review-book-author-${review.id}" class="review-book-author">${post.author}</p>
         </div>
         <div id="review-opinion-${review.id}" class="review-opinion">
@@ -37,7 +37,7 @@ export const Post = (review) => {
       </div>
       <div id="like-container" class="like-container">
         <span id="like-icon-wrap">
-          <i id="like-icon-${review.id}" class="like-icon like-icon-general far fa-heart"></i>
+          <i id="like-icon-${review.id}" class="like-icon far fa-heart"></i>
         </span>
         <div id="review-like-count-${review.id}">${post.likes}</div>
       </div>
@@ -65,19 +65,17 @@ export const Post = (review) => {
 
   if (currentUserId === user.user_id) {
     const buttonsContainer = postContainer.querySelector('#buttons-container');
-    buttonsContainer.classList.add('top-icons-container');
-
     buttonsContainer.innerHTML = `
-      <button id="edit-button-${review.id}" class="btn-base btn-post">
+      <button id="edit-button-${review.id}" class="edit-button">
         <i class="edit-icon fas fa-edit"></i>Editar resenha
       </button>
-      <button id="save-button-${review.id}" class="hidden btn-base btn-post">
+      <button id="save-button-${review.id}" class="hidden save-button">
         <i class="check-icon fas fa-check"></i>Salvar resenha
       </button>
-      <button id="cancel-button-${review.id}" class="hidden btn-base btn-post">
+      <button id="cancel-button-${review.id}" class="hidden cancel-button">
         <i class="cancel-icon fas fa-times"></i>Cancelar edição
       </button>
-      <button id="delete-button-${review.id}" class="btn-base btn-post">
+      <button id="delete-button-${review.id}" class="delete-button">
         <i class="delete-icon fas fa-trash-alt"></i>Deletar resenha
       </button>
     `;

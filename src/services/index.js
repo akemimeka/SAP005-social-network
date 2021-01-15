@@ -1,8 +1,5 @@
 /* eslint-disable no-alert */
-export const googleLogin = (event) => {
-  event.preventDefault();
-  const provider = new firebase.auth.GoogleAuthProvider();
-
+export const googleLogin = (provider) => {
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
       const user = result.user;
