@@ -3,32 +3,30 @@ import { onNavigate } from '../../utils/history.js';
 
 export const SignUp = () => {
   const rootElement = document.createElement('div');
+  rootElement.className = 'container-signup';
 
   const templateSignUp = `
     <header class="header-sign-up">
       <i class="icon-arrow fas fa-chevron-left" id="go-back-icon"></i>
-      <h1 class="title-sign-up">Vamos começar!</h1>
+      <p class="title-sign-up">Vamos começar?</p>
     </header>
-    <section>
-      <form class="form-sign-up">
-        <label class="label-sign-up-name" for="username">Nome: <span class="required">*</span></label>
-        <input class="input-sign-up-name" id="user-name" type="text" name="username" required>
-        <label class="label-sign-up-email" for="email">E-mail: <span class="required">*</span></label>
-        <input class="input-sign-up-email" type="email" name="email" id="sign-up-email" required> 
-        <label class="label-sign-up-password" for"password">Senha: <span class="required">*</span></label>
-        <input class="input-sign-up-password" type="password" name="password" minlength="8" id="sign-up-password" placeholder="A senha deve conter no mínimo 8 caracteres" required>
-        <label class="label-confirm-password" for="confirm-password">Confirmar senha: <span class="required">*</span></label>
-        <input class="input-confirm-password" type="password" name="confirm-password" minlength="8" id="confirm-password" placeholder="A senha deve conter no mínimo 8 caracteres" required>
-        <button class="btn-sign-up" type="submit" id="btn-sign-up">Registrar-se</button>
-        <label class="option-sign-up">Ou</label>
-        <button id="btn-google">
-          <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
-          <span class="btn-google-text">Cadastre-se com conta Google</span>
-        </button>
-      </form>
-    </section>
-    <p class="login-link">
-    Já tem uma conta? <a href="#" id="login-link">Entrar</a>
+    <form class="form-sign-up">
+      <label class="label-begin" for="username">Nome<span class="required"> *</span></label>
+      <input class="input-begin" id="user-name" type="text" name="username" required>
+      <label class="label-begin" for="email">E-mail<span class="required"> *</span></label>
+      <input class="input-begin" type="email" name="email" id="sign-up-email" required> 
+      <label class="label-begin" for"password">Senha<span class="required"> *</span></label>
+      <input class="input-begin" type="password" name="password" minlength="8" id="sign-up-password" placeholder="Mínimo de 8 caracteres" required>
+      <label class="label-begin" for="confirm-password">Confirmar senha<span class="required"> *</span></label>
+      <input class="input-begin" type="password" name="confirm-password" minlength="8" id="confirm-password" placeholder="Mínimo de 8 caracteres" required>
+      <button class="btn-begin" type="submit" id="btn-sign-up">Cadastrar</button>
+      <button id="btn-google" class="btn-google">
+        <img class="btn-google-icon" src="../../img/google-icon.svg" alt="Ícone do Google"/>
+        <span class="btn-google-text">Cadastrar com conta Google</span>
+      </button>
+    </form>
+    <p class="question-begin">Já tem uma conta?<br>
+    <a href="#" id="login-link" class="link-begin">Entrar</a>
     </p>
   `;
 
