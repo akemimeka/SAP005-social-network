@@ -101,7 +101,7 @@ export const createAccount = (userName, email, password, confirmPassword) => {
 
 export const createReview = (formReview, titleValue, authorValue, reviewValue) => {
   const user = firebase.auth().currentUser;
-  const date = new Date();
+  let date = new Date();
 
   if (!titleValue) {
     alert('Por favor, escreva o nome do livro.');
@@ -119,7 +119,7 @@ export const createReview = (formReview, titleValue, authorValue, reviewValue) =
       title: titleValue,
       author: authorValue,
       review: reviewValue,
-      date: date.toLocaleString('pt-BR'),
+      date: `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}&ensp;|&ensp;${date.getHours()}:${date.getMinutes()}`,
       likes: 0,
     })
       .then(() => {
