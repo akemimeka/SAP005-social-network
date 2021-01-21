@@ -1,4 +1,4 @@
-import { signOut } from '../../services/index.js';
+import { signOut } from '../../services';
 
 export const topHeaderNav = () => {
   const topHeader = document.createElement('header');

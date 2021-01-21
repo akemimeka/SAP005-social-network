@@ -1,5 +1,5 @@
-import { Post } from '../../components/post/index.js';
-import { getReviews } from '../../services/index.js';
+import { Post } from '../../components/post';
+import { getReviews } from '../../services';
 
 export const Profile = () => {
   const profileBody = document.createElement('div');

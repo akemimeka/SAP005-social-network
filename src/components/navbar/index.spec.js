@@ -1,4 +1,4 @@
-import { Navbar } from './index.js';
+import { Navbar } from '.';
 import * as utils from '../../utils/history.js';
 
 utils.onNavigate = jest.fn();

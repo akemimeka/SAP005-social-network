@@ -3,7 +3,7 @@ import {
   saveEditedReview,
   deleteReview,
   likeReview,
-} from '../../services/index.js';
+} from '../../services';
 
 export const Post = (review) => {
   const postContainer = document.createElement('div');

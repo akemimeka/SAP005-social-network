@@ -1,5 +1,5 @@
-import { topHeaderNav } from './index.js';
-import * as services from '../../services/index.js';
+import { topHeaderNav } from '.';
+import * as services from '../../services';
 import * as utils from '../../utils/history.js';
 
 utils.onNavigate = jest.fn();

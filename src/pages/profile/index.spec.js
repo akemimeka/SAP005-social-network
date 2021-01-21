@@ -1,8 +1,8 @@
 // profile test
 
-import { Profile } from './index.js';
-import * as post from '../../components/post/index.js';
-import * as services from '../../services/index.js';
+import { Profile } from '.';
+import * as post from '../../components/post';
+import * as services from '../../services';
 
 describe('Profile', () => {
   it('should be a function', () => {

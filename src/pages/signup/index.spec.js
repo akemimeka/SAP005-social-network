@@ -1,5 +1,5 @@
-import { SignUp } from './index.js';
-import * as services from '../../services/index.js';
+import { SignUp } from '.';
+import * as services from '../../services';
 import * as utils from '../../utils/history.js';
 
 services.createAccount = jest.fn(() => true);

@@ -1,5 +1,5 @@
-import { Review } from './index.js';
-import * as services from '../../services/index.js';
+import { Review } from '.';
+import * as services from '../../services';
 
 services.createReview = jest.fn(() => true);
 

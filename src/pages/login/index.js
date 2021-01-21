@@ -1,4 +1,4 @@
-import { emailAndPasswordLogin, googleLogin } from '../../services/index.js';
+import { emailAndPasswordLogin, googleLogin } from '../../services';
 import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {

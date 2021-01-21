@@ -1,11 +1,11 @@
-import { Feed } from './pages/feed/index.js';
-import { SignUp } from './pages/signup/index.js';
-import { Login } from './pages/login/index.js';
-import { Review } from './pages/review/index.js';
-import { Profile } from './pages/profile/index.js';
-import { Navbar } from './components/navbar/index.js';
-import { topHeaderNav } from './components/top-header/index.js';
-import { Footer } from './components/footer/index.js';
+import { Feed } from './pages/feed';
+import { SignUp } from './pages/signup';
+import { Login } from './pages/login';
+import { Review } from './pages/review';
+import { Profile } from './pages/profile';
+import { Navbar } from './components/navbar';
+import { topHeaderNav } from './components/top-header';
+import { Footer } from './components/footer';
 
 const root = document.querySelector('#root');
 const auth = firebase.auth();

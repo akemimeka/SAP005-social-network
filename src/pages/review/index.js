@@ -1,4 +1,4 @@
-import { createReview } from '../../services/index.js';
+import { createReview } from '../../services';
 
 export const Review = () => {
   const rootElement = document.createElement('div');

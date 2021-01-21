@@ -1,5 +1,5 @@
-import { Login } from './index.js';
-import * as services from '../../services/index.js';
+import { Login } from '.';
+import * as services from '../../services';
 import * as utils from '../../utils/history.js';
 
 services.emailAndPasswordLogin = jest.fn(() => true);

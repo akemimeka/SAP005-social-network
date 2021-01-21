@@ -1,4 +1,4 @@
-import * as post from './index.js';
+import * as post from '.';
 import * as services from '../../services/index.js';
 
 const reviewMock = {
